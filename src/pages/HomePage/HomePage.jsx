@@ -3,9 +3,13 @@ import Slider from "components/Slider/Slider";
 
 const HomePage = () => {
   return (
-    <div>
-      <Slider />
-      <Form />
+    <div className="homepage">
+      <div className="slider">
+        <Slider />
+      </div>
+      <div className="form">
+        <Form />
+      </div>
     </div>
   );
 };
