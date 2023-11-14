@@ -30,7 +30,7 @@ const Form = () => {
     color: "inherit",
   };
   return (
-    <Box>
+    <Box sx={{ width: "45%" }}>
       <div>
         <H1>let's create your account</H1>
         <Paragraph>
