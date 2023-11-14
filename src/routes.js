@@ -1,3 +1,4 @@
+import NotFound from "pages/NotFound/NotFound";
 import LoadingScreen from "./components/LoadingScreen";
 import { Suspense, lazy } from "react";
 
@@ -8,8 +9,8 @@ const Loadable = (Component) => (props) =>
     </Suspense>
   );
 
-const HomePage = Loadable(lazy(() => import("./pages/Home/Home")));
-const ErrorPage = Loadable(lazy(() => import("./pages/404")));
+const HomePage = Loadable(lazy(() => import("./pages/HomePage/HomePage")));
+const NotFoundPage = Loadable(lazy(() => import("./pages/NotFound/NotFound")));
 
 const routes = [
   {
@@ -18,7 +19,7 @@ const routes = [
   },
   {
     path: "*",
-    element: <ErrorPage />,
+    element: <NotFoundPage />,
   },
 ];
 

@@ -9,7 +9,7 @@ import {
 import { appTheme } from "./theme";
 
 function App() {
-  const appsTheme = appTheme();
+  const appsTheme = appTheme({});
 
   return (
     <StyledEngineProvider injectFirst>
