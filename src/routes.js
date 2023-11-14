@@ -10,17 +10,12 @@ const Loadable = (Component) => (props) =>
   );
 
 const HomePage = Loadable(lazy(() => import("./pages/HomePage/HomePage")));
-const LoginPage = Loadable(lazy(() => import("./pages/LoginPage/LoginPage")));
 const ErrorPage = Loadable(lazy(() => import("./pages/ErrorPage/ErrorPage")));
 
 const routes = [
   {
     path: "/",
     element: <HomePage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
   },
   {
     path: "*",

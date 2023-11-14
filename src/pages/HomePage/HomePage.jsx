@@ -1,13 +1,11 @@
-import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import Form from "components/Form/Form";
+import Slider from "components/Slider/Slider";
 
 const HomePage = () => {
   return (
     <div>
-      HomePage
-      <Button variant="outlined">
-        <Link to={"/login"}>Lets start</Link>
-      </Button>
+      <Slider />
+      <Form />
     </div>
   );
 };
