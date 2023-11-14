@@ -1,5 +1,5 @@
-/* .swiper {
-    width: 761px;
+.swiper {
+    width: 55%;
     height: 100%;
 }
 
@@ -18,4 +18,4 @@
     width: 500px;
     height: 600px;
     object-fit: cover;
-} */
+}
