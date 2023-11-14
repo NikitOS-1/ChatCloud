@@ -8,7 +8,14 @@ import "swiper/css/pagination";
 
 import "./styles.css";
 
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Mousewheel,
+  Keyboard,
+  Autoplay,
+} from "swiper/modules";
+import { Slide } from "./Slide/Slide";
 
 const MainIllustrationFirst = "/static/Illustaration/MainIllustrationFirst.svg";
 const MainIllustrationSecond =
@@ -24,22 +31,30 @@ const Slider = () => {
         pagination={true}
         mousewheel={true}
         keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        loop={true}
+        autoplay={{ delay: 10000, disableOnInteraction: false }}
+        modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
         className="mySwiper">
         <SwiperSlide>
-          <div>
-            <img src={MainIllustrationFirst} alt="picture" />
-          </div>
+          <Slide
+            img={MainIllustrationFirst}
+            title={"Group Chats"}
+            text={"Add new people to your friend list"}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <div>
-            <img src={MainIllustrationSecond} alt="picture" />
-          </div>
+          <Slide
+            img={MainIllustrationSecond}
+            title={"Find new friends around the world"}
+            text={"Add new people to your friend list"}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <div>
-            <img src={MainIllustrationThird} alt="picture" />
-          </div>
+          <Slide
+            img={MainIllustrationThird}
+            title={"Share your hobbies with others"}
+            text={"Chat with people based on common interests"}
+          />
         </SwiperSlide>
       </Swiper>
     </>
