@@ -355,7 +355,7 @@ export const appTheme = (config) => {
   let themeOption = themesOptions[config.theme];
 
   if (!themeOption) {
-    themeOption = themesOptions[THEMES.DARK];
+    themeOption = themesOptions[THEMES.LIGHT];
   } //@ts-ignore
 
   const merged = merge({}, baseOptions, themeOption, {
