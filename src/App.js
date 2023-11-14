@@ -6,18 +6,19 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from "@mui/material";
-import { appTheme } from "./theme";
+import { appTheme } from "theme";
 
 function App() {
-  const appsTheme = appTheme({});
-
+  const appThemes = appTheme({ theme: "light" });
   return (
-    <>
-      <CssBaseline />
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={appThemes}>
+        <CssBaseline />
+        <Header />
+        <Main />
+        <Footer />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 
