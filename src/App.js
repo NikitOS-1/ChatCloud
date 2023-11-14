@@ -12,14 +12,12 @@ function App() {
   const appsTheme = appTheme({});
 
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={appsTheme}>
-        <CssBaseline />
-        <Header />
-        <Main />
-        <Footer />
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <>
+      <CssBaseline />
+      <Header />
+      <Main />
+      <Footer />
+    </>
   );
 }
 

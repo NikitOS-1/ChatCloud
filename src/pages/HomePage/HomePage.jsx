@@ -1,5 +1,6 @@
 import Form from "components/Form/Form";
 import Slider from "components/Slider/Slider";
+import "./style.scss";
 
 const HomePage = () => {
   return (

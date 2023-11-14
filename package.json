@@ -21,6 +21,8 @@
     "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
     "react-svg": "^16.1.30",
+    "sass": "^1.69.5",
+    "scss": "^0.2.4",
     "styled-components": "^6.1.1",
     "swiper": "^11.0.4",
     "web-vitals": "^2.1.4"
