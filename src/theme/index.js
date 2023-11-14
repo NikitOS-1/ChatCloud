@@ -11,6 +11,7 @@ import {
 } from "./themeColors";
 
 const fontSize = 14;
+
 const baseOptions = {
   breakpoints: {
     values: {
