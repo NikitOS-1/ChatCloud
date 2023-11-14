@@ -4,18 +4,22 @@
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #F5FBFF;
-
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center; */
 }
 
 .swiper-slide img {
-    display: block;
-    width: 500px;
-    height: 600px;
-    object-fit: cover;
+    /* display: block;
+    width: 630px;
+    height: auto;
+    object-fit: cover; */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #FFBA55;
+    width: 32px;
+    height: 32px;
 }

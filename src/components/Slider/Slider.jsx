@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -28,11 +28,11 @@ const Slider = () => {
       <Swiper
         cssMode={true}
         navigation={true}
-        pagination={true}
+        pagination={false}
         mousewheel={true}
         keyboard={true}
         loop={true}
-        autoplay={{ delay: 10000, disableOnInteraction: false }}
+        // autoplay={{ delay: 10000, disableOnInteraction: false }}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
         className="mySwiper">
         <SwiperSlide>

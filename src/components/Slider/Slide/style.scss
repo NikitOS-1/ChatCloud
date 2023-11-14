@@ -1,0 +1,22 @@
+.slide-main {
+    margin: 0 auto;
+    max-width: 760px;
+    height: 1024px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    background: #F5FBFF;
+
+    .slide-main-img {
+        max-width: 630px;
+        height: auto;
+    }
+
+    .slide-main-title {
+        margin-top: 70px;
+        margin-bottom: 120px;
+    }
+
+}
