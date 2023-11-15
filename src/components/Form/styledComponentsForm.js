@@ -133,12 +133,18 @@ export const ButtonNext = styled.button`
   height: 55px;
   margin-top: 50px;
   color: white;
-  background-color: ${theme.colors.primary.primaryYellow};
+  background-color: ${(props) =>
+    !props.$errors
+      ? theme.colors.primary.primaryYellow
+      : theme.colors.neutralColors[300]};
   font-size: ${theme.fontSizes.Medium20};
 
   &:hover {
     cursor: pointer;
-    background-color: ${theme.colors.hover.yellow};
+    background-color: ${(props) =>
+      !props.$errors
+        ? theme.colors.hover.yellow
+        : theme.colors.neutralColors[300]};
   }
   &:focus-visible {
     outline: none;

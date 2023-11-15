@@ -60,7 +60,7 @@ const Form = () => {
             <div></div>
             <div></div>
           </PaginationPage>
-          <ButtonNext>Next</ButtonNext>
+          <ButtonNext $errors={error}>Next</ButtonNext>
         </InputContainer>
       </FormItem>
     </FormContainer>
