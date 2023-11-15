@@ -13,11 +13,14 @@ import {
   PaginationPage,
 } from "./styledComponentsForm";
 import CountrySelector from "./CountrySelector";
+import ChangePhoto from "./ChangePhoto";
 
 const Form = () => {
   const [errorMessage, setErrorMessage] = useState(false);
   const [error, setError] = useState(false);
   const [userName, setUserName] = useState("");
+  const [cheked, setCheked] = useState(false);
+  const [selectedAvatar, setSelectedAvatar] = useState(avaNoPhoto);
 
   const handleInputChangeUserName = (e) => {
     const regex = /^[a-zA-Z0-9]*$/;
@@ -31,6 +34,9 @@ const Form = () => {
       setErrorMessage("Please use only Latin letters and Arabic numerals");
     }
   };
+  const isCheked = () => {
+    setCheked(!cheked);
+  };
 
   return (
     <FormContainer>
@@ -40,8 +46,9 @@ const Form = () => {
       </Title>
       <FormItem>
         <Ava>
-          <img src={avaNoPhoto} alt="It your's Avatar" />
-          <p>Change Photo</p>
+          <img src={selectedAvatar} alt="It your's Avatar" />
+          <p onClick={isCheked}>Change Photo</p>
+          {cheked ? <ChangePhoto isCheked={isCheked} /> : ""}
         </Ava>
         <InputContainer>
           <InputUserName $errors={error}>

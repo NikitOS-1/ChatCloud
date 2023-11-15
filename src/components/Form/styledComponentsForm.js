@@ -1,6 +1,7 @@
 import { theme } from "theme/theme";
 import styled from "styled-components";
 const arrowBack = "/static/other/arrowDown.svg";
+const close = "/static/other/Close.svg";
 
 export const FormContainer = styled.div`
   display: flex;

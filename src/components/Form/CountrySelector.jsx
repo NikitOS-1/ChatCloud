@@ -1,6 +1,6 @@
 import { InputCountry } from "./styledComponentsForm";
 import React, { useState } from "react";
-import { countries } from "./countries";
+import { countries } from "../../data/countries";
 
 const CountrySelector = () => {
   const [selectedCountry, setSelectedCountry] = useState("US");
