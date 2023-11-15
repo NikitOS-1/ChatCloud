@@ -33,7 +33,26 @@ const ButtonClose = styled.div`
   }
 `;
 const SelectAva = styled.div``;
-const ButtonSave = styled.div``;
+const ButtonSave = styled.div`
+  button {
+    border-radius: 13px;
+    border: none;
+    width: 230px;
+    height: 55px;
+    margin-top: 50px;
+    color: white;
+    background-color: ${theme.colors.primary.primaryYellow};
+    font-size: ${theme.fontSizes.Medium20};
+
+    &:hover {
+      cursor: pointer;
+      background-color: ${theme.colors.hover.yellow};
+    }
+    &:focus-visible {
+      outline: none;
+    }
+  }
+`;
 
 const ChangePhoto = ({ isCheked }) => {
   return (
@@ -44,7 +63,9 @@ const ChangePhoto = ({ isCheked }) => {
         </div>
       </ButtonClose>
       <SelectAva></SelectAva>
-      <ButtonSave></ButtonSave>
+      <ButtonSave>
+        <button>Save</button>
+      </ButtonSave>
     </ChangePhotoContainer>
   );
 };
