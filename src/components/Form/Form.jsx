@@ -12,6 +12,7 @@ import {
   ButtonNext,
   PaginationPage,
 } from "./styledComponentsForm";
+import CountrySelector from "./CountrySelector";
 
 const Form = () => {
   const [errorMessage, setErrorMessage] = useState(false);
@@ -52,10 +53,7 @@ const Form = () => {
             />
             <InputUserNameError>{errorMessage}</InputUserNameError>
           </InputUserName>
-          <InputCountry>
-            <p>Country:</p>
-            <input type="text" />
-          </InputCountry>
+          <CountrySelector />
           <PaginationPage>
             <div></div>
             <div></div>

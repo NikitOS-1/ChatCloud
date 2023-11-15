@@ -56,10 +56,10 @@ export const InputContainer = styled.div`
   margin-top: 50px;
   height: 100%;
 
-  input {
+  input,
+  select {
     width: 495px;
     height: 65px;
-
     border: 2px solid ${theme.colors.primary.blue30};
     border-radius: 20px;
   }
@@ -72,11 +72,12 @@ export const InputContainer = styled.div`
   }
 `;
 export const InputUserName = styled.div`
-  height: 120px;
   margin: 0px 0px 25px 0px;
+  height: 120px;
 
   input {
-    width: 470px;
+    width: 464px;
+    height: 59px;
     padding-left: 25px;
     border: 2px solid;
 
@@ -105,6 +106,29 @@ export const InputUserNameError = styled.p`
 `;
 export const InputCountry = styled.div`
   height: 120px;
+  display: flex;
+  flex-direction: column;
+
+  select {
+    padding-left: 25px;
+    border: 2px solid;
+    border-color: ${(props) =>
+      props.$errors
+        ? theme.colors.supporting.error
+        : theme.colors.primary.blue30};
+  }
+
+  select:hover {
+    border-color: ${theme.colors.primary.blue50};
+  }
+
+  select:focus-visible {
+    outline: none;
+    border-color: ${(props) =>
+      props.$errors
+        ? theme.colors.supporting.error
+        : theme.colors.primary.primaryBlue};
+  }
 `;
 export const PaginationPage = styled.div`
   margin-top: 55px;
