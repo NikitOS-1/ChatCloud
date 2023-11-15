@@ -1,7 +1,5 @@
 import { avaNoPhoto } from "assets/ava/svgAva";
 import { useState } from "react";
-import styled from "styled-components";
-import { theme } from "theme/theme";
 import {
   FormContainer,
   Title,

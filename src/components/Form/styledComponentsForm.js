@@ -16,10 +16,13 @@ export const Title = styled.div`
 
   h2 {
     text-transform: uppercase;
+
     font-size: ${theme.fontSizes.Regular24};
   }
+
   p {
     margin-top: 10px;
+
     font-size: ${theme.fontSizes.Medium16};
   }
 `;
@@ -35,9 +38,12 @@ export const Ava = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   p {
     margin-top: 15px;
+
     color: ${theme.colors.primary.primaryYellow};
+
     font-size: ${theme.fontSizes.Medium20};
   }
 `;
@@ -47,12 +53,15 @@ export const InputContainer = styled.div`
   flex-direction: column;
   margin-top: 50px;
   height: 100%;
+
   input {
     width: 495px;
     height: 65px;
+
     border: 2px solid ${theme.colors.primary.blue30};
     border-radius: 20px;
   }
+
   p {
     font-size: ${theme.fontSizes.Medium16};
     margin-bottom: 10px;
@@ -63,17 +72,21 @@ export const InputContainer = styled.div`
 export const InputUserName = styled.div`
   height: 120px;
   margin: 0px 0px 25px 0px;
+
   input {
     width: 470px;
     padding-left: 25px;
     border: 2px solid;
+
     border-color: ${(props) =>
       props.$errors
         ? theme.colors.supporting.error
         : theme.colors.primary.blue30};
   }
+
   input:focus-visible {
     outline: none;
+
     border-color: ${(props) =>
       props.$errors
         ? theme.colors.supporting.error
@@ -83,6 +96,7 @@ export const InputUserName = styled.div`
 export const InputUserNameError = styled.p`
   height: 100%;
   margin: 10px 0px;
+
   color: ${theme.colors.supporting.error};
 `;
 export const InputCountry = styled.div`
@@ -94,27 +108,36 @@ export const PaginationPage = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 22px;
+
   div {
     border-radius: 50%;
     width: 8px;
     height: 8px;
     border: none;
+
     background-color: ${theme.colors.neutralColors[200]};
   }
+
   :first-child {
     background-color: ${theme.colors.neutralColors[300]};
   }
 `;
-export const ButtonNext = styled.button`
-  border-radius: 13px;
-  border: none;
-  background-color: ${theme.colors.primary.primaryYellow};
-  width: 230px;
-  height: 55px;
-  color: white;
-  margin-top:50px;
-  font-size:${theme.fontSizes.Medium20}
-  button:focus-visible {
-    outline: none;
-  }
+export const ButtonNext = styled.button` 
+border-radius: 13px;
+border: none;
+
+background-color: ${theme.colors.primary.primaryYellow}
+
+;
+width: 230px;
+height: 55px;
+color: white;
+margin-top:50px;
+
+font-size:${theme.fontSizes.Medium20}
+
+button:focus-visible {
+  outline: none;
+}
+
 `;
