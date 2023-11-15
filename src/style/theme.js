@@ -29,6 +29,13 @@ export const theme = {
       white100: "#F7F8FB",
       gray500: "#5D667E",
       black900: "#0C1629",
+      100: "#F7F8FB",
+      150: "#E5E7EB",
+      200: "#CACED7",
+      300: "#9BA2B0",
+      400: "#788397",
+      500: "#5D667E",
+      900: "#0C1629",
     },
     hover: {
       yellow: "#FFAA2E",
@@ -40,15 +47,14 @@ export const theme = {
     },
   },
   fonts: {
-    main: "Arial, sans-serif",
-    heading: "Georgia, serif",
-    // ...
+    main: "'Carrois Gothic', sans-serif;",
   },
   fontSizes: {
-    small: "14px",
-    medium: "16px",
-    large: "18px",
-    // ...
+    Regular24: "24px",
+    Regular32: "32px",
+    Medium20: "20px",
+    Medium16: "16px",
+    Medium12: "12px",
   },
   breakpoints: {
     sm: "576px",
