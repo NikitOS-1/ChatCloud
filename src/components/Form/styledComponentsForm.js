@@ -1,5 +1,6 @@
 import { theme } from "theme/theme";
 import styled from "styled-components";
+const arrowBack = "/static/other/arrowDown.svg";
 
 export const FormContainer = styled.div`
   display: flex;
@@ -110,7 +111,11 @@ export const InputCountry = styled.div`
   flex-direction: column;
 
   select {
-    padding-left: 25px;
+    appearance: none;
+    background-image: url(${arrowBack});
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding: 0px 25px;
     border: 2px solid;
     border-color: ${(props) =>
       props.$errors
@@ -119,6 +124,7 @@ export const InputCountry = styled.div`
   }
 
   select:hover {
+    cursor: pointer;
     border-color: ${theme.colors.primary.blue50};
   }
 

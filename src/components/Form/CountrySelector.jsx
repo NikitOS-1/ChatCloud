@@ -1,12 +1,6 @@
 import { InputCountry } from "./styledComponentsForm";
 import React, { useState } from "react";
-import CountryFlag from "react-country-flag";
-
-const countries = [
-  { code: "US", name: "United States" },
-  { code: "UA", name: "Ukraine" },
-  // Добавьте другие страны по мере необходимости
-];
+import { countries } from "./countries";
 
 const CountrySelector = () => {
   const [selectedCountry, setSelectedCountry] = useState("US");
