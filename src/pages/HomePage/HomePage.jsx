@@ -1,17 +1,41 @@
-import { Grid } from "@mui/material";
 import Form from "components/Form/Form";
 import Slider from "components/Slider/Slider";
+import styled from "styled-components";
+import { theme } from "theme/theme";
 
+const ContainerHomePage = styled.div`
+  max-width: ${theme.breakpoints.xxl};
+  margin: 0 auto;
+  display: flex;
+  max-height: ${theme.breakpoints.height};
+
+  @media screen and (max-width: ${theme.breakpoints.lg}) {
+    flex-direction: column;
+  }
+`;
+const ContainerSlider = styled.div`
+  max-width: 761px;
+
+  @media screen and (max-width: ${theme.breakpoints.xl}) {
+    max-width: 661px;
+  }
+`;
+const ContainerForm = styled.div`
+  width: 679px;
+  @media screen and (max-width: ${theme.breakpoints.xl}) {
+    max-width: 579px;
+  }
+`;
 const HomePage = () => {
   return (
-    <Grid container maxWidth={1440} maxHeight={1024} margin={"0 auto"}>
-      <Grid item xs={12} sm={12} md={6}>
+    <ContainerHomePage>
+      <ContainerSlider>
         <Slider />
-      </Grid>
-      <Grid item xs={12} sm={12} md={6}>
+      </ContainerSlider>
+      <ContainerForm>
         <Form />
-      </Grid>
-    </Grid>
+      </ContainerForm>
+    </ContainerHomePage>
   );
 };
 export default HomePage;

@@ -62,5 +62,6 @@ export const theme = {
     lg: "992px",
     xl: "1280px",
     xxl: "1440px",
+    height: "1024px",
   },
 };
