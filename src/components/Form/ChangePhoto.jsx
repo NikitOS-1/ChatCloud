@@ -39,7 +39,9 @@ const ButtonClose = styled.div`
 const SelectAvaContainer = styled.div`
   width: 100%;
   height: 465px;
-  //   background-color: aqua;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
 `;
 const ButtonSave = styled.div`
   display: flex;
@@ -84,13 +86,18 @@ const ChangePhoto = ({ isCheked }) => {
         </ButtonClose>
         <SelectAvaContainer>
           {avatarList.map((avatar) => (
-            <div key={avatar.id}>
+            <div
+              key={avatar.id}
+              style={{ margin: "5px", width: "150px", height: "150px" }}>
               <img
                 src={avatar.src}
                 alt={`Avatar ${avatar.id}`}
                 onClick={() => setSelectAva(avatar.src)}
                 style={{
-                  border: avatar.src === selectAva ? "2px solid blue" : "none",
+                  border:
+                    avatar.src === selectAva
+                      ? `3px solid ${theme.colors.primary.primaryBlue}`
+                      : "none",
                   borderRadius: "50%",
                 }}
               />
