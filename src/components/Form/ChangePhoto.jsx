@@ -12,6 +12,7 @@ const ChangePhotoContainer = styled.div`
   top: 410px;
   border-radius: 20px;
   padding: 15px;
+  z-index: 100;
 `;
 const ButtonClose = styled.div`
   display: flex;
@@ -20,9 +21,8 @@ const ButtonClose = styled.div`
 
   div {
     cursor: pointer;
-    text-align: center;
-    width: 35px;
-    height: 35px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,14 +32,21 @@ const ButtonClose = styled.div`
     opacity: 1;
   }
 `;
-const SelectAva = styled.div``;
+const SelectAvaContainer = styled.div`
+  width: 100%;
+  height: 465px;
+  background-color: aqua;
+`;
 const ButtonSave = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   button {
     border-radius: 13px;
     border: none;
     width: 230px;
     height: 55px;
-    margin-top: 50px;
+    margin-top: 10px;
     color: white;
     background-color: ${theme.colors.primary.primaryYellow};
     font-size: ${theme.fontSizes.Medium20};
@@ -57,15 +64,17 @@ const ButtonSave = styled.div`
 const ChangePhoto = ({ isCheked }) => {
   return (
     <ChangePhotoContainer>
-      <ButtonClose>
-        <div onClick={() => isCheked()}>
-          <img src={closeSvg} alt="Close" />
-        </div>
-      </ButtonClose>
-      <SelectAva></SelectAva>
-      <ButtonSave>
-        <button>Save</button>
-      </ButtonSave>
+      <div>
+        <ButtonClose>
+          <div onClick={() => isCheked()}>
+            <img src={closeSvg} alt="Close" />
+          </div>
+        </ButtonClose>
+        <SelectAvaContainer></SelectAvaContainer>
+        <ButtonSave>
+          <button>Save</button>
+        </ButtonSave>
+      </div>
     </ChangePhotoContainer>
   );
 };
