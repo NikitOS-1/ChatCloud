@@ -1,12 +1,16 @@
 import Header from "./container/Header/Header";
 import Main from "./container/Main/Main";
 import Footer from "./container/Footer/Footer";
-import { CssBaseline } from "@mui/material";
+import GlobalStyles from "style/GlobalStyles";
+import Normalize from "style/Normalize";
+import ResetStyles from "style/ResetStyles";
 
 function App() {
   return (
     <>
-      <CssBaseline />
+      <ResetStyles />
+      <Normalize />
+      <GlobalStyles />
       <Header />
       <Main />
       <Footer />
