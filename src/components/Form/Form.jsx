@@ -8,13 +8,28 @@ import {
   FormItem,
   Ava,
   InputContainer,
-  InputUserName,
   InputUserNameError,
+  InputUserName,
   InputCountry,
 } from "./styledComponentsForm";
+
 const Form = () => {
   const [errorMessage, setErrorMessage] = useState(false);
-  const [error, seterror] = useState(false);
+  const [error, setError] = useState(false);
+  const [userName, setUserName] = useState("");
+
+  const handleInputChange = (e) => {
+    const regex = /^[a-zA-Z0-9]*$/;
+    setUserName(e.target.value);
+
+    if (regex.test(e.target.value)) {
+      setError(false);
+      setErrorMessage(false);
+    } else {
+      setError(true);
+      setErrorMessage("Please use only Latin letters and Arabic numerals");
+    }
+  };
 
   return (
     <FormContainer>
@@ -28,14 +43,14 @@ const Form = () => {
           <p>Change Photo</p>
         </Ava>
         <InputContainer>
-          <InputUserName>
+          <InputUserName $errors={error}>
             <p>Username</p>
-            <input type="" />
+            <input type="text" value={userName} onChange={handleInputChange} />
             <InputUserNameError>{errorMessage}</InputUserNameError>
           </InputUserName>
           <InputCountry>
             <p>Country:</p>
-            <input type="" />
+            <input type="text" />
           </InputCountry>
         </InputContainer>
       </FormItem>

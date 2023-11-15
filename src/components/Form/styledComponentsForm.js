@@ -1,8 +1,6 @@
 import { theme } from "theme/theme";
 import styled from "styled-components";
 
-let error = false;
-
 export const FormContainer = styled.div`
   display: flex;
   align-items: center;
@@ -65,8 +63,18 @@ export const InputUserName = styled.div`
   input {
     width: 470px;
     padding-left: 25px;
-    border: 2px solid
-      ${!error ? theme.colors.primary.blue30 : theme.colors.supporting.error};
+    border: 2px solid;
+    border-color: ${(props) =>
+      props.$errors
+        ? theme.colors.supporting.error
+        : theme.colors.primary.blue30};
+  }
+  input:focus-visible {
+    outline: none;
+    border-color: ${(props) =>
+      props.$errors
+        ? theme.colors.supporting.error
+        : theme.colors.primary.primaryBlue};
   }
 `;
 export const InputUserNameError = styled.p`
