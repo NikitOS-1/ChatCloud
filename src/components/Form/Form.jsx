@@ -11,6 +11,8 @@ import {
   InputUserNameError,
   InputUserName,
   InputCountry,
+  ButtonNext,
+  PaginationPage,
 } from "./styledComponentsForm";
 
 const Form = () => {
@@ -18,7 +20,7 @@ const Form = () => {
   const [error, setError] = useState(false);
   const [userName, setUserName] = useState("");
 
-  const handleInputChange = (e) => {
+  const handleInputChangeUserName = (e) => {
     const regex = /^[a-zA-Z0-9]*$/;
     setUserName(e.target.value);
 
@@ -45,13 +47,22 @@ const Form = () => {
         <InputContainer>
           <InputUserName $errors={error}>
             <p>Username</p>
-            <input type="text" value={userName} onChange={handleInputChange} />
+            <input
+              type="text"
+              value={userName}
+              onChange={handleInputChangeUserName}
+            />
             <InputUserNameError>{errorMessage}</InputUserNameError>
           </InputUserName>
           <InputCountry>
             <p>Country:</p>
             <input type="text" />
           </InputCountry>
+          <PaginationPage>
+            <div></div>
+            <div></div>
+          </PaginationPage>
+          <ButtonNext>Next</ButtonNext>
         </InputContainer>
       </FormItem>
     </FormContainer>

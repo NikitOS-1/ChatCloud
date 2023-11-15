@@ -42,6 +42,9 @@ export const Ava = styled.div`
   }
 `;
 export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-top: 50px;
   height: 100%;
   input {
@@ -84,4 +87,34 @@ export const InputUserNameError = styled.p`
 `;
 export const InputCountry = styled.div`
   height: 120px;
+`;
+export const PaginationPage = styled.div`
+  margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 22px;
+  div {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    border: none;
+    background-color: ${theme.colors.neutralColors[200]};
+  }
+  :first-child {
+    background-color: ${theme.colors.neutralColors[300]};
+  }
+`;
+export const ButtonNext = styled.button`
+  border-radius: 13px;
+  border: none;
+  background-color: ${theme.colors.primary.primaryYellow};
+  width: 230px;
+  height: 55px;
+  color: white;
+  margin-top:50px;
+  font-size:${theme.fontSizes.Medium20}
+  button:focus-visible {
+    outline: none;
+  }
 `;
