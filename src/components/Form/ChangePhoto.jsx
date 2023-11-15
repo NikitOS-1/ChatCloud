@@ -1,3 +1,7 @@
+import { avatarList } from "data/avatarList";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAvatar, selectSelectedAvatar } from "redux/avatarSlice";
 import styled from "styled-components";
 import { theme } from "theme/theme";
 
@@ -35,7 +39,7 @@ const ButtonClose = styled.div`
 const SelectAvaContainer = styled.div`
   width: 100%;
   height: 465px;
-  background-color: aqua;
+  //   background-color: aqua;
 `;
 const ButtonSave = styled.div`
   display: flex;
@@ -62,6 +66,14 @@ const ButtonSave = styled.div`
 `;
 
 const ChangePhoto = ({ isCheked }) => {
+  const dispatch = useDispatch();
+  const [selectAva, setSelectAva] = useState("");
+
+  const saveAva = () => {
+    dispatch(selectAvatar(selectAva));
+    isCheked();
+  };
+
   return (
     <ChangePhotoContainer>
       <div>
@@ -70,9 +82,23 @@ const ChangePhoto = ({ isCheked }) => {
             <img src={closeSvg} alt="Close" />
           </div>
         </ButtonClose>
-        <SelectAvaContainer></SelectAvaContainer>
+        <SelectAvaContainer>
+          {avatarList.map((avatar) => (
+            <div key={avatar.id}>
+              <img
+                src={avatar.src}
+                alt={`Avatar ${avatar.id}`}
+                onClick={() => setSelectAva(avatar.src)}
+                style={{
+                  border: avatar.src === selectAva ? "2px solid blue" : "none",
+                  borderRadius: "50%",
+                }}
+              />
+            </div>
+          ))}
+        </SelectAvaContainer>
         <ButtonSave>
-          <button>Save</button>
+          <button onClick={saveAva}>Save</button>
         </ButtonSave>
       </div>
     </ChangePhotoContainer>

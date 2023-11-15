@@ -1,4 +1,3 @@
-import { avaNoPhoto } from "assets/ava/svgAva";
 import { useState } from "react";
 import {
   FormContainer,
@@ -14,13 +13,17 @@ import {
 } from "./styledComponentsForm";
 import CountrySelector from "./CountrySelector";
 import ChangePhoto from "./ChangePhoto";
+import { useSelector } from "react-redux";
+import { selectSelectedAvatar } from "redux/avatarSlice";
 
 const Form = () => {
+  const avaNoPhotoSVG = "/static/Ava/NoPhoto.svg";
+  const myAva = useSelector(selectSelectedAvatar);
+
   const [errorMessage, setErrorMessage] = useState(false);
   const [error, setError] = useState(false);
   const [userName, setUserName] = useState("");
   const [cheked, setCheked] = useState(false);
-  const [selectedAvatar, setSelectedAvatar] = useState(avaNoPhoto);
 
   const handleInputChangeUserName = (e) => {
     const regex = /^[a-zA-Z0-9]*$/;
@@ -46,7 +49,7 @@ const Form = () => {
       </Title>
       <FormItem>
         <Ava>
-          <img src={selectedAvatar} alt="It your's Avatar" />
+          <img src={myAva ? myAva : avaNoPhotoSVG} alt="It your's Avatar" />
           <p onClick={isCheked}>Change Photo</p>
           {cheked ? <ChangePhoto isCheked={isCheked} /> : ""}
         </Ava>

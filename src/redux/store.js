@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import someReducer from "./someReducer";
+import avatarSlice from "./avatarSlice";
 
 export const store = configureStore({
   reducer: {
-    some: someReducer,
+    avatar: avatarSlice,
   },
 });
