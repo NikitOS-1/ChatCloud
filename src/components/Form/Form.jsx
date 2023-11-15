@@ -39,7 +39,7 @@ const Form = () => {
       </Title>
       <FormItem>
         <Ava>
-          <img src={avaNoPhoto} alt="No photo" />
+          <img src={avaNoPhoto} alt="It your's Avatar" />
           <p>Change Photo</p>
         </Ava>
         <InputContainer>

@@ -41,10 +41,12 @@ export const Ava = styled.div`
 
   p {
     margin-top: 15px;
-
     color: ${theme.colors.primary.primaryYellow};
-
     font-size: ${theme.fontSizes.Medium20};
+  }
+  p:hover {
+    cursor: pointer;
+    color: ${theme.colors.hover.yellow};
   }
 `;
 export const InputContainer = styled.div`
@@ -83,7 +85,9 @@ export const InputUserName = styled.div`
         ? theme.colors.supporting.error
         : theme.colors.primary.blue30};
   }
-
+  input:hover {
+    border-color: ${theme.colors.primary.blue50};
+  }
   input:focus-visible {
     outline: none;
 
@@ -122,22 +126,21 @@ export const PaginationPage = styled.div`
     background-color: ${theme.colors.neutralColors[300]};
   }
 `;
-export const ButtonNext = styled.button` 
-border-radius: 13px;
-border: none;
+export const ButtonNext = styled.button`
+  border-radius: 13px;
+  border: none;
+  width: 230px;
+  height: 55px;
+  margin-top: 50px;
+  color: white;
+  background-color: ${theme.colors.primary.primaryYellow};
+  font-size: ${theme.fontSizes.Medium20};
 
-background-color: ${theme.colors.primary.primaryYellow}
-
-;
-width: 230px;
-height: 55px;
-color: white;
-margin-top:50px;
-
-font-size:${theme.fontSizes.Medium20}
-
-button:focus-visible {
-  outline: none;
-}
-
+  &:hover {
+    cursor: pointer;
+    background-color: ${theme.colors.hover.yellow};
+  }
+  &:focus-visible {
+    outline: none;
+  }
 `;
