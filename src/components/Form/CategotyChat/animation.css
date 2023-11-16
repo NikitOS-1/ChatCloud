@@ -1,0 +1,14 @@
+.container {
+    width: 0px;
+    height: 100%;
+    background-color: #eee;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 1;
+    transition: 0.5s ease-in-out;
+}
+
+.visible {
+    width: 679px;
+}

@@ -7,7 +7,6 @@ import {
   InputContainer,
   InputUserNameError,
   InputUserName,
-  InputCountry,
   ButtonNext,
   PaginationPage,
 } from "./styledComponentsForm";
@@ -15,6 +14,7 @@ import CountrySelector from "./CountrySelector";
 import ChangePhoto from "./ChangePhoto";
 import { useSelector } from "react-redux";
 import { selectSelectedAvatar } from "redux/avatarSlice";
+import CategoryChat from "./CategotyChat/CategoryChat";
 
 const Form = () => {
   const avaNoPhotoSVG = "/static/Ava/NoPhoto.svg";
@@ -24,6 +24,7 @@ const Form = () => {
   const [error, setError] = useState(false);
   const [userName, setUserName] = useState("");
   const [cheked, setCheked] = useState(false);
+  const [next, setNext] = useState(false);
 
   const handleInputChangeUserName = (e) => {
     const regex = /^[a-zA-Z0-9]*$/;
@@ -39,6 +40,9 @@ const Form = () => {
   };
   const isCheked = () => {
     setCheked(!cheked);
+  };
+  const nextButton = () => {
+    setNext(!next);
   };
 
   return (
@@ -68,7 +72,14 @@ const Form = () => {
             <div></div>
             <div></div>
           </PaginationPage>
-          <ButtonNext $errors={error}>Next</ButtonNext>
+          <ButtonNext $errors={error} onClick={nextButton}>
+            Next
+          </ButtonNext>
+          {next ? (
+            <CategoryChat next={next} nextButton={nextButton} />
+          ) : (
+            <CategoryChat next={next} nextButton={nextButton} />
+          )}
         </InputContainer>
       </FormItem>
     </FormContainer>
