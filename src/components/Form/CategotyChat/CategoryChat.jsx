@@ -1,20 +1,23 @@
+import { category } from "data/categotyChatList";
 import styled from "styled-components";
 import { theme } from "theme/theme";
 const arrowLeft = "/static/other/arrowLeft.svg";
 
 const CategoryChatContainer = styled.div`
   width: 0px;
+  opacity: 0;
   padding: 0px;
-  height: 944px;
+  height: 0px;
   background-color: ${theme.colors.neutralColors.bgWhite};
   overflow: hidden;
   position: absolute;
   top: 0;
   z-index: 101;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   &.visible {
+    opacity: 1;
     width: 599px;
     padding: 40px;
     height: 944px;
@@ -64,10 +67,23 @@ const CategoryContainer = styled.div`
   width: 100%;
   height: 350px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 `;
-const CategoryItem = styled.div``;
+const CategoryItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${theme.colors.primary.primaryBlue};
+  color: ${theme.colors.neutralColors.bgWhite};
+  font-size: ${theme.fontSizes.Medium20};
+  padding: 10px 15px;
+  margin-right: 25px;
+  width: max-content;
+  height: max-content;
+  border-radius: 20px;
+`;
 const Footer = styled.div`
+  margin-top: 24px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -120,6 +136,10 @@ const PrivacyPolicyandTerms = styled.div`
   margin-top: 60px;
   span {
     color: ${theme.colors.primary.primaryYellow};
+    &:hover {
+      cursor: pointer;
+      color: ${theme.colors.hover.yellow};
+    }
   }
 `;
 
@@ -138,14 +158,18 @@ const CategoryChat = ({ next, nextButton }) => {
       <Category>
         <h1>Choose your interests</h1>
         <p>Pick up your favourite topics to set up your feeds</p>
-        <CategoryContainer></CategoryContainer>
+        <CategoryContainer>
+          {category.map((category) => (
+            <CategoryItem>{category}</CategoryItem>
+          ))}
+        </CategoryContainer>
       </Category>
       <Footer>
         <PaginationPage>
           <div></div>
           <div></div>
         </PaginationPage>
-        <ButtonContinue>Continue</ButtonContinue>
+        <ButtonContinue onClick={() => nextButton()}>Continue</ButtonContinue>
         <PrivacyPolicyandTerms>
           <p>
             By clicking "Continue" you agree to our <span>Privacy Policy</span>{" "}
