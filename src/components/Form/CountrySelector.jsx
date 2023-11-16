@@ -1,12 +1,17 @@
 import { InputCountry } from "./styledComponentsForm";
 import React, { useState } from "react";
 import { countries } from "../../data/countries";
+import { useDispatch } from "react-redux";
+import { updateCountry } from "redux/slices/countrySlice";
 
 const CountrySelector = () => {
-  const [selectedCountry, setSelectedCountry] = useState("US");
+  const [selectedCountry, setSelectedCountry] = useState("UA");
+
+  const dispatch = useDispatch();
 
   const handleCountryChange = (event) => {
     setSelectedCountry(event.target.value);
+    dispatch(updateCountry(event.target.value));
   };
 
   return (

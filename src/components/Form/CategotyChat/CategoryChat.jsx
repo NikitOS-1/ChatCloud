@@ -5,7 +5,7 @@ import {
   addCategory,
   removeCategory,
   selectSelectedCategories,
-} from "redux/categorySlice";
+} from "redux/slices/categorySlice";
 import {
   ButtonArrowLeft,
   ButtonContinue,

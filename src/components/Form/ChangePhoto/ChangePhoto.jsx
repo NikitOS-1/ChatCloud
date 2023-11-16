@@ -1,7 +1,7 @@
 import { avatarList } from "data/avatarList";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { selectAvatar } from "redux/avatarSlice";
+import { selectAvatar } from "redux/slices/avatarSlice";
 import { theme } from "theme/theme";
 import {
   ButtonClose,
