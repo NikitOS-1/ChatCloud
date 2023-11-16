@@ -16,10 +16,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectSelectedAvatar } from "redux/slices/avatarSlice";
 import CategoryChat from "./CategotyChat/CategoryChat";
 import { updateUserName } from "redux/slices/userNameSlice";
+import { avatarList } from "data/avatarList";
 
 const Form = () => {
   const avaNoPhotoSVG = "/static/Ava/NoPhoto.svg";
-  const myAva = useSelector(selectSelectedAvatar);
+  const selectedAvatarID = useSelector(selectSelectedAvatar);
+  const selectedUserAvatar = avatarList.find(
+    (avatar) => avatar.id === selectedAvatarID
+  );
+
   const dispatch = useDispatch();
 
   const [errorMessage, setErrorMessage] = useState(false);
@@ -46,9 +51,11 @@ const Form = () => {
 
   const [next, setNext] = useState(false);
   const nextButton = () => {
-    if (userName.length < 3) {
+    if (userName.length < 3 || userName.length > 25) {
       setError(true);
-      setErrorMessage("You need to enter at minimum 3 characters");
+      setErrorMessage(
+        "You must use a minimum of 3 to a maximum of 25 characters"
+      );
     } else {
       dispatch(updateUserName(userName));
       setNext(!next);
@@ -63,7 +70,10 @@ const Form = () => {
       </Title>
       <FormItem>
         <Ava>
-          <img src={myAva ? myAva : avaNoPhotoSVG} alt="It your's Avatar" />
+          <img
+            src={selectedUserAvatar ? selectedUserAvatar.src : avaNoPhotoSVG}
+            alt="It your's Avatar"
+          />
           <p onClick={isCheked}>Change Photo</p>
           {cheked ? <ChangePhoto isCheked={isCheked} /> : ""}
         </Ava>

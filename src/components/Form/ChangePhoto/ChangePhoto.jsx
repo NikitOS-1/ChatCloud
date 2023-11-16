@@ -15,10 +15,16 @@ const closeSvg = "/static/other/Close.svg";
 const ChangePhoto = ({ isCheked }) => {
   const dispatch = useDispatch();
   const [selectAva, setSelectAva] = useState("");
+  const [selectAvaID, setSelectAvaID] = useState("");
 
   const saveAva = () => {
-    dispatch(selectAvatar(selectAva));
+    dispatch(selectAvatar(selectAvaID));
     isCheked();
+  };
+
+  const handleChangeAva = (src, id) => {
+    setSelectAva(src);
+    setSelectAvaID(id);
   };
 
   return (
@@ -37,7 +43,7 @@ const ChangePhoto = ({ isCheked }) => {
               <img
                 src={avatar.src}
                 alt={`Avatar ${avatar.id}`}
-                onClick={() => setSelectAva(avatar.src)}
+                onClick={() => handleChangeAva(avatar.src, avatar.id)}
                 style={{
                   border:
                     avatar.src === selectAva

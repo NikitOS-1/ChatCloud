@@ -3,15 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const avatarSlice = createSlice({
   name: "avatar",
   initialState: {
-    selectedAvatar: null,
+    selectedAvatarID: null,
   },
   reducers: {
     selectAvatar: (state, action) => {
-      state.selectedAvatar = action.payload;
+      state.selectedAvatarID = action.payload;
     },
   },
 });
 
 export const { selectAvatar } = avatarSlice.actions;
-export const selectSelectedAvatar = (state) => state.avatar.selectedAvatar;
+export const selectSelectedAvatar = (state) => state.avatar.selectedAvatarID;
 export default avatarSlice.reducer;
