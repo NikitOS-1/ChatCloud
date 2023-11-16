@@ -11,7 +11,7 @@ import {
   PaginationPage,
 } from "./styledComponentsForm";
 import CountrySelector from "./CountrySelector";
-import ChangePhoto from "./ChangePhoto";
+import ChangePhoto from "./ChangePhoto/ChangePhoto";
 import { useSelector } from "react-redux";
 import { selectSelectedAvatar } from "redux/avatarSlice";
 import CategoryChat from "./CategotyChat/CategoryChat";

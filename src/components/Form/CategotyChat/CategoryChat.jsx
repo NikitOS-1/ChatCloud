@@ -1,11 +1,11 @@
 import { category } from "data/categotyChatList";
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   addCategory,
   removeCategory,
   selectSelectedCategories,
 } from "redux/categorySlice";
-import { theme } from "theme/theme";
 import {
   ButtonArrowLeft,
   ButtonContinue,
@@ -19,6 +19,7 @@ import {
   PrivacyPolicyandTerms,
 } from "./styledCompCategoryChat";
 import { PaginationPage } from "../styledComponentsForm";
+
 const arrowLeft = "/static/other/arrowLeft.svg";
 
 const CategoryChat = ({ next, nextButton }) => {
