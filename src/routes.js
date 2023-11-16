@@ -1,6 +1,6 @@
 import NotFound from "pages/ErrorPage/ErrorPage";
-import LoadingScreen from "./components/LoadingScreen";
-import { Suspense, lazy } from "react";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 
 const Loadable = (Component) => (props) =>
   (
