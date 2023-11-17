@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { countries } from "../../data/countries";
 import { useDispatch } from "react-redux";
 import { updateCountry } from "redux/slices/countrySlice";
+import ReactCountryFlag from "react-country-flag";
 
 const CountrySelector = () => {
   const [selectedCountry, setSelectedCountry] = useState("UA");

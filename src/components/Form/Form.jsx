@@ -17,6 +17,8 @@ import { selectSelectedAvatar } from "redux/slices/avatarSlice";
 import CategoryChat from "./CategotyChat/CategoryChat";
 import { updateUserName } from "redux/slices/userNameSlice";
 import { avatarList } from "data/avatarList";
+import ReactCountryFlag from "react-country-flag";
+import { selectCountry } from "redux/slices/countrySlice";
 
 const Form = () => {
   const avaNoPhotoSVG = "/static/Ava/NoPhoto.svg";
@@ -61,6 +63,7 @@ const Form = () => {
       setNext(!next);
     }
   };
+  const selectedCountry = useSelector(selectCountry);
 
   return (
     <FormContainer>
@@ -74,6 +77,19 @@ const Form = () => {
             src={selectedUserAvatar ? selectedUserAvatar.src : avaNoPhotoSVG}
             alt="It your's Avatar"
           />
+          {/* <div> */}
+          <ReactCountryFlag
+            countryCode={selectedCountry}
+            svg
+            style={{
+              width: "2rem",
+              height: "2rem",
+              position: "relative",
+              top: "-33px",
+              left: "0px",
+            }}
+          />
+          {/* </div> */}
           <p onClick={isCheked}>Change Photo</p>
           {cheked ? <ChangePhoto isCheked={isCheked} /> : ""}
         </Ava>
