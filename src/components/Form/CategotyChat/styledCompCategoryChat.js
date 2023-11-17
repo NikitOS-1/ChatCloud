@@ -88,7 +88,7 @@ export const CategoryItem = styled.div`
   cursor: pointer;
 `;
 export const Footer = styled.div`
-  margin-top: 24px;
+  margin-top: 55.5px;
   display: flex;
   align-items: center;
   flex-direction: column;
