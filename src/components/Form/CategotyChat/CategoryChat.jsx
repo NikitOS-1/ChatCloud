@@ -16,9 +16,9 @@ import {
   CategoryItem,
   Footer,
   Navigations,
+  PaginationPage,
   PrivacyPolicyandTerms,
 } from "./styledCompCategoryChat";
-import { PaginationPage } from "../styledComponentsForm";
 
 const arrowLeft = "/static/other/arrowLeft.svg";
 

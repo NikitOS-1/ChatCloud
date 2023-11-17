@@ -2,16 +2,16 @@ import styled from "styled-components";
 import { theme } from "theme/theme";
 
 export const CategoryChatContainer = styled.div`
-  width: 0px;
+  width: 0;
   opacity: 0;
   padding: 0px;
-  height: 0px;
+  height: 0;
   background-color: ${theme.colors.neutralColors.bgWhite};
   overflow: hidden;
   position: absolute;
   top: 0;
   z-index: 101;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
   &.visible {
