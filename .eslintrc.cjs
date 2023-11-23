@@ -34,5 +34,6 @@ module.exports = {
       }
     ],
     'simple-import-sort/exports': "warn",
+    "quotes": [2, "single", { "avoidEscape": true }],
   },
 }
