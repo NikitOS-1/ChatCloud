@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "CeraProRegular";
+  src: url(./CeraPro-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "CeraProMedium";
+  src: url(./CeraPro-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "CarroisGothicSCRegular";
+  src: url(./CarroisGothicSC-Regular.ttf) format("truetype");
+}
