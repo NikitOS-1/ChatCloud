@@ -50,7 +50,9 @@ export const theme = {
     button: '13px',
   },
   fonts: {
-    main: "'Carrois Gothic', sans-serif;",
+    CarroisGothicSCRegular: "'CarroisGothicSCRegular', sans-serif;",
+    CeraProRegular: "'CeraProRegular', sans-serif;",
+    CeraProMedium: "'CeraProMedium', sans-serif;",
   },
   fontSizes: {
     Regular24: '24px',
