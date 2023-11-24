@@ -53,7 +53,9 @@ declare module 'styled-components' {
       button: string;
     };
     fonts: {
-      main: string;
+      CarroisGothicSCRegular: string;
+      CeraProRegular: string;
+      CeraProMedium: string;
     };
     fontSizes: {
       Regular24: string;
