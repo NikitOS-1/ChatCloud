@@ -132,6 +132,38 @@ export const ButtonContainer = styled.button<ButtonProps>`
       `}
 `;
 
+const spinAnimation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+export const Spiner = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top: 3px solid #3498db;
+  animation: ${spinAnimation} 0.5s linear infinite;
+`;
+
+export const Label = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: ${({ theme }) => theme.fontSizes.Medium20};
+  font-style: normal;
+  line-height: normal;
+  span {
+    fill: inherit;
+  }
+`;
+
 export const StartIcon = styled.span`
   margin-right: 8px;
   width: 24px;
@@ -142,28 +174,4 @@ export const EndIcon = styled.span`
   margin-left: 8px;
   width: 24px;
   height: 24px;
-`;
-
-const spinAnimation = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-`;
-export const Spiner = styled.div`
-  margin: 0 auto;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  border-top: 3px solid #3498db;
-  animation: ${spinAnimation} 0.5s linear infinite;
-`;
-
-export const Label = styled.span`
-  font-size: ${({ theme }) => theme.fontSizes.Medium20};
-  font-style: normal;
-  line-height: normal;
 `;

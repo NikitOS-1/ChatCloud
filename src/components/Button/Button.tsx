@@ -14,12 +14,14 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <ButtonContainer
       variant={variant}
-      disabled={isDisabled}
+      disabled={isDisabled || isLoading}
       isLoading={isLoading}
     >
-      {startIcon && <StartIcon>{startIcon}</StartIcon>}
-      <Label>{isLoading ? <Spiner /> : children}</Label>
-      {endIcon && <EndIcon>{endIcon}</EndIcon>}
+      <Label>
+        {startIcon && <StartIcon>{startIcon}</StartIcon>}
+        {isLoading ? <Spiner /> : children}
+        {endIcon && <EndIcon>{endIcon}</EndIcon>}
+      </Label>
     </ButtonContainer>
   );
 };
