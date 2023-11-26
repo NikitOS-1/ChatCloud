@@ -1,28 +1,30 @@
 import React from 'react';
 
-import { ButtonProps } from './types';
-import { ButtonContainer, EndIcon, Label, Spiner, StartIcon } from '.';
+import { IconWrapper, LabelWrapper, StyledButton } from './styled';
+import { ButtonType } from '.';
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  variant = 'container',
-  startIcon,
-  endIcon,
-  isDisabled = false,
-  isLoading = false,
-}) => {
+export interface ButtonInterface {
+  label?: string;
+  variant?: ButtonType;
+  isDisabled?: boolean;
+  icon?: React.ReactNode;
+  onClick?: () => void;
+}
+
+export const Button = ({
+  label,
+  variant = 'primary',
+  isDisabled,
+  icon,
+  onClick,
+}: ButtonInterface) => {
   return (
-    <ButtonContainer
-      variant={variant}
-      disabled={isDisabled || isLoading}
-      isLoading={isLoading}
-    >
-      <Label>
-        {startIcon && <StartIcon>{startIcon}</StartIcon>}
-        {isLoading ? <Spiner /> : children}
-        {endIcon && <EndIcon>{endIcon}</EndIcon>}
-      </Label>
-    </ButtonContainer>
+    <StyledButton variant={variant} disabled={isDisabled} onClick={onClick}>
+      <LabelWrapper>
+        {label}
+        <IconWrapper>{icon}</IconWrapper>
+      </LabelWrapper>
+    </StyledButton>
   );
 };
 

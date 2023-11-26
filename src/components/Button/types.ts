@@ -1,8 +1,4 @@
-export interface ButtonProps {
-  children: React.ReactNode;
-  isDisabled?: boolean;
-  variant?: 'container' | 'outlined';
-  startIcon?: React.ReactNode;
-  endIcon?: React.ReactNode;
-  isLoading?: boolean;
-}
+export const PRIMARY_TYPE = 'primary';
+export const SECONDARY_TYPE = 'secondary';
+
+export type ButtonType = typeof PRIMARY_TYPE | typeof SECONDARY_TYPE;
