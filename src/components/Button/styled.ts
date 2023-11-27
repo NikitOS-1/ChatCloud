@@ -12,9 +12,11 @@ export const StyledButton = styled.button<{ variant: ButtonVariantType }>`
   cursor: pointer;
   font-family: ${({ theme }) => theme.fonts.CeraProMedium};
   font-size: ${({ theme }) => theme.fontSizes.Medium20};
-  svg {
+
+  & > svg {
     margin-left: 10px;
   }
+
   ${(props) =>
     props.variant === PRIMARY_TYPE &&
     css`
@@ -33,28 +35,27 @@ export const StyledButton = styled.button<{ variant: ButtonVariantType }>`
       }
     `}
 
-    ${(props) =>
-      props.variant === SECONDARY_TYPE &&
-      css`
-        padding-right: 32px;
-        padding-left: 32px;
-        background-color: ${({ theme }) => theme.colors.neutralColors.bgWhite};
-        border-radius: ${({ theme }) => theme.radius.button};
-        color: ${({ theme }) => theme.colors.primary.primaryYellow};
-        border: 2px solid ${({ theme }) => theme.colors.primary.primaryYellow};
+  ${(props) =>
+    props.variant === SECONDARY_TYPE &&
+    css`
+      padding-right: 32px;
+      padding-left: 32px;
+      background-color: ${({ theme }) => theme.colors.neutralColors.bgWhite};
+      border-radius: ${({ theme }) => theme.radius.button};
+      color: ${({ theme }) => theme.colors.primary.primaryYellow};
+      border: 2px solid ${({ theme }) => theme.colors.primary.primaryYellow};
 
-        &:hover {
-          color: ${({ theme }) => theme.colors.hover.yellow};
-          border-color: ${({ theme }) => theme.colors.hover.yellow};
-        }
-        &:active {
-          color: ${({ theme }) => theme.colors.pressed.yellow};
-          border-color: ${({ theme }) => theme.colors.pressed.yellow};
-        }
-        &:disabled {
-          border-color: ${({ theme }) => theme.colors.neutralColors[200]};
-          color: ${({ theme }) => theme.colors.neutralColors[200]};
-        }
-      `}
-  }}
+      &:hover {
+        color: ${({ theme }) => theme.colors.hover.yellow};
+        border-color: ${({ theme }) => theme.colors.hover.yellow};
+      }
+      &:active {
+        color: ${({ theme }) => theme.colors.pressed.yellow};
+        border-color: ${({ theme }) => theme.colors.pressed.yellow};
+      }
+      &:disabled {
+        border-color: ${({ theme }) => theme.colors.neutralColors[200]};
+        color: ${({ theme }) => theme.colors.neutralColors[200]};
+      }
+    `}
 `;

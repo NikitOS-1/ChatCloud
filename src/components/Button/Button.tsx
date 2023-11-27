@@ -17,11 +17,9 @@ export const Button = ({
   isDisabled,
   icon,
   onClick,
-}: ButtonInterface) => {
-  return (
-    <StyledButton variant={variant} disabled={isDisabled} onClick={onClick}>
-      {label}
-      {icon}
-    </StyledButton>
-  );
-};
+}: ButtonInterface) => (
+  <StyledButton variant={variant} disabled={isDisabled} onClick={onClick}>
+    {label}
+    {icon}
+  </StyledButton>
+);
