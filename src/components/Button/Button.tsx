@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { IconWrapper, LabelWrapper, StyledButton } from './styled';
-import { ButtonType } from '.';
+import { StyledButton } from './styled';
+import { ButtonVariantType } from './types';
 
 export interface ButtonInterface {
   label?: string;
-  variant?: ButtonType;
+  variant?: ButtonVariantType;
   isDisabled?: boolean;
   icon?: React.ReactNode;
   onClick?: () => void;
@@ -20,12 +20,8 @@ export const Button = ({
 }: ButtonInterface) => {
   return (
     <StyledButton variant={variant} disabled={isDisabled} onClick={onClick}>
-      <LabelWrapper>
-        {label}
-        <IconWrapper>{icon}</IconWrapper>
-      </LabelWrapper>
+      {label}
+      {icon}
     </StyledButton>
   );
 };
-
-export default Button;

@@ -1,5 +1,7 @@
+import { StyledLayout } from './components/Layout';
+
 function App() {
-  return <div>App</div>;
+  return <StyledLayout>App</StyledLayout>;
 }
 
 export default App;

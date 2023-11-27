@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import { ButtonType, PRIMARY_TYPE, SECONDARY_TYPE } from './types';
+import { ButtonVariantType, PRIMARY_TYPE, SECONDARY_TYPE } from './types';
 
-export const StyledButton = styled.button<{ variant: ButtonType }>`
+export const StyledButton = styled.button<{ variant: ButtonVariantType }>`
   padding-right: 94px;
   padding-left: 94px;
   height: 58px;
@@ -12,7 +12,9 @@ export const StyledButton = styled.button<{ variant: ButtonType }>`
   cursor: pointer;
   font-family: ${({ theme }) => theme.fonts.CeraProMedium};
   font-size: ${({ theme }) => theme.fontSizes.Medium20};
-
+  svg {
+    margin-left: 10px;
+  }
   ${(props) =>
     props.variant === PRIMARY_TYPE &&
     css`
@@ -55,15 +57,4 @@ export const StyledButton = styled.button<{ variant: ButtonType }>`
         }
       `}
   }}
-`;
-
-export const LabelWrapper = styled.span`
-  display: flex;
-  align-items: center;
-`;
-
-export const IconWrapper = styled.span`
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
 `;
