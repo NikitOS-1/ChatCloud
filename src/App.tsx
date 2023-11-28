@@ -1,15 +1,7 @@
-import Input from './components/Input/Input';
 import { StyledLayout } from './components/Layout';
 
 function App() {
-  return (
-    <StyledLayout>
-      <p>input</p>
-      <Input />
-      <p>input error</p>
-      <Input isError />
-    </StyledLayout>
-  );
+  return <StyledLayout>App</StyledLayout>;
 }
 
 export default App;
