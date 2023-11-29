@@ -1,5 +1,6 @@
-import { useEffect, useMemo,useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
+import { theme } from '../../theme';
 import { Icon } from '../Icon';
 
 import {
@@ -9,36 +10,38 @@ import {
   SelectList,
   SelectWraper,
 } from './styled';
-import { SelectInterface } from '.';
+import { SelectInterface } from './types';
 
 export const Select = ({
   label,
-  placeholder,
+  placeholder = 'Choose from the list',
   options = [],
   value,
   onChange,
 }: SelectInterface) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
   const selectRef = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleOutsideClick = (event: MouseEvent) => {
     if (
       selectRef.current &&
       !selectRef.current.contains(event.target as Node)
     ) {
-      setIsOpen(false);
+      setIsOpened(false);
     }
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleOutsideClick);
+
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleOutsideClick);
     };
   }, []);
 
   const handleOptionClick = (selectedValue: string) => {
-    setIsOpen(false);
+    setIsOpened(false);
+
     if (onChange) {
       onChange(selectedValue);
     }
@@ -50,22 +53,22 @@ export const Select = ({
   );
 
   const renderedValue = useMemo(
-    () => (value ? value : placeholder || 'Choose from the list'),
+    () => value || placeholder,
     [value, placeholder],
   );
 
   const renderedOptions = useMemo(
     () => (
-      <SelectList $isOpen={isOpen}>
-        {options.map((option, i) => (
-          <SelectItem key={i} onClick={() => handleOptionClick(option.label)}>
-            {option.icon}
-            {option.label}
+      <SelectList $isOpened={isOpened}>
+        {options.map(({ label, icon }, i) => (
+          <SelectItem key={i} onClick={() => handleOptionClick(label)}>
+            {icon}
+            {label}
           </SelectItem>
         ))}
       </SelectList>
     ),
-    [options, isOpen, handleOptionClick],
+    [options, isOpened, handleOptionClick],
   );
 
   return (
@@ -73,10 +76,10 @@ export const Select = ({
       {renderedLabel}
       <SelectButtonWraper
         $hasValue={!!value}
-        onClick={() => setIsOpen((prevState) => !prevState)}
+        onClick={() => setIsOpened((prevState) => !prevState)}
       >
         {renderedValue}
-        <Icon name="expandMore" fill="#FFBA55" />
+        <Icon name="expandMore" fill={theme.colors.primary.primaryYellow} />
       </SelectButtonWraper>
       {renderedOptions}
     </SelectWraper>

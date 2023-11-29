@@ -37,11 +37,11 @@ export const SelectButtonWraper = styled.div<{ $hasValue: boolean }>`
   }
 `;
 
-export const SelectList = styled.ul<{ $isOpen: boolean }>`
+export const SelectList = styled.ul<{ $isOpened: boolean }>`
   position: absolute;
   margin-top: 10px;
   width: 100%;
-  height: ${({ $isOpen }) => ($isOpen ? '360px' : '0px')};
+  height: ${({ $isOpened }) => ($isOpened ? '360px' : '0px')};
   overflow-y: auto;
   background-color: tomato;
   background-color: ${({ theme }) => theme.colors.neutralColors.bgWhite};
