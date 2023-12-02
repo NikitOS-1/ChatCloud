@@ -41,7 +41,7 @@ export const SelectList = styled.ul<{ $isOpened: boolean }>`
   position: absolute;
   margin-top: 10px;
   width: 100%;
-  height: ${({ $isOpened }) => ($isOpened ? '360px' : '0px')};
+  max-height: ${({ $isOpened }) => ($isOpened ? '360px' : '0px')};
   overflow-y: auto;
   background-color: tomato;
   background-color: ${({ theme }) => theme.colors.neutralColors.bgWhite};
