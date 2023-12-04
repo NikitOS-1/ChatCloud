@@ -6,14 +6,14 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint --fix . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "commitlint": "commitlint --edit",
     "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,css,md,vue,json,ts,tsx,jsx}": "prettier --write",
-    "*.{ts,tsx}": "eslint --fix"
+    "*.{ts,tsx}": "yarn run lint"
   },
   "dependencies": {
     "react": "^18.2.0",
