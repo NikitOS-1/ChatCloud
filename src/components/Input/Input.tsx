@@ -1,14 +1,14 @@
-import { useMemo } from 'react';
-
-import { InputLabel, InputStyled } from './styled';
+import { TextFieldStyled } from './styled';
 import { InputProps } from '.';
 
 export const Input = ({
+  label,
   isError = false,
+  disabled = false,
+  errorMessage,
+  placeholder,
   value,
   onChange,
-  label,
-  placeholder,
 }: InputProps) => {
   const handleChangeValue = (value: string) => {
     if (onChange) {
@@ -16,19 +16,18 @@ export const Input = ({
     }
   };
 
-  const renderedLabel = useMemo(
-    () => (label ? <InputLabel>{label}</InputLabel> : null),
-    [label],
-  );
-
   return (
     <>
-      {renderedLabel}
-      <InputStyled
-        $isError={isError}
-        value={value}
+      <TextFieldStyled
+        className="input"
+        variant="outlined"
+        fullWidth
+        helperText={errorMessage}
+        label={label}
+        error={isError}
+        disabled={disabled}
         placeholder={placeholder}
-        type="text"
+        value={value}
         onChange={(e) => handleChangeValue(e.target.value)}
       />
     </>

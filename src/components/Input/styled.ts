@@ -1,41 +1,46 @@
+import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
 
-export const InputLabel = styled.label`
-  font-size: ${({ theme }) => theme.fontSizes.Medium16};
-  font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-  color: ${({ theme }) => theme.colors.neutralColors[300]};
-  margin-bottom: 10px;
-  display: block;
-`;
+export const TextFieldStyled = styled(TextField)`
+  .MuiFormLabel-root {
+    font-family: ${({ theme }) => theme.fonts.CeraProMedium};
+    font-size: ${({ theme }) => theme.fontSizes.Medium20};
+    color: ${({ theme }) => theme.colors.neutralColors[300]};
 
-export const InputStyled = styled.input<{ $isError: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 441px;
-  height: 61px;
-  border: 2px solid
-    ${({ theme, $isError }) =>
-      $isError ? theme.colors.supporting.error : theme.colors.primary.blue30};
-  border-radius: 20px;
-  align-items: center;
-  font-size: ${({ theme }) => theme.fontSizes.Medium20};
-  font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-  color: ${({ theme }) => theme.colors.neutralColors.black900};
-  padding: 0px 25px;
+    &.Mui-focused {
+      color: ${({ theme }) => theme.colors.primary.primaryBlue};
+    }
 
-  &:hover {
-    border: 2px solid
-      ${({ theme, $isError }) =>
-        $isError
-          ? theme.colors.supporting.error
-          : theme.colors.primary.primaryBlue};
+    &.Mui-error {
+      color: ${({ theme }) => theme.colors.supporting.error};
+    }
   }
 
-  &:focus-visible {
-    outline: none;
-    border: 2px solid
-      ${({ theme, $isError }) =>
-        $isError ? theme.colors.supporting.error : theme.colors.pressed.blue};
+  .MuiOutlinedInput-root.MuiInputBase-root {
+    width: 495px;
+    height: 57px;
+    font-family: ${({ theme }) => theme.fonts.CeraProMedium};
+    font-size: ${({ theme }) => theme.fontSizes.Medium20};
+
+    fieldset {
+      border: 2px solid ${({ theme }) => theme.colors.primary.blue30};
+      border-radius: 20px;
+    }
+
+    &:hover fieldset {
+      border: 2px solid ${({ theme }) => theme.colors.primary.blue50};
+    }
+
+    &.Mui-focused fieldset {
+      border: 2px solid ${({ theme }) => theme.colors.primary.primaryBlue};
+    }
+
+    &.Mui-disabled fieldset {
+      border: 2px solid ${({ theme }) => theme.colors.neutralColors[200]};
+    }
+
+    &.Mui-error fieldset {
+      border: 2px solid ${({ theme }) => theme.colors.supporting.error};
+    }
   }
 `;
