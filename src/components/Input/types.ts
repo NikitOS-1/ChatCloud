@@ -3,7 +3,7 @@ export interface InputProps<T = string> {
   disabled?: boolean;
   placeholder?: string;
   isError?: boolean;
-  errorMessage?: string;
+  alert?: string;
   value: T;
   onChange: (value: T) => void;
 }

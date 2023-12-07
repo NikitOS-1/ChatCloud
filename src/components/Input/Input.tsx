@@ -1,11 +1,11 @@
 import { TextFieldStyled } from './styled';
-import { InputProps } from '.';
+import { InputProps } from './types';
 
 export const Input = ({
   label,
   isError = false,
   disabled = false,
-  errorMessage,
+  alert,
   placeholder,
   value,
   onChange,
@@ -22,7 +22,7 @@ export const Input = ({
         className="input"
         variant="outlined"
         fullWidth
-        helperText={errorMessage}
+        helperText={alert}
         label={label}
         error={isError}
         disabled={disabled}
