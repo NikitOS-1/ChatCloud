@@ -47,7 +47,8 @@ export const theme = {
     },
   },
   radius: {
-    button: '13px',
+    button: '10px',
+    input: '10px',
   },
   fonts: {
     CarroisGothicSCRegular: "'CarroisGothicSCRegular', sans-serif;",
