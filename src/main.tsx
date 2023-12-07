@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { StyledEngineProvider } from '@mui/material';
 import { ThemeProvider } from 'styled-components';
 
 import App from './App.tsx';
@@ -15,7 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* @todo: pass theme when it is defined */}
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <StyledEngineProvider injectFirst>
+          <App />
+        </StyledEngineProvider>
       </QueryClientProvider>
     </ThemeProvider>
   </React.StrictMode>,

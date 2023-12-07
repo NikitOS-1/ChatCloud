@@ -1,4 +1,8 @@
-export const PRIMARY_TYPE = 'primary';
-export const SECONDARY_TYPE = 'secondary';
+export const CONTAINED_TYPE = 'contained';
+export const OUTLINED_TYPE = 'outlined';
+export const TEXT_TYPE = 'text';
 
-export type ButtonVariantType = typeof PRIMARY_TYPE | typeof SECONDARY_TYPE;
+export type ButtonVariantType =
+  | typeof CONTAINED_TYPE
+  | typeof OUTLINED_TYPE
+  | typeof TEXT_TYPE;

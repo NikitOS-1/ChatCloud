@@ -1,61 +1,69 @@
+import Button from '@mui/material/Button';
 import styled, { css } from 'styled-components';
 
-import { ButtonVariantType, PRIMARY_TYPE, SECONDARY_TYPE } from './types';
+import {
+  ButtonVariantType,
+  CONTAINED_TYPE,
+  OUTLINED_TYPE,
+  TEXT_TYPE,
+} from './types';
 
-export const StyledButton = styled.button<{ variant: ButtonVariantType }>`
-  padding-right: 94px;
-  padding-left: 94px;
+export const StyledButton = styled(Button)<{ variant: ButtonVariantType }>`
+  padding: 16px 32px;
   height: 58px;
-  display: flex;
-  align-items: center;
-  border: 0;
-  cursor: pointer;
   font-family: ${({ theme }) => theme.fonts.CeraProMedium};
   font-size: ${({ theme }) => theme.fontSizes.Medium20};
+  border-radius: ${({ theme }) => theme.radius.button};
+  text-transform: none;
+  box-shadow: none;
 
-  & > svg {
-    margin-left: 10px;
+  &:hover {
+    box-shadow: none;
   }
 
   ${(props) =>
-    props.variant === PRIMARY_TYPE &&
+    props.variant === CONTAINED_TYPE &&
     css`
       background-color: ${({ theme }) => theme.colors.primary.primaryYellow};
-      border-radius: ${({ theme }) => theme.radius.button};
       color: ${({ theme }) => theme.colors.neutralColors.white100};
 
       &:hover {
         background-color: ${({ theme }) => theme.colors.hover.yellow};
       }
-      &:active {
-        background-color: ${({ theme }) => theme.colors.pressed.yellow};
-      }
+
       &:disabled {
         background-color: ${({ theme }) => theme.colors.neutralColors[200]};
+        color: ${({ theme }) => theme.colors.neutralColors.white100};
       }
     `}
 
   ${(props) =>
-    props.variant === SECONDARY_TYPE &&
+    props.variant === OUTLINED_TYPE &&
     css`
-      padding-right: 32px;
-      padding-left: 32px;
-      background-color: ${({ theme }) => theme.colors.neutralColors.bgWhite};
-      border-radius: ${({ theme }) => theme.radius.button};
-      color: ${({ theme }) => theme.colors.primary.primaryYellow};
       border: 2px solid ${({ theme }) => theme.colors.primary.primaryYellow};
+      color: ${({ theme }) => theme.colors.primary.primaryYellow};
+      background-color: ${({ theme }) => theme.colors.neutralColors.bgWhite};
 
       &:hover {
-        color: ${({ theme }) => theme.colors.hover.yellow};
         border-color: ${({ theme }) => theme.colors.hover.yellow};
+        color: ${({ theme }) => theme.colors.hover.yellow};
       }
-      &:active {
-        color: ${({ theme }) => theme.colors.pressed.yellow};
-        border-color: ${({ theme }) => theme.colors.pressed.yellow};
-      }
+
       &:disabled {
-        border-color: ${({ theme }) => theme.colors.neutralColors[200]};
         color: ${({ theme }) => theme.colors.neutralColors[200]};
+        border-width: 2px;
+        border-color: currentColor;
+      }
+    `}
+
+  ${(props) =>
+    props.variant === TEXT_TYPE &&
+    css`
+      color: ${({ theme }) => theme.colors.primary.primaryYellow};
+
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.neutralColors.bgWhite};
+        color: ${({ theme }) => theme.colors.hover.yellow};
       }
     `}
 `;
