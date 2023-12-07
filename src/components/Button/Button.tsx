@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyledButton } from './styled';
-import { ButtonVariantType } from './types';
+import { ButtonVariantType, CONTAINED_TYPE } from './types';
 
 export interface ButtonInterface {
   label?: string;
@@ -13,13 +13,18 @@ export interface ButtonInterface {
 
 export const Button = ({
   label,
-  variant = 'primary',
+  variant = CONTAINED_TYPE,
   isDisabled,
   icon,
   onClick,
 }: ButtonInterface) => (
-  <StyledButton variant={variant} disabled={isDisabled} onClick={onClick}>
+  <StyledButton
+    className="button"
+    variant={variant}
+    disabled={isDisabled}
+    onClick={onClick}
+    startIcon={icon}
+  >
     {label}
-    {icon}
   </StyledButton>
 );
