@@ -1,12 +1,16 @@
 import { Box, TextField } from '@mui/material';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
-// export const AutocompleteStyled = styled(Autocomplete)`
-//   &.MuiAutocomplete-popper {
-//     position: relative;
-//     top: 10px;
-//   }
-// `;
+export const DropdownStyles = createGlobalStyle`
+  .MuiPopper-root {
+    top: 8px !important;
+
+    & > .MuiPaper-rounded {
+      border-radius: ${({ theme }) => theme.radius.input}
+    } 
+  }
+`;
+
 export const TextFieldStyled = styled(TextField)`
   .MuiFormLabel-root {
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
