@@ -1,5 +1,8 @@
 import Autocomplete from '@mui/material/Autocomplete';
 
+import { theme } from '../../theme';
+import { Icon } from '../Icon';
+
 import { BoxStyled, DropdownStyles, TextFieldStyled } from './styled';
 import { SelectInterface } from './types';
 
@@ -14,12 +17,13 @@ export const Select = ({
       <DropdownStyles />
       <Autocomplete
         {...props}
-        //@ts-expect-error iserror
-        onChange={(_, selected) => onChange(selected)}
+        onChange={(_, selected) => onChange(selected?.label || '')}
         isOptionEqualToValue={(option, value) => option.code === value.code}
         options={options}
         clearIcon={false}
-        open
+        popupIcon={
+          <Icon name="expandMore" fill={theme.colors.primary.primaryYellow} />
+        }
         autoHighlight
         getOptionLabel={(option) => option.label}
         renderOption={(props, option) => (
