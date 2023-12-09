@@ -1,13 +1,6 @@
-export interface SelectInterface<T = string> {
-  label?: string;
-  disabled?: boolean;
-  options: OptionInterface<T>[];
-  onChange: (value: T) => void;
-}
+import { AutocompleteProps } from '@mui/material';
 
-export interface OptionInterface<T> {
-  code: T;
-  label: T;
-  phone?: T;
-  suggested?: boolean;
+export interface SelectInterface<T>
+  extends Omit<AutocompleteProps<T, boolean, boolean, boolean>, 'renderInput'> {
+  label: string;
 }
