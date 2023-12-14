@@ -14,23 +14,23 @@ interface OptionInterface {
 
 const options: OptionInterface[] = [
   {
-    label: 'label1',
+    label: 'Ukraine',
     value: {
-      code: 'code1',
+      code: 'UA',
       SKU: 1,
     },
   },
   {
-    label: 'label2',
+    label: 'Italy',
     value: {
-      code: 'code2',
+      code: 'IT',
       SKU: 2,
     },
   },
   {
-    label: 'label3',
+    label: 'Germany',
     value: {
-      code: 'code3',
+      code: 'GM',
       SKU: 3,
     },
   },
@@ -50,19 +50,19 @@ function App() {
           if (option !== null) {
             setState(
               typeof option !== 'string' && 'value' in option
-                ? option.value.code
+                ? option.label
                 : null,
             );
           }
         }}
-        isOptionEqualToValue={(option) => option.value.code === state}
+        isOptionEqualToValue={(option) => option.label === state}
         renderOption={(props, option) => (
           <BoxStyled component="li" {...props}>
-            {/* <img
+            <img
               width="32"
-              src={`https://flagcdn.com/${option.code.toLowerCase()}.svg`}
+              src={`https://flagcdn.com/${option.value.code.toLowerCase()}.svg`}
               alt={option.label}
-            /> */}
+            />
             {option.label}
           </BoxStyled>
         )}
