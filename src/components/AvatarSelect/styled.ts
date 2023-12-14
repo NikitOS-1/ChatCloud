@@ -17,7 +17,7 @@ export const MainButtonWrapper = styled('div')`
 
 export const PopoverStyled = styled(Popover)`
   .MuiPaper-root {
-    max-width: 532px;
+    width: 499px;
     height: max-content;
     padding: 16px 24px 0px 24px;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
@@ -41,7 +41,7 @@ export const AvatarOptions = styled('div')`
   gap: 24px;
   justify-content: center;
   width: 100%;
-  height: 457px;
+  height: 417px;
   overflow: auto;
   border: none;
 

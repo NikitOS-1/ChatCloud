@@ -15,7 +15,7 @@ import {
 } from './styled';
 import { AvatarSelectProps } from './types';
 
-export const AvatarSelect = ({ options }: AvatarSelectProps) => {
+export const AvatarSelect = ({ options, onSelect }: AvatarSelectProps) => {
   const defaultAvatar = 'src/assets/icons/Avatar/NoPhoto.svg';
 
   const [selectedAvatar, setSelectedAvatar] =
@@ -34,27 +34,23 @@ export const AvatarSelect = ({ options }: AvatarSelectProps) => {
   const setAvatar = () => {
     setSelectedAvatar(buffer);
     setAnchorEl(null);
+    onSelect(buffer);
   };
-
-  const renderedMainButton = (
-    <div style={{ marginTop: 16 }}>
-      <Button
-        variant="text"
-        label="Change Photo"
-        // onClick={(event) => handleClick(event)}
-      />
-    </div>
-  );
 
   return (
     <>
-      <MainButtonWrapper style={{ marginLeft: '200px' }}>
+      <MainButtonWrapper>
         <MainAvatar
           alt="You avatar"
           src={selectedAvatar}
           onClick={(event) => handleClick(event)}
         />
-        {renderedMainButton}
+        <Button
+          marginTop="16px"
+          variant="text"
+          label="Change Photo"
+          onClick={(event) => handleClick(event)}
+        />
       </MainButtonWrapper>
       <PopoverStyled
         open={open}
