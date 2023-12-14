@@ -3,23 +3,25 @@ import { Avatar } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 
 import { Button } from '../Button';
+import { Icon } from '../Icon';
 
 import {
+  AvatarOptions,
+  ButtonClose,
   MainAvatar,
   MainButtonWrapper,
   MenuButtonStyled,
-  MenuListStyled,
-  MenuStyled,
+  PopoverStyled,
 } from './styled';
 import { AvatarSelectProps } from './types';
 
 export const AvatarSelect = ({ options }: AvatarSelectProps) => {
   const defaultAvatar = 'src/assets/icons/Avatar/NoPhoto.svg';
 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [selectedAvatar, setSelectedAvatar] =
     React.useState<string>(defaultAvatar);
   const [buffer, setBuffer] = React.useState<string>(selectedAvatar);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);
 
@@ -34,29 +36,43 @@ export const AvatarSelect = ({ options }: AvatarSelectProps) => {
     setAnchorEl(null);
   };
 
-  // not styled for my buttom
   const renderedMainButton = (
     <div style={{ marginTop: 16 }}>
       <Button
         variant="text"
         label="Change Photo"
-        onClick={(event) => handleClick(event)}
+        // onClick={(event) => handleClick(event)}
       />
     </div>
   );
 
   return (
     <>
-      <MainButtonWrapper>
-        <MainAvatar alt="You avatar" src={selectedAvatar} />
+      <MainButtonWrapper style={{ marginLeft: '200px' }}>
+        <MainAvatar
+          alt="You avatar"
+          src={selectedAvatar}
+          onClick={(event) => handleClick(event)}
+        />
         {renderedMainButton}
       </MainButtonWrapper>
-      <MenuStyled
-        anchorEl={anchorEl}
+      <PopoverStyled
         open={open}
+        anchorEl={anchorEl}
         onClose={() => setAnchorEl(null)}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
       >
-        <MenuListStyled>
+        <ButtonClose onClick={() => setAnchorEl(null)}>
+          <Icon name="close" />
+        </ButtonClose>
+        <AvatarOptions>
           {options.map((option) => (
             <MenuItem
               key={option.id}
@@ -66,7 +82,7 @@ export const AvatarSelect = ({ options }: AvatarSelectProps) => {
               <Avatar alt="You avatar" src={option.src} />
             </MenuItem>
           ))}
-        </MenuListStyled>
+        </AvatarOptions>
         <MenuButtonStyled>
           <Button
             variant="text"
@@ -75,7 +91,7 @@ export const AvatarSelect = ({ options }: AvatarSelectProps) => {
           />
           <Button label="Save" onClick={setAvatar} />
         </MenuButtonStyled>
-      </MenuStyled>
+      </PopoverStyled>
     </>
   );
 };
