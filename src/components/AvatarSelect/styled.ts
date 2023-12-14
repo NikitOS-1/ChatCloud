@@ -1,4 +1,4 @@
-import { Avatar, Menu, MenuList } from '@mui/material';
+import { Avatar, Popover } from '@mui/material';
 import { styled } from 'styled-components';
 
 export const MainAvatar = styled(Avatar)`
@@ -15,17 +15,26 @@ export const MainButtonWrapper = styled('div')`
   flex-direction: column;
 `;
 
-export const MenuStyled = styled(Menu)`
+export const PopoverStyled = styled(Popover)`
   .MuiPaper-root {
-    width: 532px;
-    height: 556px;
-    padding: 16px 24px;
+    max-width: 532px;
+    height: max-content;
+    padding: 16px 24px 0px 24px;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
     border-radius: ${({ theme }) => theme.radius.button};
   }
 `;
 
-export const MenuListStyled = styled(MenuList)`
+export const ButtonClose = styled('div')`
+  text-align: right;
+  margin-bottom: 24px;
+  cursor: pointer;
+  :hover {
+    fill: ${({ theme }) => theme.colors.hover.yellow};
+  }
+`;
+
+export const AvatarOptions = styled('div')`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
