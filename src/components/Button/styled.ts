@@ -1,6 +1,8 @@
 import Button from '@mui/material/Button';
 import styled, { css } from 'styled-components';
 
+import { MarginInterface } from '../../types/styles';
+
 import {
   ButtonVariantType,
   CONTAINED_TYPE,
@@ -8,7 +10,11 @@ import {
   TEXT_TYPE,
 } from './types';
 
-export const StyledButton = styled(Button)<{ variant: ButtonVariantType }>`
+interface StyledButtonInterface extends MarginInterface {
+  variant: ButtonVariantType;
+}
+
+export const StyledButton = styled(Button)<StyledButtonInterface>`
   padding: 16px 32px;
   height: 58px;
   font-family: ${({ theme }) => theme.fonts.CeraProMedium};
@@ -16,6 +22,10 @@ export const StyledButton = styled(Button)<{ variant: ButtonVariantType }>`
   border-radius: ${({ theme }) => theme.radius.button};
   text-transform: none;
   box-shadow: none;
+  margin-top: ${({ marginTop }) => marginTop};
+  margin-bottom: ${({ marginBotton }) => marginBotton};
+  margin-left: ${({ marginLeft }) => marginLeft};
+  margin-right: ${({ marginRight }) => marginRight};
 
   &:hover {
     box-shadow: none;
