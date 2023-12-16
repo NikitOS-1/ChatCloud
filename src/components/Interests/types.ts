@@ -1,8 +1,8 @@
 export interface InterestsProps {
-  interests: Interest[];
+  options: OptionsInterface[];
 }
 
-export interface Interest {
+export interface OptionsInterface {
+  category: string;
   id: number;
-  name: string;
 }
