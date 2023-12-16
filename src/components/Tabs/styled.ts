@@ -21,6 +21,6 @@ export const TabsStyled = styled(Tabs)`
 `;
 
 export const TabStyled = styled(Tab)`
-  min-width: 20px;
+  min-width: 15px;
   padding: 0px;
 `;

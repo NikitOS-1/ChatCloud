@@ -3,31 +3,13 @@ import Box from '@mui/material/Box';
 
 import { Icon } from '../Icon';
 
-import { TabsStyled,TabStyled } from './styled';
+import { TabsStyled, TabStyled } from './styled';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
+interface TabsProps {
+  children: React.ReactNode;
 }
 
-function CustomTabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box>{children}</Box>}
-    </div>
-  );
-}
-
-export const BasicTabs = () => {
+export const Tabs = ({ children }: TabsProps) => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
@@ -35,16 +17,8 @@ export const BasicTabs = () => {
   };
 
   return (
-    <Box sx={{ width: '500px' }}>
-      <CustomTabPanel value={value} index={0}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nulla,
-        repellendus dolorum, eveniet fuga possimus velit aspernatur cumque animi
-        dicta molestiae veniam expedita voluptates explicabo omnis facere odio
-        quia corrupti!
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        Item Two
-      </CustomTabPanel>
+    <Box>
+      <Box>{children}</Box>
       <Box>
         <TabsStyled
           value={value}
@@ -55,6 +29,11 @@ export const BasicTabs = () => {
           <TabStyled icon={<Icon name="circle" />} />
         </TabsStyled>
       </Box>
+      {value === 1 ? (
+        <p>
+          By proceeding you agree to our Privacy Policy and Terms of Service
+        </p>
+      ) : null}
     </Box>
   );
 };
