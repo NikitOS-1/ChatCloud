@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Interests } from './components/Interests';
 import { StyledLayout } from './components/Layout';
 const categories = [
@@ -23,9 +25,11 @@ const categories = [
   { id: 20, category: 'Food' },
 ];
 function App() {
+  const [foo, setFoo] = useState<string[]>([]);
+  console.log(foo);
   return (
     <StyledLayout>
-      <Interests options={categories} />
+      <Interests options={categories} onChange={setFoo} value={foo} />
     </StyledLayout>
   );
 }

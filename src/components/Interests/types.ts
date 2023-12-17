@@ -1,8 +1,12 @@
 export interface InterestsProps {
-  options: OptionsInterface[];
+  options: Categories;
+  onChange: OnChangeCallback;
+  value: string[];
 }
 
-export interface OptionsInterface {
-  category: string;
+export type Category = {
   id: number;
-}
+  category: string;
+};
+export type Categories = Category[];
+export type OnChangeCallback = (updatedValue: string[]) => void;

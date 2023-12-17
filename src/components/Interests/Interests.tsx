@@ -1,29 +1,26 @@
-import { useState } from 'react';
-
 import { InterestItem, InterestsContainer } from './styled';
 import { InterestsProps } from './types';
 
-export const Interests = ({ options }: InterestsProps) => {
-  const [selected, setSelected] = useState<string[]>([]);
-
+export const Interests = ({ options, onChange, value }: InterestsProps) => {
   const updateSelected = (category: string) => {
-    const isIdInArray = selected.some((item) => item === category);
+    const isIdInArray = value.some((item) => item === category);
 
     if (isIdInArray) {
-      setSelected((prev) => prev.filter((item) => item !== category));
+      const updatedValue = value.filter((item) => item !== category);
+      onChange(updatedValue);
     } else {
-      setSelected((prev) => [...prev, category]);
+      const updatedValue = [...value, category];
+      onChange(updatedValue);
     }
   };
 
-  console.log(selected);
   return (
     <InterestsContainer>
       {options.map(({ id, category }) => (
         <InterestItem
           key={id}
           label={category}
-          selected={selected.includes(category)}
+          selected={value.includes(category)}
           onClick={() => updateSelected(category)}
         />
       ))}
