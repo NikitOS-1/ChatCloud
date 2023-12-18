@@ -52,6 +52,7 @@ declare module 'styled-components' {
     radius: {
       button: string;
       input: string;
+      text: string;
     };
     fonts: {
       CarroisGothicSCRegular: string;

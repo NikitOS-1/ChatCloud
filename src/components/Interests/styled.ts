@@ -11,7 +11,7 @@ export const InterestsContainer = styled.div`
 export const InterestItem = styled(Chip)<{ selected: boolean }>`
   width: max-content;
   height: max-content;
-  border-radius: 20px;
+  border-radius: ${({ theme }) => theme.radius.text};
   font-family: ${({ theme }) => theme.fonts.CeraProMedium};
   font-size: ${({ theme }) => theme.fontSizes.Medium20};
 

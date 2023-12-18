@@ -49,6 +49,7 @@ export const theme = {
   radius: {
     button: '10px',
     input: '10px',
+    text: '20px',
   },
   fonts: {
     CarroisGothicSCRegular: "'CarroisGothicSCRegular', sans-serif;",
