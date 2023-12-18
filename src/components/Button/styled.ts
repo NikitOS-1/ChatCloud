@@ -22,10 +22,10 @@ export const StyledButton = styled(Button)<StyledButtonInterface>`
   border-radius: ${({ theme }) => theme.radius.button};
   text-transform: none;
   box-shadow: none;
-  margin-top: ${({ marginTop }) => marginTop};
-  margin-bottom: ${({ marginBotton }) => marginBotton};
-  margin-left: ${({ marginLeft }) => marginLeft};
-  margin-right: ${({ marginRight }) => marginRight};
+  margin-top: ${({ margintop }) => margintop};
+  margin-bottom: ${({ marginbottom }) => marginbottom};
+  margin-left: ${({ marginleft }) => marginleft};
+  margin-right: ${({ marginright }) => marginright};
 
   &:hover {
     box-shadow: none;
