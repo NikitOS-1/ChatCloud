@@ -4,36 +4,38 @@ import Box from '@mui/material/Box';
 import { Icon } from '../Icon';
 
 import { TabsStyled, TabStyled } from './styled';
+import { TabsInterface } from './types';
 
-interface TabsProps {
-  children: React.ReactNode;
-}
-
-export const Tabs = ({ children }: TabsProps) => {
+export const Tabs = ({ mainComponents, footerComponents }: TabsInterface) => {
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+  const renderMainComponents = mainComponents.map(({ id, component }) => (
+    <Box key={id} hidden={value !== id}>
+      {component}
+    </Box>
+  ));
+
+  const renderTabsPanel = mainComponents.map(({ id }) => (
+    <TabStyled key={id} icon={<Icon name="circle" />} />
+  ));
+
+  const renderFooterComponents = footerComponents.map(({ id, component }) => (
+    <Box key={id} hidden={value !== id}>
+      {component}
+    </Box>
+  ));
 
   return (
     <Box>
-      <Box>{children}</Box>
-      <Box>
-        <TabsStyled
-          value={value}
-          onChange={handleChange}
-          TabIndicatorProps={{ style: { display: 'none' } }}
-        >
-          <TabStyled icon={<Icon name="circle" />} />
-          <TabStyled icon={<Icon name="circle" />} />
-        </TabsStyled>
-      </Box>
-      {value === 1 ? (
-        <p>
-          By proceeding you agree to our Privacy Policy and Terms of Service
-        </p>
-      ) : null}
+      {renderMainComponents}
+      <TabsStyled
+        value={value}
+        onChange={(_, value) => setValue(value)}
+        TabIndicatorProps={{ style: { display: 'none' } }}
+      >
+        {renderTabsPanel}
+      </TabsStyled>
+      {renderFooterComponents}
     </Box>
   );
 };
