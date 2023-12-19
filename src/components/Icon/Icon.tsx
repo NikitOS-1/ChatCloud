@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ArrowLeft from '../../assets/icons/arrow-left.svg?react';
+import ArrowRight from '../../assets/icons/arrow-right.svg?react';
 import CircleIcon from '../../assets/icons/circle-icon.svg?react';
 import CloseIcon from '../../assets/icons/close.svg?react';
 import DeleteIcon from '../../assets/icons/delete-icon.svg?react';
@@ -7,7 +9,14 @@ import ExpandMore from '../../assets/icons/expand-more.svg?react';
 import ReplyIcon from '../../assets/icons/reply-icon.svg?react';
 
 interface IconProps {
-  name: 'delete' | 'reply' | 'expandMore' | 'circle' | 'close';
+  name:
+    | 'delete'
+    | 'reply'
+    | 'expandMore'
+    | 'circle'
+    | 'close'
+    | 'arrowLeft'
+    | 'arrowRight';
   fill?: string;
 }
 
@@ -20,6 +29,8 @@ export const Icon = (props: IconProps) => {
     expandMore: <ExpandMore fill={fill} {...svgProps} />,
     circle: <CircleIcon fill={fill} {...svgProps} />,
     close: <CloseIcon fill={fill} {...svgProps} />,
+    arrowLeft: <ArrowLeft fill={fill} {...svgProps} />,
+    arrowRight: <ArrowRight fill={fill} {...svgProps} />,
   };
 
   return Icons[name];
