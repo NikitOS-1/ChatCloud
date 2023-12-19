@@ -1,14 +1,14 @@
-import Button from "@mui/material/Button";
-import styled, { css } from "styled-components";
+import Button from '@mui/material/Button';
+import styled, { css } from 'styled-components';
 
-import { MarginInterface } from "../../types/styles";
+import { MarginInterface } from '../../types/styles';
 
 import {
   ButtonVariantType,
   CONTAINED_TYPE,
   OUTLINED_TYPE,
   TEXT_TYPE,
-} from "./types";
+} from './types';
 
 interface StyledButtonInterface extends MarginInterface {
   variant: ButtonVariantType;
