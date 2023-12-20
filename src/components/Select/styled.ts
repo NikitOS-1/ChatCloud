@@ -57,6 +57,7 @@ export const TextFieldStyled = styled(TextField)`
 
 export const BoxStyled = styled(Box)`
   img {
+    object-fit: cover;
     width: 32px;
     height: 32px;
     border-radius: 50%;
