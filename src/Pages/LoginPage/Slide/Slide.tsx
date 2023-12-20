@@ -37,7 +37,7 @@ const P = styled.p`
   }
 `;
 
-const Slide = ({ src, title, description }: SlideInterface) => {
+export const Slide = ({ src, title, description }: SlideInterface) => {
   return (
     <>
       <Image src={src} alt={title} />
@@ -46,4 +46,3 @@ const Slide = ({ src, title, description }: SlideInterface) => {
     </>
   );
 };
-export default Slide;
