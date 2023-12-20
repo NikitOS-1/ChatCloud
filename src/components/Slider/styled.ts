@@ -8,11 +8,11 @@ export const SliderContainer = styled.div`
   box-sizing: border-box;
 `;
 
-export const SliderWrapper = styled.div<{ translateValue: number }>`
+export const SliderWrapper = styled.div<{ $translateValue: number }>`
   height: 100%;
   display: flex;
   transition: transform 0.5s ease;
-  transform: translateX(${(props) => props.translateValue}%);
+  transform: translateX(${(props) => props.$translateValue}%);
 `;
 
 export const Slide = styled.div`

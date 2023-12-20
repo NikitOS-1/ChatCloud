@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 
 import { Icon } from '../Icon';
 
-import { TabsStyled, TabStyled } from './styled';
+import { BoxStyled, TabsStyled, TabStyled } from './styled';
 import { TabsInterface } from './types';
 
 export const Tabs = ({ mainComponents, footerComponents }: TabsInterface) => {
@@ -26,7 +26,7 @@ export const Tabs = ({ mainComponents, footerComponents }: TabsInterface) => {
   ));
 
   return (
-    <Box>
+    <BoxStyled>
       {renderMainComponents}
       <TabsStyled
         value={value}
@@ -36,6 +36,6 @@ export const Tabs = ({ mainComponents, footerComponents }: TabsInterface) => {
         {renderTabsPanel}
       </TabsStyled>
       {renderFooterComponents}
-    </Box>
+    </BoxStyled>
   );
 };

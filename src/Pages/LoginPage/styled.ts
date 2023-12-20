@@ -5,6 +5,7 @@ export const Container = styled.div`
   max-width: 1440px;
   height: 1024px;
   margin: 0 auto;
+
   @media (max-width: 800px) {
     flex-wrap: wrap;
     height: 820px;

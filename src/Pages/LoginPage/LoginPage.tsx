@@ -1,3 +1,4 @@
+import { Button } from '../../components/Button';
 import { Slider } from '../../components/Slider';
 import { Tabs } from '../../components/Tabs';
 
@@ -13,7 +14,23 @@ export const LoginPage = () => {
   ];
 
   const footerComponents = [
-    { id: 1, component: <div>terms and conditions</div> },
+    {
+      id: 0,
+      component: (
+        <div style={{ marginTop: '40px' }}>
+          <Button label="Continue" onClick={() => null} />
+        </div>
+      ),
+    },
+    {
+      id: 1,
+      component: (
+        <div style={{ marginTop: '40px' }}>
+          <Button label="Continue" onClick={() => null} />
+          <p>terms and conditions</p>
+        </div>
+      ),
+    },
   ];
 
   return (
