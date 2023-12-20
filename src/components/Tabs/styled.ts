@@ -1,4 +1,4 @@
-import { Tab, Tabs } from '@mui/material';
+import { Box, Tab, Tabs } from '@mui/material';
 import styled from 'styled-components';
 
 export const TabsStyled = styled(Tabs)`
@@ -23,4 +23,10 @@ export const TabsStyled = styled(Tabs)`
 export const TabStyled = styled(Tab)`
   min-width: 15px;
   padding: 0px;
+`;
+export const BoxStyled = styled(Box)`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;

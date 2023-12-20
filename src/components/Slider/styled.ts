@@ -1,19 +1,26 @@
 import styled from 'styled-components';
 
 export const SliderContainer = styled.div`
+  position: relative;
   width: 100%;
+  height: 100%;
   overflow: hidden;
+  box-sizing: border-box;
 `;
 
-export const SliderWrapper = styled.div<{ translateValue: number }>`
+export const SliderWrapper = styled.div<{ $translateValue: number }>`
+  height: 100%;
   display: flex;
   transition: transform 0.5s ease;
-  transform: translateX(${(props) => props.translateValue}%);
+  transform: translateX(${(props) => props.$translateValue}%);
 `;
 
 export const Slide = styled.div`
   min-width: 100%;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 export const SliderButton = styled.button`
@@ -22,16 +29,15 @@ export const SliderButton = styled.button`
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
-  font-size: 24px;
   cursor: pointer;
   outline: none;
   color: #333;
 `;
 
 export const PrevButton = styled(SliderButton)`
-  left: 0;
+  left: 10px;
 `;
 
 export const NextButton = styled(SliderButton)`
-  right: 0;
+  right: 10px;
 `;

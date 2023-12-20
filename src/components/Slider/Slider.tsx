@@ -1,4 +1,4 @@
-import { useCallback,useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Icon } from '../Icon';
 
@@ -36,7 +36,7 @@ export const Slider = ({ slides, autoPlay, autoPlaySec = 5 }: SliderProps) => {
 
   return (
     <SliderContainer>
-      <SliderWrapper translateValue={-currentSlide * 100}>
+      <SliderWrapper $translateValue={-currentSlide * 100}>
         {slides.map((slide, index) => (
           <Slide key={index}>{slide}</Slide>
         ))}
