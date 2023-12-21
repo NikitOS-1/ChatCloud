@@ -3,7 +3,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { theme } from '../../theme';
 import { Icon } from '../Icon';
 
-import { TextFieldStyled } from './styled';
+import { DropdownStyles, TextFieldStyled } from './styled';
 import { SelectInterface } from './types';
 
 export function Select<T>(props: SelectInterface<T>) {
@@ -16,7 +16,10 @@ export function Select<T>(props: SelectInterface<T>) {
       }
       autoHighlight
       renderInput={(params) => (
-        <TextFieldStyled {...params} label={props.label} />
+        <>
+          <TextFieldStyled {...params} label={props.label} />
+          <DropdownStyles />
+        </>
       )}
     />
   );

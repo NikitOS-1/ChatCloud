@@ -1,5 +1,5 @@
-import { Select } from '../Select';
-import { BoxStyled } from '../Select/styled';
+import { Select } from '../../../../components/Select';
+import { BoxStyled } from '../../../../components/Select/styled';
 
 import { SelectCountriesInterface } from './types';
 
@@ -11,7 +11,6 @@ export const SelectCountries = ({
   return (
     <div>
       <Select
-        open
         label="Choose a country"
         options={options}
         value={value}

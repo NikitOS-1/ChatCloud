@@ -23,7 +23,6 @@ export const SliderContainer = styled.div`
 
 export const FormContainer = styled.div`
   max-width: 680px;
-  padding: 118px 92px;
 
   @media (max-width: 800px) {
     max-width: none;

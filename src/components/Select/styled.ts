@@ -2,11 +2,17 @@ import { Box, TextField } from '@mui/material';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const DropdownStyles = createGlobalStyle`
-  .MuiPopper-root {
+  &.MuiPaper-root{
+  height: 278px !important;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  &.MuiPopper-root {
     top: 8px !important;
+    
 
     & > .MuiPaper-rounded {
-      border-radius: ${({ theme }) => theme.radius.input}
+      border-radius: ${({ theme }) => theme.radius.input};
     } 
   }
 `;

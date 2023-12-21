@@ -1,6 +1,6 @@
 export interface SelectCountriesInterface {
   options: OptionInterface[];
-  onChange: (option: string) => void;
+  onChange: (option: string | null) => void;
   value: string | null;
 }
 
