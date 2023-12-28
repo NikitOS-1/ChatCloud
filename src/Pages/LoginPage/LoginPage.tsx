@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Button } from '../../components/Button';
 import { Slider } from '../../components/Slider';
 import { Tabs } from '../../components/Tabs';
@@ -13,9 +15,11 @@ import {
 } from './styled';
 
 export const LoginPage = () => {
+  const [togglePage, setTogglePage] = useState<number>(0);
+
   const mainComponents = [
     { id: 0, component: <FormWrapper /> },
-    { id: 1, component: <InterestsWrapper /> },
+    { id: 1, component: <InterestsWrapper setTogglePage={setTogglePage} /> },
   ];
 
   const footerComponents = [
@@ -50,6 +54,8 @@ export const LoginPage = () => {
         <Tabs
           mainComponents={mainComponents}
           footerComponents={footerComponents}
+          value={togglePage}
+          setValue={setTogglePage}
         />
       </FormContainer>
     </Container>

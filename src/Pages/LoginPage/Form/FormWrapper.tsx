@@ -12,6 +12,7 @@ export const FormWrapper = () => {
   const [selectedAvatar, setSelectedAvatar] = useState('');
   const [userName, setUserName] = useState('');
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+
   return (
     <Container>
       {selectedAvatar}

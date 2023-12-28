@@ -6,4 +6,6 @@ export interface TabInterface {
 export interface TabsInterface {
   mainComponents: TabInterface[];
   footerComponents: TabInterface[];
+  value: number;
+  setValue: (index: number) => void;
 }
