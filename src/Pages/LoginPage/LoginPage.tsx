@@ -5,7 +5,12 @@ import { Tabs } from '../../components/Tabs';
 import { slides } from './Slide/slides';
 import { FormWrapper } from './Form';
 import { InterestsWrapper } from './Interests';
-import { Container, FormContainer, SliderContainer } from './styled';
+import {
+  ButtonContainer,
+  Container,
+  FormContainer,
+  SliderContainer,
+} from './styled';
 
 export const LoginPage = () => {
   const mainComponents = [
@@ -17,18 +22,21 @@ export const LoginPage = () => {
     {
       id: 0,
       component: (
-        <div style={{ marginTop: '40px' }}>
+        <ButtonContainer>
           <Button label="Continue" onClick={() => null} />
-        </div>
+        </ButtonContainer>
       ),
     },
     {
       id: 1,
       component: (
-        <div style={{ marginTop: '40px' }}>
+        <ButtonContainer>
           <Button label="Continue" onClick={() => null} />
-          <p>terms and conditions</p>
-        </div>
+          <p>
+            By proceeding you agree to our <a href="#">Privacy Policy</a> and{' '}
+            <a href="#">Terms of Service</a>
+          </p>
+        </ButtonContainer>
       ),
     },
   ];

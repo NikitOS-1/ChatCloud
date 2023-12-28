@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ArrowBack from '../../assets/icons/arrow-back.svg?react';
 import ArrowLeft from '../../assets/icons/arrow-left.svg?react';
 import ArrowRight from '../../assets/icons/arrow-right.svg?react';
 import CircleIcon from '../../assets/icons/circle-icon.svg?react';
@@ -16,7 +17,8 @@ interface IconProps {
     | 'circle'
     | 'close'
     | 'arrowLeft'
-    | 'arrowRight';
+    | 'arrowRight'
+    | 'arrowBack';
   fill?: string;
 }
 
@@ -31,6 +33,7 @@ export const Icon = (props: IconProps) => {
     close: <CloseIcon fill={fill} {...svgProps} />,
     arrowLeft: <ArrowLeft fill={fill} {...svgProps} />,
     arrowRight: <ArrowRight fill={fill} {...svgProps} />,
+    arrowBack: <ArrowBack fill={fill} {...svgProps} />,
   };
 
   return Icons[name];

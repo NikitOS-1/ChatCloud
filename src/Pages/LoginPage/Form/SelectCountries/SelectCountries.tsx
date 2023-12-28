@@ -15,7 +15,12 @@ export const SelectCountries = ({
         options={options}
         value={value}
         onChange={(_, option) => {
-          if (option && typeof option !== 'string' && 'label' in option) {
+          if (
+            option &&
+            typeof option !== 'string' &&
+            'label' in option &&
+            option.label !== value
+          ) {
             onChange(option.label);
           }
         }}

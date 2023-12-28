@@ -4,6 +4,11 @@ import { styled } from 'styled-components';
 export const MainAvatar = styled(Avatar)`
   width: 148px;
   height: 148px;
+
+  @media (max-width: 800px) {
+    width: 122px;
+    height: 122px;
+  }
 `;
 
 export const MainButtonWrapper = styled('div')`
@@ -22,6 +27,12 @@ export const PopoverStyled = styled(Popover)`
     padding: 16px 24px 0px 24px;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
     border-radius: ${({ theme }) => theme.radius.button};
+
+    @media (max-width: 800px) {
+      padding: 0px;
+      width: 100%;
+      height: max-content;
+    }
   }
 `;
 
@@ -29,6 +40,7 @@ export const ButtonClose = styled('div')`
   text-align: right;
   margin-bottom: 24px;
   cursor: pointer;
+
   :hover {
     fill: ${({ theme }) => theme.colors.hover.yellow};
   }
@@ -65,6 +77,20 @@ export const AvatarOptions = styled('div')`
   .MuiAvatar-root {
     width: 100px;
     height: 100px;
+  }
+
+  @media (max-width: 800px) {
+    gap: 16px;
+
+    .MuiButtonBase-root {
+      width: 90px;
+      height: 90px;
+    }
+
+    .MuiAvatar-root {
+      width: 84px;
+      height: 84px;
+    }
   }
 `;
 

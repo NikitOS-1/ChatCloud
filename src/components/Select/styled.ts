@@ -38,6 +38,10 @@ export const TextFieldStyled = styled(TextField)`
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
     font-size: ${({ theme }) => theme.fontSizes.Medium20};
 
+    @media (max-width: 800px) {
+      width: 358px;
+    }
+
     fieldset {
       border: 2px solid ${({ theme }) => theme.colors.primary.blue30};
       border-radius: ${({ theme }) => theme.radius.input};

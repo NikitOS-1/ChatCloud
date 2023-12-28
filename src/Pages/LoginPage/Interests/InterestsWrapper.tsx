@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { Icon } from '../../../components/Icon';
 import { Interests } from '../../../components/Interests';
 
 import { categories } from './categories';
@@ -10,7 +11,9 @@ export const InterestsWrapper = () => {
 
   return (
     <Container>
-      <div>button back</div>
+      <div onClick={() => null} style={{ float: 'left' }}>
+        <Icon name="arrowBack" />
+      </div>
       <H1>Choose your interests</H1>
       <P>Pick up your favourite topics to set up your feeds</P>
       <div
