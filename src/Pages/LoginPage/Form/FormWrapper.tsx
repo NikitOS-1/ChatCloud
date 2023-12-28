@@ -15,9 +15,9 @@ export const FormWrapper = () => {
 
   return (
     <Container>
+      {selectedAvatar}
       <H1>let's create your account</H1>
       <P>Choose your username and photo to personalize your account</P>
-      {selectedAvatar}
       <div style={{ marginBottom: '48px' }}>
         <AvatarSelect options={avatars} onSelect={setSelectedAvatar} />
       </div>

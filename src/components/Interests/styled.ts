@@ -5,7 +5,12 @@ export const InterestsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  max-width: 522px;
+  width: 495px;
+
+  @media (max-width: 800px) {
+    gap: 16px;
+    width: 311px;
+  }
 `;
 
 export const InterestItem = styled(Chip)<{ selected: boolean }>`
@@ -34,5 +39,13 @@ export const InterestItem = styled(Chip)<{ selected: boolean }>`
 
   .MuiChip-label {
     padding: 16px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: ${({ theme }) => theme.fontSizes.Medium16};
+
+    .MuiChip-label {
+      padding: 10px;
+    }
   }
 `;

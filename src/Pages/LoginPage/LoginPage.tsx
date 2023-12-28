@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Button } from '../../components/Button';
 import { Slider } from '../../components/Slider';
 import { Tabs } from '../../components/Tabs';
@@ -5,30 +7,40 @@ import { Tabs } from '../../components/Tabs';
 import { slides } from './Slide/slides';
 import { FormWrapper } from './Form';
 import { InterestsWrapper } from './Interests';
-import { Container, FormContainer, SliderContainer } from './styled';
+import {
+  ButtonContainer,
+  Container,
+  FormContainer,
+  SliderContainer,
+} from './styled';
 
 export const LoginPage = () => {
+  const [togglePage, setTogglePage] = useState<number>(0);
+
   const mainComponents = [
     { id: 0, component: <FormWrapper /> },
-    { id: 1, component: <InterestsWrapper /> },
+    { id: 1, component: <InterestsWrapper setTogglePage={setTogglePage} /> },
   ];
 
   const footerComponents = [
     {
       id: 0,
       component: (
-        <div style={{ marginTop: '40px' }}>
+        <ButtonContainer>
           <Button label="Continue" onClick={() => null} />
-        </div>
+        </ButtonContainer>
       ),
     },
     {
       id: 1,
       component: (
-        <div style={{ marginTop: '40px' }}>
+        <ButtonContainer>
           <Button label="Continue" onClick={() => null} />
-          <p>terms and conditions</p>
-        </div>
+          <p>
+            By proceeding you agree to our <a href="#">Privacy Policy</a> and{' '}
+            <a href="#">Terms of Service</a>
+          </p>
+        </ButtonContainer>
       ),
     },
   ];
@@ -42,6 +54,8 @@ export const LoginPage = () => {
         <Tabs
           mainComponents={mainComponents}
           footerComponents={footerComponents}
+          value={togglePage}
+          setValue={setTogglePage}
         />
       </FormContainer>
     </Container>

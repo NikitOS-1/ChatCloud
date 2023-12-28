@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 
 import { Icon } from '../Icon';
@@ -6,9 +5,12 @@ import { Icon } from '../Icon';
 import { BoxStyled, TabsStyled, TabStyled } from './styled';
 import { TabsInterface } from './types';
 
-export const Tabs = ({ mainComponents, footerComponents }: TabsInterface) => {
-  const [value, setValue] = React.useState(0);
-
+export const Tabs = ({
+  mainComponents,
+  footerComponents,
+  value,
+  setValue,
+}: TabsInterface) => {
   const renderMainComponents = mainComponents.map(({ id, component }) => (
     <Box key={id} hidden={value !== id}>
       {component}

@@ -6,6 +6,10 @@ export const SliderContainer = styled.div`
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
+
+  @media (max-width: 800px) {
+    padding-top: 50px;
+  }
 `;
 
 export const SliderWrapper = styled.div<{ $translateValue: number }>`
