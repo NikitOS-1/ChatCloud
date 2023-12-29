@@ -1,63 +1,72 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
+import { AvatarSelect } from '../../components/AvatarSelect';
 import { Button } from '../../components/Button';
-import { Slider } from '../../components/Slider';
+import { Input } from '../../components/Input';
 import { Tabs } from '../../components/Tabs';
 
-import { slides } from './Slide/slides';
-import { FormWrapper } from './Form';
-import { InterestsWrapper } from './Interests';
+import { H1, P } from './Form/styled';
 import {
-  ButtonContainer,
-  Container,
-  FormContainer,
-  SliderContainer,
+  FormContainerStyled,
+  LoginPageStyled,
+  SliderContainerStyled,
 } from './styled';
 
 export const LoginPage = () => {
-  const [togglePage, setTogglePage] = useState<number>(0);
+  const [tabId, setTabId] = useState<string>('user');
 
-  const mainComponents = [
-    { id: 0, component: <FormWrapper /> },
-    { id: 1, component: <InterestsWrapper setTogglePage={setTogglePage} /> },
-  ];
+  const renderedTabContent = useMemo(() => {
+    if (tabId === 'user') {
+      return (
+        <>
+          <H1>let's create your account</H1>
+          <P>Choose your username and photo to personalize your account</P>
+          <AvatarSelect options={[]} onSelect={() => null} />
+          <Input value={''} onChange={() => null} />
+          <Input value={''} onChange={() => null} />
+        </>
+      );
+    }
 
-  const footerComponents = [
-    {
-      id: 0,
-      component: (
-        <ButtonContainer>
-          <Button label="Continue" onClick={() => null} />
-        </ButtonContainer>
-      ),
-    },
-    {
-      id: 1,
-      component: (
-        <ButtonContainer>
-          <Button label="Continue" onClick={() => null} />
-          <p>
-            By proceeding you agree to our <a href="#">Privacy Policy</a> and{' '}
-            <a href="#">Terms of Service</a>
-          </p>
-        </ButtonContainer>
-      ),
-    },
-  ];
+    return <div>Some other</div>;
+  }, [tabId]);
+
+  const handleContinueClick = () => {
+    if (tabId === 'interests') {
+      // @todo: make request
+      return;
+    }
+
+    setTabId('interests');
+  };
 
   return (
-    <Container>
-      <SliderContainer>
-        <Slider slides={slides} />
-      </SliderContainer>
-      <FormContainer>
-        <Tabs
-          mainComponents={mainComponents}
-          footerComponents={footerComponents}
-          value={togglePage}
-          setValue={setTogglePage}
-        />
-      </FormContainer>
-    </Container>
+    // <Container>
+    //   <SliderContainer>
+    //     {/* <Slider slides={slides} /> */}
+    //   </SliderContainer>
+    //   <FormContainer>
+    //     <Tabs
+    //       mainComponents={mainComponents}
+    //       footerComponents={footerComponents}
+    //       value={togglePage}
+    //       setValue={setTogglePage}
+    //     />
+    //   </FormContainer>
+    // </Container>
+    <LoginPageStyled>
+      <SliderContainerStyled>S</SliderContainerStyled>
+      <FormContainerStyled>
+        {renderedTabContent}
+        <div>
+          <Tabs
+            items={['user', 'interests']}
+            onChange={setTabId}
+            value={tabId}
+          />
+          <Button label="Continue" onClick={handleContinueClick} />
+        </div>
+      </FormContainerStyled>
+    </LoginPageStyled>
   );
 };

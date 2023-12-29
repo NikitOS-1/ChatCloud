@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 118px 92px 0px 92px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -24,7 +23,6 @@ export const H1 = styled.h1`
 `;
 
 export const P = styled.p`
-  margin-bottom: 80px;
   color: ${({ theme }) => theme.colors.neutralColors[500]};
   font-family: ${({ theme }) => theme.fonts.CeraProRegular};
   font-size: ${({ theme }) => theme.fontSizes.Medium16};

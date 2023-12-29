@@ -71,4 +71,13 @@ export const theme = {
     xxl: '1440px',
     height: '1024px',
   },
+  space: {
+    xSmall: '8px',
+    small: '12px',
+    medium: '16px',
+    large: '24px',
+    xLarge: '32px',
+    xxLarge: '64px',
+    xxxLarge: '96px',
+  },
 };

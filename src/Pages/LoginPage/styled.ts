@@ -2,32 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  max-width: 1440px;
-  height: 1024px;
-  margin: 0 auto;
-
-  @media (max-width: 800px) {
-    flex-wrap: wrap;
-    height: 820px;
-  }
 `;
 
 export const SliderContainer = styled.div`
-  max-width: 760px;
-
-  @media (max-width: 800px) {
-    max-width: none;
-    width: 100%;
-  }
+  flex: 16 16;
+  background-color: red;
 `;
 
 export const FormContainer = styled.div`
-  max-width: 680px;
-
-  @media (max-width: 800px) {
-    max-width: none;
-    width: 100%;
-  }
+  flex: 14 14;
 `;
 
 export const ButtonContainer = styled.div`
@@ -57,4 +40,24 @@ export const ButtonContainer = styled.div`
       font-size: ${({ theme }) => theme.fontSizes.Medium12};
     }
   }
+`;
+
+export const LoginPageStyled = styled.div`
+  display: flex;
+  height: 100%;
+`;
+
+export const SliderContainerStyled = styled.div`
+  display: flex;
+  flex: 16 16;
+  background-color: ${({ theme }) => theme.colors.primary.blue10};
+`;
+
+export const FormContainerStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 14 14;
+  padding: 50px 90px;
 `;
