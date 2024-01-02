@@ -20,12 +20,12 @@ export const TabsStyled = styled(Tabs)`
   }
 `;
 
-export const TabStyled = styled(Tab)`
+export const TabStyled = styled(Tab)<{ withPointer: boolean }>`
   min-width: 15px;
   padding: 0px;
+  cursor: ${({ withPointer }) => (withPointer ? 'pointer' : 'default')};
 `;
 export const BoxStyled = styled(Box)`
-  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;

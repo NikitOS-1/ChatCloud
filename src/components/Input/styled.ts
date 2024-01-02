@@ -16,7 +16,7 @@ export const TextFieldStyled = styled(TextField)`
   }
 
   .MuiOutlinedInput-root.MuiInputBase-root {
-    width: 495px;
+    width: 100%;
     height: 57px;
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
     font-size: ${({ theme }) => theme.fontSizes.Medium20};
