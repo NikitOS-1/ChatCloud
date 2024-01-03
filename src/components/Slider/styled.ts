@@ -6,14 +6,12 @@ export const SliderContainer = styled.div`
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
-
-  @media (max-width: 800px) {
-    padding-top: 50px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const SliderWrapper = styled.div<{ $translateValue: number }>`
-  height: 100%;
   display: flex;
   transition: transform 0.5s ease;
   transform: translateX(${(props) => props.$translateValue}%);

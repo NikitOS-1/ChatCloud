@@ -3,28 +3,19 @@ import { useMemo, useState } from 'react';
 import { AvatarSelect } from '../../components/AvatarSelect';
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
+import { Slider } from '../../components/Slider';
 import { Tabs } from '../../components/Tabs';
+import { H1, P } from '../../components/Typography';
 
-import { H1, P } from './Form/styled';
+import { slides } from './Slide/slides';
 import {
   FormContainerStyled,
   LoginPageStyled,
   SliderContainerStyled,
 } from './styled';
 
-// interface CountriesInterface {
-//   countries: CountryInterface[];
-// }
-
-// interface CountryInterface {
-//   code: string;
-//   country: string;
-// }
-
 export const LoginPage = () => {
   const [tabId, setTabId] = useState<string>('user');
-  // const [dataCountries, setDataCountries] = useState<CountryInterface[]>([]);
-  // const [selectedCountry, setSelectedCountry] = useState<string>('');
 
   const renderedTabContent = useMemo(() => {
     if (tabId === 'user') {
@@ -38,7 +29,12 @@ export const LoginPage = () => {
       );
     }
 
-    return <div>Some other</div>;
+    return (
+      <>
+        <div onClick={() => setTabId('user')}>Back</div>
+        <div>interests</div>
+      </>
+    );
   }, [tabId]);
 
   const handleContinueClick = () => {
@@ -52,7 +48,9 @@ export const LoginPage = () => {
 
   return (
     <LoginPageStyled>
-      <SliderContainerStyled>S</SliderContainerStyled>
+      <SliderContainerStyled>
+        <Slider slides={slides} autoPlay />
+      </SliderContainerStyled>
       <FormContainerStyled>
         {renderedTabContent}
         <div>

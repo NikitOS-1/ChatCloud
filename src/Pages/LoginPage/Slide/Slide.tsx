@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { H1, P } from '../../../components/Typography';
+
 interface SlideInterface<T = string> {
   src?: T;
   title?: T;
@@ -7,7 +9,8 @@ interface SlideInterface<T = string> {
 }
 
 const Image = styled.img`
-  width: 100%;
+  margin-top: 40px;
+  width: 70%;
   height: auto;
 
   @media (max-width: 800px) {
@@ -15,35 +18,11 @@ const Image = styled.img`
   }
 `;
 
-const H1 = styled.h1`
-  color: ${({ theme }) => theme.colors.primary.primaryBlueText};
-  font-family: ${({ theme }) => theme.fonts.CarroisGothicSCRegular};
-  font-size: ${({ theme }) => theme.fontSizes.Regular32};
-  margin-top: 80px;
-
-  @media (max-width: 800px) {
-    font-size: ${({ theme }) => theme.fontSizes.Medium20};
-    margin-top: 30px;
-  }
-`;
-
-const P = styled.p`
-  color: ${({ theme }) => theme.colors.neutralColors[500]};
-  font-family: ${({ theme }) => theme.fonts.CeraProRegular};
-  font-size: ${({ theme }) => theme.fontSizes.Medium16};
-  margin: 10px 0px 120px 0px;
-
-  @media (max-width: 800px) {
-    font-size: ${({ theme }) => theme.fontSizes.Medium12};
-    margin: 5px 0px 60px 0px;
-  }
-`;
-
 export const Slide = ({ src, title, description }: SlideInterface) => {
   return (
     <>
       <Image src={src} alt={title} />
-      <H1>{title}</H1>
+      <H1 style={{ margin: '40px 0px 20px 0px' }}>{title}</H1>
       <P>{description}</P>
     </>
   );

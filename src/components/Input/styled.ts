@@ -22,7 +22,7 @@ export const TextFieldStyled = styled(TextField)`
     font-size: ${({ theme }) => theme.fontSizes.Medium20};
 
     @media (max-width: 800px) {
-      width: 358px;
+      height: 47px;
     }
 
     fieldset {
