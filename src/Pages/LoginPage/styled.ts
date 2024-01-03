@@ -49,7 +49,7 @@ export const LoginPageStyled = styled.div`
 
 export const SliderContainerStyled = styled.div`
   display: flex;
-  flex: 16 16;
+  flex: 18 18;
   background-color: ${({ theme }) => theme.colors.primary.blue10};
 `;
 
@@ -58,6 +58,6 @@ export const FormContainerStyled = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  flex: 14 14;
+  flex: 12 12;
   padding: 50px 90px;
 `;

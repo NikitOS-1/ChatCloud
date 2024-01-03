@@ -6,7 +6,7 @@ import { TabsInterface } from './types';
 export const Tabs = ({ items, value, onChange }: TabsInterface) => {
   const renderTabsPanel = items.map((id) => (
     <TabStyled
-      withPointer={!!onChange}
+      $withpointer={!!onChange}
       value={id}
       key={id}
       icon={<Icon name="circle" />}

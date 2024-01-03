@@ -20,10 +20,10 @@ export const TabsStyled = styled(Tabs)`
   }
 `;
 
-export const TabStyled = styled(Tab)<{ withPointer: boolean }>`
+export const TabStyled = styled(Tab)<{ $withpointer: boolean }>`
   min-width: 15px;
   padding: 0px;
-  cursor: ${({ withPointer }) => (withPointer ? 'pointer' : 'default')};
+  cursor: ${({ $withpointer }) => ($withpointer ? 'pointer' : 'default')};
 `;
 export const BoxStyled = styled(Box)`
   display: flex;

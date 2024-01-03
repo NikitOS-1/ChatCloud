@@ -12,8 +12,19 @@ import {
   SliderContainerStyled,
 } from './styled';
 
+// interface CountriesInterface {
+//   countries: CountryInterface[];
+// }
+
+// interface CountryInterface {
+//   code: string;
+//   country: string;
+// }
+
 export const LoginPage = () => {
   const [tabId, setTabId] = useState<string>('user');
+  // const [dataCountries, setDataCountries] = useState<CountryInterface[]>([]);
+  // const [selectedCountry, setSelectedCountry] = useState<string>('');
 
   const renderedTabContent = useMemo(() => {
     if (tabId === 'user') {
@@ -22,7 +33,6 @@ export const LoginPage = () => {
           <H1>let's create your account</H1>
           <P>Choose your username and photo to personalize your account</P>
           <AvatarSelect options={[]} onSelect={() => null} />
-          <Input value={''} onChange={() => null} />
           <Input value={''} onChange={() => null} />
         </>
       );
@@ -41,29 +51,12 @@ export const LoginPage = () => {
   };
 
   return (
-    // <Container>
-    //   <SliderContainer>
-    //     {/* <Slider slides={slides} /> */}
-    //   </SliderContainer>
-    //   <FormContainer>
-    //     <Tabs
-    //       mainComponents={mainComponents}
-    //       footerComponents={footerComponents}
-    //       value={togglePage}
-    //       setValue={setTogglePage}
-    //     />
-    //   </FormContainer>
-    // </Container>
     <LoginPageStyled>
       <SliderContainerStyled>S</SliderContainerStyled>
       <FormContainerStyled>
         {renderedTabContent}
         <div>
-          <Tabs
-            items={['user', 'interests']}
-            onChange={setTabId}
-            value={tabId}
-          />
+          <Tabs items={['user', 'interests']} value={tabId} />
           <Button label="Continue" onClick={handleContinueClick} />
         </div>
       </FormContainerStyled>
