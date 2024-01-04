@@ -1,4 +1,5 @@
 export interface AvatarSelectProps {
+  value: string;
   options: Option[];
   onSelect: (src: string) => void;
 }

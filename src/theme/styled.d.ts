@@ -60,11 +60,15 @@ declare module 'styled-components' {
       CeraProMedium: string;
     };
     fontSizes: {
-      Regular24: string;
       Regular32: string;
+      Regular28: string;
+      Regular24: string;
       Medium20: string;
+      Medium18: string;
       Medium16: string;
+      Medium14: string;
       Medium12: string;
+      Medium10: string;
     };
     breakpoints: {
       sm: string;

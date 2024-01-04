@@ -7,6 +7,7 @@ export const Input = ({
   error,
   required = true,
   onChange,
+  value,
   ...restProps
 }: InputProps) => {
   const requiredLabel = useMemo(
@@ -17,6 +18,7 @@ export const Input = ({
   return (
     <TextFieldStyled
       {...restProps}
+      value={value}
       variant="outlined"
       fullWidth
       helperText={error || requiredLabel}

@@ -2,9 +2,15 @@ import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
 
 export const TextFieldStyled = styled(TextField)`
+  height: 90px;
+
+  @media (max-width: 800px) {
+    height: 65px;
+  }
+
   .MuiFormLabel-root {
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-    font-size: ${({ theme }) => theme.fontSizes.Medium20};
+    font-size: ${({ theme }) => theme.fontSizes.Medium16};
     color: ${({ theme }) => theme.colors.neutralColors[300]};
 
     &.Mui-focused {
@@ -19,11 +25,7 @@ export const TextFieldStyled = styled(TextField)`
     width: 100%;
     height: 57px;
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-    font-size: ${({ theme }) => theme.fontSizes.Medium20};
-
-    @media (max-width: 800px) {
-      height: 47px;
-    }
+    font-size: ${({ theme }) => theme.fontSizes.Medium16};
 
     fieldset {
       border: 2px solid ${({ theme }) => theme.colors.primary.blue30};

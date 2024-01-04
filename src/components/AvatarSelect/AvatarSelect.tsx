@@ -15,11 +15,12 @@ import {
 } from './styled';
 import { AvatarSelectProps } from './types';
 
-export const AvatarSelect = ({ options, onSelect }: AvatarSelectProps) => {
-  const defaultAvatar = 'src/assets/icons/Avatar/NoPhoto.svg';
-
-  const [selectedAvatar, setSelectedAvatar] =
-    React.useState<string>(defaultAvatar);
+export const AvatarSelect = ({
+  options,
+  onSelect,
+  value,
+}: AvatarSelectProps) => {
+  const [selectedAvatar, setSelectedAvatar] = React.useState<string>(value);
   const [buffer, setBuffer] = React.useState<string>(selectedAvatar);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -46,7 +47,7 @@ export const AvatarSelect = ({ options, onSelect }: AvatarSelectProps) => {
           onClick={(event) => handleClick(event)}
         />
         <Button
-          margintop="16px"
+          margintop="10px"
           variant="text"
           label="Change Photo"
           onClick={(event) => handleClick(event)}

@@ -57,11 +57,15 @@ export const theme = {
     CeraProMedium: "'CeraProMedium', sans-serif;",
   },
   fontSizes: {
-    Regular24: '24px',
     Regular32: '32px',
+    Regular28: '28px',
+    Regular24: '24px',
     Medium20: '20px',
+    Medium18: '18px',
     Medium16: '16px',
+    Medium14: '14px',
     Medium12: '12px',
+    Medium10: '10px',
   },
   breakpoints: {
     sm: '576px',

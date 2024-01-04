@@ -14,6 +14,8 @@ export function Select<T>(props: SelectInterface<T>) {
       popupIcon={
         <Icon name="expandMore" fill={theme.colors.primary.primaryYellow} />
       }
+      //@ts-expect-error TS error = option.country is not string | T
+      getOptionLabel={(option) => option.country ?? option}
       autoHighlight
       renderInput={(params) => (
         <>

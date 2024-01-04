@@ -2,14 +2,14 @@ import { Box, TextField } from '@mui/material';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const DropdownStyles = createGlobalStyle`
-  &.MuiPaper-root{
-  height: 278px !important;
-  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+max-height: 278px ;
+
+&.MuiPaper-root{
+    margin: 10px 0px;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
   }
 
   &.MuiPopper-root {
-    top: 8px !important;
-    
 
     & > .MuiPaper-rounded {
       border-radius: ${({ theme }) => theme.radius.input};
@@ -20,7 +20,7 @@ export const DropdownStyles = createGlobalStyle`
 export const TextFieldStyled = styled(TextField)`
   .MuiFormLabel-root {
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-    font-size: ${({ theme }) => theme.fontSizes.Medium20};
+    font-size: ${({ theme }) => theme.fontSizes.Medium18};
     color: ${({ theme }) => theme.colors.neutralColors[300]};
 
     &.Mui-focused {
@@ -33,14 +33,9 @@ export const TextFieldStyled = styled(TextField)`
   }
 
   .MuiOutlinedInput-root.MuiInputBase-root {
-    width: 495px;
     height: 57px;
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-    font-size: ${({ theme }) => theme.fontSizes.Medium20};
-
-    @media (max-width: 800px) {
-      width: 358px;
-    }
+    font-size: ${({ theme }) => theme.fontSizes.Medium16};
 
     fieldset {
       border: 2px solid ${({ theme }) => theme.colors.primary.blue30};
@@ -76,7 +71,7 @@ export const BoxStyled = styled(Box)`
 
   &.MuiBox-root {
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-    font-size: ${({ theme }) => theme.fontSizes.Medium20};
+    font-size: ${({ theme }) => theme.fontSizes.Medium16};
     color: ${({ theme }) => theme.colors.neutralColors[500]};
 
     &:hover {

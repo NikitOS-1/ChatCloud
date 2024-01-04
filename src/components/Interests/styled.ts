@@ -4,11 +4,13 @@ import styled from 'styled-components';
 export const InterestsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 20px;
   width: 495px;
+  height: 330px;
+  overflow: auto;
 
   @media (max-width: 800px) {
-    gap: 16px;
+    gap: 14px;
     width: 311px;
   }
 `;
@@ -18,7 +20,7 @@ export const InterestItem = styled(Chip)<{ selected: boolean }>`
   height: max-content;
   border-radius: ${({ theme }) => theme.radius.text};
   font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-  font-size: ${({ theme }) => theme.fontSizes.Medium20};
+  font-size: ${({ theme }) => theme.fontSizes.Medium18};
 
   background-color: ${(props) =>
     props.selected
@@ -42,7 +44,7 @@ export const InterestItem = styled(Chip)<{ selected: boolean }>`
   }
 
   @media (max-width: 800px) {
-    font-size: ${({ theme }) => theme.fontSizes.Medium16};
+    font-size: ${({ theme }) => theme.fontSizes.Medium14};
 
     .MuiChip-label {
       padding: 10px;

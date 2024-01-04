@@ -18,7 +18,7 @@ export const StyledButton = styled(Button)<StyledButtonInterface>`
   padding: 16px 32px;
   height: 58px;
   font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-  font-size: ${({ theme }) => theme.fontSizes.Medium20};
+  font-size: ${({ theme }) => theme.fontSizes.Medium16};
   border-radius: ${({ theme }) => theme.radius.button};
   text-transform: none;
   box-shadow: none;
@@ -31,7 +31,7 @@ export const StyledButton = styled(Button)<StyledButtonInterface>`
     box-shadow: none;
   }
   @media (max-width: 800px) {
-    width: 358px;
+    width: 100%;
   }
 
   ${(props) =>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { H1, P } from '../../../components/Typography';
+import { H1, P } from '../../../../components/Typography';
 
 interface SlideInterface<T = string> {
   src?: T;

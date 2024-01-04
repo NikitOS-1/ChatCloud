@@ -2,12 +2,12 @@ import { Avatar, Popover } from '@mui/material';
 import { styled } from 'styled-components';
 
 export const MainAvatar = styled(Avatar)`
-  width: 148px;
-  height: 148px;
+  width: 122px;
+  height: 122px;
 
   @media (max-width: 800px) {
-    width: 122px;
-    height: 122px;
+    width: 102px;
+    height: 102px;
   }
 `;
 
@@ -22,7 +22,8 @@ export const MainButtonWrapper = styled('div')`
 
 export const PopoverStyled = styled(Popover)`
   .MuiPaper-root {
-    width: 499px;
+    overflow: hidden;
+    max-width: 449px;
     height: max-content;
     padding: 16px 24px 0px 24px;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
@@ -31,7 +32,6 @@ export const PopoverStyled = styled(Popover)`
     @media (max-width: 800px) {
       padding: 0px;
       width: 100%;
-      height: max-content;
     }
   }
 `;
@@ -50,11 +50,11 @@ export const AvatarOptions = styled('div')`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
   justify-content: center;
   width: 100%;
-  height: 417px;
-  overflow: auto;
+  height: 340px;
+  overflow: scroll;
   border: none;
 
   &:focus-visible {
@@ -65,8 +65,8 @@ export const AvatarOptions = styled('div')`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 106px;
-    height: 106px;
+    width: 86px;
+    height: 86px;
     border-radius: 50%;
 
     &.Mui-selected {
@@ -75,12 +75,12 @@ export const AvatarOptions = styled('div')`
   }
 
   .MuiAvatar-root {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
   @media (max-width: 800px) {
-    gap: 16px;
+    gap: 14px;
 
     .MuiButtonBase-root {
       width: 90px;

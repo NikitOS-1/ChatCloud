@@ -1,7 +1,14 @@
+import { CircularProgress } from '@mui/material';
+
 import { InterestItem, InterestsContainer } from './styled';
 import { InterestsProps } from './types';
 
-export const Interests = ({ options, onChange, value }: InterestsProps) => {
+export const Interests = ({
+  options,
+  onChange,
+  value,
+  isLoading = true,
+}: InterestsProps) => {
   const updateSelected = (category: string) => {
     const isIdInArray = value.some((item) => item === category);
 
@@ -13,17 +20,31 @@ export const Interests = ({ options, onChange, value }: InterestsProps) => {
       onChange(updatedValue);
     }
   };
-
   return (
     <InterestsContainer>
-      {options.map(({ id, category }) => (
-        <InterestItem
-          key={id}
-          label={category}
-          selected={value.includes(category)}
-          onClick={() => updateSelected(category)}
-        />
-      ))}
+      {isLoading ? (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+          }}
+        >
+          <CircularProgress />
+        </div>
+      ) : (
+        <>
+          {options.map(({ id, topic }) => (
+            <InterestItem
+              key={id}
+              label={topic}
+              selected={value.includes(topic)}
+              onClick={() => updateSelected(topic)}
+            />
+          ))}
+        </>
+      )}
     </InterestsContainer>
   );
 };
