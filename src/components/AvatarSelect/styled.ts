@@ -30,8 +30,7 @@ export const PopoverStyled = styled(Popover)`
     border-radius: ${({ theme }) => theme.radius.button};
 
     @media (max-width: 800px) {
-      padding: 0px;
-      width: 100%;
+      padding: 10px;
     }
   }
 `;
@@ -80,7 +79,7 @@ export const AvatarOptions = styled('div')`
   }
 
   @media (max-width: 800px) {
-    gap: 14px;
+    gap: 10px;
 
     .MuiButtonBase-root {
       width: 90px;
@@ -90,6 +89,20 @@ export const AvatarOptions = styled('div')`
     .MuiAvatar-root {
       width: 84px;
       height: 84px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    gap: 10px;
+
+    .MuiButtonBase-root {
+      width: 80px;
+      height: 80px;
+    }
+
+    .MuiAvatar-root {
+      width: 74px;
+      height: 74px;
     }
   }
 `;
