@@ -6,6 +6,7 @@ import { Button } from '../../components/Button';
 import { Icon } from '../../components/Icon';
 import { Input } from '../../components/Input';
 import { Interests } from '../../components/Interests';
+import ModalWindow from '../../components/Modal/Modal';
 import { Select } from '../../components/Select';
 import { BoxStyled } from '../../components/Select/styled';
 import { Slider } from '../../components/Slider';
@@ -13,6 +14,7 @@ import { Tabs } from '../../components/Tabs';
 import { H1, P } from '../../components/Typography';
 import { useCountries } from '../../hooks/countries/useCountries';
 import { useInterests } from '../../hooks/interests/useInterests';
+import { useLogin } from '../../hooks/login/login';
 
 import { slides } from './components/Slide/slides';
 import { avatars } from './avatars';
@@ -31,9 +33,11 @@ const LoginPage = () => {
   const [selectedAvatar, setSelectedAvatar] = useState<string>(avatars[0].src);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const { data: countries, isLoading: loadingCounties } = useCountries();
   const { data: interests, isLoading: loadingInterests } = useInterests();
+  const { mutate } = useLogin();
   // mutateAsync
   const renderedTabContent = () => {
     if (tabId === 'user') {
@@ -129,17 +133,26 @@ const LoginPage = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      return console.log({
-        username: values.userName,
-        profile_picture: selectedAvatar,
-        country: selectedCountry,
-        topics: selectedInterests,
-      });
+      if (selectedInterests.length == 0) {
+        setIsModalOpen(true);
+      } else {
+        return mutate({
+          username: values.userName,
+          profile_picture: selectedAvatar,
+          country: selectedCountry,
+          topics: selectedInterests,
+        });
+      }
     },
   });
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <LoginPageStyled>
+      <ModalWindow isOpen={isModalOpen} onClose={closeModal} />
       <SliderContainerStyled>
         <Slider slides={slides} autoPlay />
       </SliderContainerStyled>
