@@ -5,13 +5,12 @@ export const InterestsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  width: 495px;
-  height: 330px;
+  max-width: 495px;
+  max-height: 330px;
   overflow: auto;
 
   @media (max-width: 800px) {
     gap: 14px;
-    width: 311px;
   }
 `;
 

@@ -19,7 +19,11 @@ export function Select<T>(props: SelectInterface<T>) {
       autoHighlight
       renderInput={(params) => (
         <>
-          <TextFieldStyled {...params} label={props.label} />
+          <TextFieldStyled
+            {...params}
+            label={props.label}
+            error={props.error}
+          />
           <DropdownStyles />
         </>
       )}

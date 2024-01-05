@@ -2,11 +2,7 @@ import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
 
 export const TextFieldStyled = styled(TextField)`
-  height: 90px;
-
-  @media (max-width: 800px) {
-    height: 65px;
-  }
+  height: 75px;
 
   .MuiFormLabel-root {
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
@@ -22,8 +18,7 @@ export const TextFieldStyled = styled(TextField)`
   }
 
   .MuiOutlinedInput-root.MuiInputBase-root {
-    width: 100%;
-    height: 57px;
+    height: 52px;
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
     font-size: ${({ theme }) => theme.fontSizes.Medium16};
 

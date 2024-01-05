@@ -14,7 +14,9 @@ interface StyledButtonInterface extends MarginInterface {
   variant: ButtonVariantType;
 }
 
-export const StyledButton = styled(Button)<StyledButtonInterface>`
+export const StyledButton = styled(Button)<
+  StyledButtonInterface & HTMLButtonElement
+>`
   padding: 16px 32px;
   height: 58px;
   font-family: ${({ theme }) => theme.fonts.CeraProMedium};

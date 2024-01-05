@@ -1,6 +1,8 @@
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
+import { REACT_APP_API_URL } from './../../../API_DataBase';
+
 interface CountriesInterface {
   countries: CountryInterface[];
 }
@@ -10,12 +12,11 @@ interface CountryInterface {
   country: string;
 }
 
-// const apiUrl = process.env.REACT_APP_API_URL; //doesn't work process error
-const apiUrl = 'http://0.0.0.0:8080';
-
-const fetchDataToCountries = async (): Promise<CountriesInterface> => {
+const getCountries = async (): Promise<CountriesInterface> => {
   try {
-    const response = await axios.get<CountriesInterface>(`${apiUrl}/countries`);
+    const response = await axios.get<CountriesInterface>(
+      `${REACT_APP_API_URL}/countries`,
+    );
     return response.data;
   } catch (error) {
     throw new Error('Failed to fetch countries data');
@@ -23,5 +24,5 @@ const fetchDataToCountries = async (): Promise<CountriesInterface> => {
 };
 
 export const useCountries = () => {
-  return useQuery<CountriesInterface>('countries', fetchDataToCountries);
+  return useQuery<CountriesInterface>('countries', getCountries);
 };

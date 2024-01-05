@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useFormik } from 'formik';
 
 import { AvatarSelect } from '../../components/AvatarSelect';
 import { Button } from '../../components/Button';
@@ -23,17 +24,17 @@ import {
   SliderContainerStyled,
   UserInfoStyled,
 } from './styled';
+import { validationSchema } from './validationConfig';
 
-export const LoginPage = () => {
+const LoginPage = () => {
   const [tabId, setTabId] = useState<string>('user');
   const [selectedAvatar, setSelectedAvatar] = useState<string>(avatars[0].src);
-  const [userName, setUserName] = useState<string>('');
-  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
 
   const { data: countries, isLoading: loadingCounties } = useCountries();
   const { data: interests, isLoading: loadingInterests } = useInterests();
-
+  // mutateAsync
   const renderedTabContent = () => {
     if (tabId === 'user') {
       return (
@@ -48,15 +49,16 @@ export const LoginPage = () => {
               options={avatars}
               onSelect={setSelectedAvatar}
             />
-
             <Input
-              placeholder="Username*"
-              value={userName}
-              onChange={setUserName}
-              required={userName ? false : true}
+              name="userName"
+              label="Username*"
+              value={formik.values.userName}
+              onChange={formik.handleChange}
+              required={formik.values.userName ? false : true}
+              error={formik.errors.userName}
             />
-
             <Select
+              name="country"
               fullWidth
               loading={loadingCounties}
               label="Choose a country"
@@ -69,8 +71,9 @@ export const LoginPage = () => {
                   option !== null &&
                   typeof option === 'object' &&
                   'country' in option
-                )
+                ) {
                   setSelectedCountry(option.country);
+                }
               }}
               isOptionEqualToValue={(option) =>
                 option.country === selectedCountry
@@ -113,25 +116,43 @@ export const LoginPage = () => {
     );
   };
 
-  const handleContinueClick = () => {
-    if (tabId === 'interests') {
-      // @todo: make request
-      return;
+  const handleContinueClick = (event: React.MouseEvent) => {
+    if (tabId === 'user') {
+      event.preventDefault();
+      setTabId('interests');
     }
-
-    setTabId('interests');
   };
+
+  const formik = useFormik({
+    initialValues: {
+      userName: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      return console.log({
+        username: values.userName,
+        profile_picture: selectedAvatar,
+        country: selectedCountry,
+        topics: selectedInterests,
+      });
+    },
+  });
 
   return (
     <LoginPageStyled>
       <SliderContainerStyled>
         <Slider slides={slides} autoPlay />
       </SliderContainerStyled>
-      <FormContainerStyled>
+      <FormContainerStyled onSubmit={formik.handleSubmit}>
         {renderedTabContent()}
         <FooterContainerStyled>
           <Tabs items={['user', 'interests']} value={tabId} />
-          <Button label="Continue" onClick={handleContinueClick} />
+          <Button
+            isDisabled={!formik.dirty || !formik.isValid}
+            type="submit"
+            label="Continue"
+            onClick={handleContinueClick}
+          />
           <P>
             By proceeding you agree to our <a href="#">Privacy Policy</a> and{' '}
             <a href="#">Terms of Service</a>
@@ -141,3 +162,5 @@ export const LoginPage = () => {
     </LoginPageStyled>
   );
 };
+
+export default LoginPage;

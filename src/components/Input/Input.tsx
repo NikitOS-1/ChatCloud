@@ -23,7 +23,7 @@ export const Input = ({
       fullWidth
       helperText={error || requiredLabel}
       error={!!error}
-      onChange={(e) => onChange(e.target.value)}
+      onChange={onChange}
     />
   );
 };

@@ -1,12 +1,12 @@
+import { useRoutes } from 'react-router-dom';
+
 import { StyledLayout } from './components/Layout';
-import { LoginPage } from './Pages/LoginPage';
+import routes from './routes';
 
 function App() {
-  return (
-    <StyledLayout>
-      <LoginPage />
-    </StyledLayout>
-  );
+  const allPages = useRoutes(routes);
+
+  return <StyledLayout>{allPages}</StyledLayout>;
 }
 
 export default App;

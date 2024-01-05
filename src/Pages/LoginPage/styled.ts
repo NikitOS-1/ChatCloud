@@ -15,7 +15,7 @@ export const SliderContainerStyled = styled.div`
   }
 `;
 
-export const FormContainerStyled = styled.div`
+export const FormContainerStyled = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
