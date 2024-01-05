@@ -7,6 +7,7 @@ export const ModalStyled = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 export const ModalContainerStyled = styled.div`
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
   background-color: ${({ theme }) => theme.colors.neutralColors.bgWhite};
@@ -25,6 +26,7 @@ export const ModalContainerStyled = styled.div`
 export const HeaderStyled = styled.div`
   display: flex;
   justify-content: flex-end;
+
   span {
     cursor: pointer;
   }
@@ -35,6 +37,7 @@ export const MainStyled = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
   H1 {
     margin-bottom: 10px;
   }

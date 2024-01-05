@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 
 import { AvatarSelect } from '../../components/AvatarSelect';
@@ -14,7 +15,6 @@ import { Tabs } from '../../components/Tabs';
 import { H1, P } from '../../components/Typography';
 import { useCountries } from '../../hooks/countries/useCountries';
 import { useInterests } from '../../hooks/interests/useInterests';
-import { useLogin } from '../../hooks/login/login';
 
 import { slides } from './components/Slide/slides';
 import { avatars } from './avatars';
@@ -29,6 +29,7 @@ import {
 import { validationSchema } from './validationConfig';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [tabId, setTabId] = useState<string>('user');
   const [selectedAvatar, setSelectedAvatar] = useState<string>(avatars[0].src);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
@@ -37,8 +38,7 @@ const LoginPage = () => {
 
   const { data: countries, isLoading: loadingCounties } = useCountries();
   const { data: interests, isLoading: loadingInterests } = useInterests();
-  const { mutate } = useLogin();
-  // mutateAsync
+
   const renderedTabContent = () => {
     if (tabId === 'user') {
       return (
@@ -124,6 +124,13 @@ const LoginPage = () => {
     if (tabId === 'user') {
       event.preventDefault();
       setTabId('interests');
+      setIsModalOpen(false);
+    }
+    if (tabId === 'interests') {
+      if (selectedInterests.length === 0) {
+        event.preventDefault();
+        setIsModalOpen(true);
+      }
     }
   };
 
@@ -132,19 +139,18 @@ const LoginPage = () => {
       userName: '',
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      if (selectedInterests.length == 0) {
-        setIsModalOpen(true);
-      } else {
-        return mutate({
-          username: values.userName,
-          profile_picture: selectedAvatar,
-          country: selectedCountry,
-          topics: selectedInterests,
-        });
-      }
-    },
+    onSubmit: () => handleSubmit(),
   });
+
+  const handleSubmit = () => {
+    console.log({
+      username: formik.values.userName,
+      profile_picture: selectedAvatar,
+      country: selectedCountry,
+      topics: selectedInterests,
+    });
+    navigate('/chat');
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -152,7 +158,11 @@ const LoginPage = () => {
 
   return (
     <LoginPageStyled>
-      <ModalWindow isOpen={isModalOpen} onClose={closeModal} />
+      <ModalWindow
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        onSkip={handleSubmit}
+      />
       <SliderContainerStyled>
         <Slider slides={slides} autoPlay />
       </SliderContainerStyled>

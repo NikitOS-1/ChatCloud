@@ -1,6 +1,5 @@
 import { Modal } from '@mui/material';
 
-import { useLogin } from '../../hooks/login/login';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { H1, P } from '../Typography';
@@ -16,21 +15,10 @@ import {
 interface ModalWindowProps {
   isOpen: boolean;
   onClose: () => void;
-  handleContinueClick?: (event: React.MouseEvent) => void;
+  onSkip?: () => void;
 }
 
-const ModalWindow = ({ isOpen, onClose }: ModalWindowProps) => {
-  const { mutate } = useLogin();
-
-  const handleContinueClick = () => {
-    mutate({
-      username: 'values.userName',
-      profile_picture: 'selectedAvatar',
-      country: 'selectedCountry',
-      topics: ['selectedInterests'],
-    });
-  };
-
+const ModalWindow = ({ isOpen, onClose, onSkip }: ModalWindowProps) => {
   return (
     <Modal
       open={isOpen}
@@ -56,9 +44,9 @@ const ModalWindow = ({ isOpen, onClose }: ModalWindowProps) => {
               type="button"
               label="Cancel"
               onClick={onClose}
-              marginright="20px"
+              marginright="10px"
             />
-            <Button type="submit" label="Skip" onClick={handleContinueClick} />
+            <Button type="submit" label="Skip" onClick={onSkip} />
           </FooterStyled>
         </ModalContainerStyled>
       </ModalStyled>
