@@ -17,7 +17,7 @@ interface LoginResponse {
 const loginRequest = async (data: LoginData): Promise<LoginResponse> => {
   try {
     const response = await axios.post<LoginResponse>(
-      `${REACT_APP_API_URL}/testuser`,
+      `${REACT_APP_API_URL}/newuser`,
       data,
     );
     return response.data;

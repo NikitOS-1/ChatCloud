@@ -15,6 +15,7 @@ import { Tabs } from '../../components/Tabs';
 import { H1, P } from '../../components/Typography';
 import { useCountries } from '../../hooks/countries/useCountries';
 import { useInterests } from '../../hooks/interests/useInterests';
+import { useLogin } from '../../hooks/login/login';
 
 import { slides } from './components/Slide/slides';
 import { avatars } from './avatars';
@@ -38,6 +39,7 @@ const LoginPage = () => {
 
   const { data: countries, isLoading: loadingCounties } = useCountries();
   const { data: interests, isLoading: loadingInterests } = useInterests();
+  const { mutate } = useLogin();
 
   const renderedTabContent = () => {
     if (tabId === 'user') {
@@ -102,8 +104,13 @@ const LoginPage = () => {
     return (
       <>
         <HeaderStyled>
-          <div onClick={() => setTabId('user')} style={{ width: '100%' }}>
-            <Icon name="arrowBack" />
+          <div
+            onClick={() => setTabId('user')}
+            style={{ width: '100%', cursor: 'pointer' }}
+          >
+            <div>
+              <Icon name="arrowBack" />
+            </div>
           </div>
           <H1>Choose your interests</H1>
           <P>Pick up your favourite topics to set up your feeds</P>
@@ -143,7 +150,7 @@ const LoginPage = () => {
   });
 
   const handleSubmit = () => {
-    console.log({
+    mutate({
       username: formik.values.userName,
       profile_picture: selectedAvatar,
       country: selectedCountry,
