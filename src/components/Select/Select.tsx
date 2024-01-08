@@ -22,6 +22,7 @@ export function Select<T>(props: SelectInterface<T>) {
           <TextFieldStyled
             {...params}
             label={props.label}
+            //@ts-expect-error TS error = option.country is not string | T
             error={props.error}
           />
           <DropdownStyles />
