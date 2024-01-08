@@ -14,6 +14,7 @@ type ButtonInterfaceProps = ButtonInterface &
       | 'info'
       | 'warning';
   };
+
 export const Button = ({
   label,
   variant = CONTAINED_TYPE,
