@@ -1,5 +1,6 @@
-import { LoadingScreen } from './components/LoadingScreen';
-import LoginPage from './Pages/LoginPage/LoginPage';
+// import { LoadingScreen } from "./components/LoadingScreen";
+import { ChatPage } from './Pages/ChatPage';
+import { LoginPage } from './Pages/LoginPage/LoginPage';
 
 interface Route {
   path: string;
@@ -8,12 +9,12 @@ interface Route {
 
 const routes: Route[] = [
   {
-    path: '/',
+    path: '/login',
     element: <LoginPage />,
   },
   {
-    path: '/chat',
-    element: <LoadingScreen />,
+    path: '/',
+    element: <ChatPage />,
   },
 ];
 // protected route

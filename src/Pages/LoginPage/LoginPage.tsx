@@ -29,7 +29,7 @@ import {
 } from './styled';
 import { validationSchema } from './validationConfig';
 
-const LoginPage = () => {
+export const LoginPage = () => {
   const navigate = useNavigate();
   const [tabId, setTabId] = useState<string>('user');
   const [selectedAvatar, setSelectedAvatar] = useState<string>(avatars[0].src);
@@ -192,5 +192,3 @@ const LoginPage = () => {
     </LoginPageStyled>
   );
 };
-
-export default LoginPage;
