@@ -1,24 +1,34 @@
 import { Icon } from '../Icon';
 
 import { BoxStyled, TabsStyled, TabStyled } from './styled';
-import { TabsInterface } from './types';
+import { POINTER_TABS, TabsInterface } from './types';
 
-export const Tabs = ({ items, value, onChange }: TabsInterface) => {
+export const Tabs = ({
+  items,
+  value,
+  onChange,
+  variants = POINTER_TABS,
+}: TabsInterface) => {
   const renderTabsPanel = items.map((id) => (
     <TabStyled
+      $variants={variants}
       $withpointer={!!onChange}
       value={id}
       key={id}
-      icon={<Icon name="circle" />}
+      label={variants === 'pointer' ? '' : id}
+      icon={variants === 'line' ? '' : <Icon name="circle" />}
     />
   ));
 
   return (
     <BoxStyled>
       <TabsStyled
+        $variants={variants}
         value={value}
         onChange={(_, value) => onChange && onChange(value)}
-        TabIndicatorProps={{ style: { display: 'none' } }}
+        TabIndicatorProps={{
+          style: { display: `${variants === 'pointer' ? 'none' : ''}` },
+        }}
       >
         {renderTabsPanel}
       </TabsStyled>
