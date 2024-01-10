@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs } from '@mui/material';
+import { Badge, Box, Tab, Tabs } from '@mui/material';
 import styled, { css } from 'styled-components';
 
 import { LINE_TABS, POINTER_TABS } from './types';
@@ -15,7 +15,6 @@ export const TabsStyled = styled(Tabs)<{ $variants: string }>`
 
       .MuiButtonBase-root {
         min-height: 15px;
-        min-height: 15px;
         border-radius: 50%;
         color: ${({ theme }) => theme.colors.neutralColors[200]};
       }
@@ -25,7 +24,25 @@ export const TabsStyled = styled(Tabs)<{ $variants: string }>`
       }
     `}
 
-  ${(props) => props.$variants === LINE_TABS && css``}
+  ${(props) =>
+    props.$variants === LINE_TABS &&
+    css`
+      .MuiButtonBase-root {
+        padding: 30px;
+        text-transform: capitalize;
+        min-width: max-content;
+        color: ${({ theme }) => theme.colors.neutralColors[500]};
+        font-family: ${({ theme }) => theme.fonts.CeraProMedium};
+      }
+
+      .Mui-selected {
+        color: ${({ theme }) => theme.colors.neutralColors[900]};
+      }
+
+      .MuiTabs-indicator {
+        background-color: ${({ theme }) => theme.colors.primary.primaryYellow};
+      }
+    `}
 `;
 
 export const TabStyled = styled(Tab)<{
@@ -40,6 +57,7 @@ export const TabStyled = styled(Tab)<{
     `}
 
   ${(props) => props.$variants === LINE_TABS && css``}
+
   cursor: ${({ $withpointer }) => ($withpointer ? 'pointer' : 'default')};
 `;
 
@@ -47,4 +65,16 @@ export const BoxStyled = styled(Box)`
   display: flex;
   align-items: center;
   flex-direction: column;
+`;
+
+export const BadgeStyled = styled(Badge)`
+  &.MuiBadge-root {
+    display: block;
+    margin-left: 20px;
+  }
+
+  & .MuiBadge-badge {
+    color: ${({ theme }) => theme.colors.neutralColors[100]};
+    background-color: ${({ theme }) => theme.colors.primary.primaryYellow};
+  }
 `;

@@ -5,9 +5,14 @@ export interface TabInterface {
   id: number;
 }
 
-export interface TabsInterface {
-  variants?: string;
-  items: string[];
+export interface TabsPropsInterface {
+  items: ItemsBadgeInterface[];
   value: string;
+  variants?: string;
   onChange?: (index: string) => void;
+  badge?: number;
+}
+export interface ItemsBadgeInterface {
+  item: string;
+  badge?: number;
 }
