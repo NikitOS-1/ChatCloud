@@ -1,6 +1,12 @@
 import { Icon } from '../Icon';
 
-import { BadgeStyled, BoxStyled, TabsStyled, TabStyled } from './styled';
+import {
+  BadgeStyled,
+  BoxStyled,
+  ButtonTabsStyled,
+  TabsStyled,
+  TabStyled,
+} from './styled';
 import { ItemsBadgeInterface, POINTER_TABS, TabsPropsInterface } from './types';
 
 export const Tabs = ({
@@ -20,16 +26,10 @@ export const Tabs = ({
           variants === 'pointer' ? (
             ''
           ) : (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
+            <ButtonTabsStyled>
               {item}
               <BadgeStyled badgeContent={badge} />
-            </div>
+            </ButtonTabsStyled>
           )
         }
         icon={variants === 'line' ? '' : <Icon name="circle" />}

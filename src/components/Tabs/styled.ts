@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 
 import { LINE_TABS, POINTER_TABS } from './types';
 
+export const BoxStyled = styled(Box)``;
+
 export const TabsStyled = styled(Tabs)<{ $variants: string }>`
   ${(props) =>
     props.$variants === POINTER_TABS &&
@@ -27,10 +29,15 @@ export const TabsStyled = styled(Tabs)<{ $variants: string }>`
   ${(props) =>
     props.$variants === LINE_TABS &&
     css`
+      .MuiTabs-flexContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
       .MuiButtonBase-root {
-        padding: 30px;
+        padding: 25px 15px;
         text-transform: capitalize;
-        min-width: max-content;
         color: ${({ theme }) => theme.colors.neutralColors[500]};
         font-family: ${({ theme }) => theme.fonts.CeraProMedium};
       }
@@ -61,12 +68,6 @@ export const TabStyled = styled(Tab)<{
   cursor: ${({ $withpointer }) => ($withpointer ? 'pointer' : 'default')};
 `;
 
-export const BoxStyled = styled(Box)`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`;
-
 export const BadgeStyled = styled(Badge)`
   &.MuiBadge-root {
     display: block;
@@ -77,4 +78,10 @@ export const BadgeStyled = styled(Badge)`
     color: ${({ theme }) => theme.colors.neutralColors[100]};
     background-color: ${({ theme }) => theme.colors.primary.primaryYellow};
   }
+`;
+
+export const ButtonTabsStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
