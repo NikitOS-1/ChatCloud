@@ -1,21 +1,31 @@
-# Используем официальный образ Node.js в качестве базового образа
-FROM node:14
+FROM node:18-alpine as BUILD_IMAGE
 
-# Устанавливаем рабочую директорию внутри контейнера
 WORKDIR /app
 
-# Копируем файлы package.json и package-lock.json и устанавливаем зависимости
 COPY package*.json ./
 RUN npm install
 
-# Копируем все файлы в текущей директории внутрь контейнера
 COPY . .
 
-# Собираем приложение
 RUN npm run build
 
-# Указываем порт, который будет использоваться приложением
-EXPOSE 3000
+EXPOSE 8080
 
-# Команда для запуска приложения при старте контейнера
 CMD ["npm", "start"]
+
+FROM node:18-alpine as PRODUCTION_IMAGE
+
+WORKDIR /app
+
+COPY --from=BUILD_IMAGE /app/react-app/dist/ /app/react-app/dist/
+EXPOSE 8080
+
+COPY package.json .
+COPY vite.config.ts .
+
+RUN npm install typescript
+EXPOSE 8080
+CMD ["npm","run","preview"]
+
+
+
