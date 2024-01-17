@@ -84,9 +84,9 @@ const LoginPage = () => {
               isOptionEqualToValue={(option) =>
                 option.country === selectedCountry
               }
-              renderOption={(props, option) =>
+              renderOption={(_, option) =>
                 option && (
-                  <BoxStyled component="li" {...props}>
+                  <BoxStyled component="li">
                     <img
                       src={`https://flagcdn.com/${option.code.toLowerCase()}.svg`}
                       alt={option.country}

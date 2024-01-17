@@ -20,13 +20,15 @@ export const Button = ({
   isDisabled,
   icon,
   ...restProps
-}: ButtonInterfaceProps) => (
-  <StyledButton
-    {...restProps}
-    variant={variant}
-    disabled={isDisabled}
-    startIcon={icon}
-  >
-    {label}
-  </StyledButton>
-);
+}: ButtonInterfaceProps) => {
+  return (
+    <StyledButton
+      {...restProps}
+      variant={variant}
+      disabled={isDisabled}
+      startIcon={icon}
+    >
+      {[String(label)]}
+    </StyledButton>
+  );
+};
