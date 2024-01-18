@@ -10,7 +10,6 @@ export const AvatarContainerStyled = styled('div')<MarginInterface>`
   justify-content: center;
   flex-direction: column;
   max-width: 80px;
-  position: relative;
   margin-top: ${({ margintop }) => margintop};
   margin-bottom: ${({ marginbottom }) => marginbottom};
   margin-left: ${({ marginleft }) => marginleft};
@@ -25,9 +24,9 @@ export const AvatarStyled = styled(Avatar)`
 `;
 
 export const CountryBadgeStyled = styled(Avatar)`
-  position: absolute;
-  top: 33px;
-  left: 50px;
+  position: relative;
+  top: -21px;
+  left: 18px;
 
   &.MuiAvatar-root {
     width: 21px;
@@ -36,9 +35,9 @@ export const CountryBadgeStyled = styled(Avatar)`
 `;
 
 export const OnlineBadgeStyled = styled.div`
-  position: absolute;
-  top: 0px;
-  left: 50px;
+  position: relative;
+  top: -74px;
+  left: 20px;
   width: 10px;
   height: 10px;
   border-radius: 50%;

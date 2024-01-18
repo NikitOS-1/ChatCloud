@@ -12,9 +12,10 @@ export const AvatarUser = ({
   countryCode = '',
   avatarSrc = 'src/assets/icons/Avatar/NoPhoto.svg',
   userName = '',
+  ...props
 }: AvatarPropsInterface) => {
   return (
-    <AvatarContainerStyled>
+    <AvatarContainerStyled {...props}>
       <AvatarStyled src={avatarSrc} alt="It's your avatar" />
       {countryCode && (
         <CountryBadgeStyled
