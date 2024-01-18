@@ -33,6 +33,7 @@ export const TabsStyled = styled(Tabs)<{ $variants: string }>`
         display: flex;
         align-items: center;
         justify-content: space-between;
+        background-color: ${({ theme }) => theme.colors.neutralColors[100]};
       }
 
       .MuiButtonBase-root {

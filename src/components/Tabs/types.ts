@@ -14,5 +14,5 @@ export interface TabsPropsInterface {
 }
 export interface ItemsBadgeInterface {
   item: string;
-  badge?: number;
+  badge?: number | string;
 }

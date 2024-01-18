@@ -176,7 +176,10 @@ export const LoginPage = () => {
       <FormContainerStyled onSubmit={formik.handleSubmit}>
         {renderedTabContent()}
         <FooterContainerStyled>
-          <Tabs items={['user', 'interests']} value={tabId} />
+          <Tabs
+            items={[{ item: 'user' }, { item: 'interests' }]}
+            value={tabId}
+          />
           <Button
             isDisabled={!formik.dirty || !formik.isValid}
             type="submit"

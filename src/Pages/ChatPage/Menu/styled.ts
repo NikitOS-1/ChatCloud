@@ -11,6 +11,8 @@ export const MenuStyled = styled.div`
   justify-content: space-between;
   border-right: 2px solid ${({ theme }) => theme.colors.neutralColors[150]};
   font-family: ${({ theme }) => theme.fonts.CeraProRegular};
+  font-size: ${({ theme }) => theme.fontSizes.Medium14};
+  background-color: ${({ theme }) => theme.colors.neutralColors[100]};
 
   @media (max-width: 800px) {
     display: none;
@@ -30,7 +32,9 @@ export const ButtonStyled = styled.div`
   margin: 24px 0px;
   color: ${({ theme }) => theme.colors.neutralColors[500]};
   fill: ${({ theme }) => theme.colors.neutralColors[500]};
-
+  p {
+    margin-top: 5px;
+  }
   &:hover {
     color: ${({ theme }) => theme.colors.primary.primaryBlue};
     fill: ${({ theme }) => theme.colors.primary.primaryBlue};
