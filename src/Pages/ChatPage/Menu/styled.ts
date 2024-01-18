@@ -10,8 +10,6 @@ export const MenuStyled = styled.div`
   align-items: center;
   justify-content: space-between;
   border-right: 2px solid ${({ theme }) => theme.colors.neutralColors[150]};
-  font-family: ${({ theme }) => theme.fonts.CeraProRegular};
-  font-size: ${({ theme }) => theme.fontSizes.Medium14};
   background-color: ${({ theme }) => theme.colors.neutralColors[100]};
 
   @media (max-width: 800px) {
@@ -26,15 +24,28 @@ export const ContainerStyled = styled.div`
 export const OptionStyled = styled.div``;
 
 export const ButtonStyled = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   margin: 24px 0px;
   color: ${({ theme }) => theme.colors.neutralColors[500]};
   fill: ${({ theme }) => theme.colors.neutralColors[500]};
+
+  a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    font-family: ${({ theme }) => theme.fonts.CeraProRegular};
+    font-size: ${({ theme }) => theme.fontSizes.Medium14};
+  }
+
   p {
     margin-top: 5px;
   }
+
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
   &:hover {
     color: ${({ theme }) => theme.colors.primary.primaryBlue};
     fill: ${({ theme }) => theme.colors.primary.primaryBlue};

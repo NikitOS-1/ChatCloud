@@ -1,5 +1,6 @@
 // import { LoadingScreen } from "./components/LoadingScreen";
 import { ChatPage } from './Pages/ChatPage';
+import { ChatTabs } from './Pages/ChatPage/Tabs';
 import { LoginPage } from './Pages/LoginPage/LoginPage';
 
 interface Route {
@@ -14,22 +15,26 @@ interface Children {
 
 const routes: Route[] = [
   {
-    path: 'chat',
+    path: '/',
     element: <LoginPage />,
   },
   {
-    path: '/',
+    path: 'chat',
     element: <ChatPage />,
     children: [
       {
-        path: '/m',
-        element: <div>jknfnkfkjnndfndfkdkmdfjkndfdfdfknkdfdfj</div>,
+        path: 'message',
+        element: <ChatTabs />,
+      },
+      {
+        path: 'search',
+        element: <div>Search...</div>,
       },
     ],
   },
   {
     path: '*',
-    element: <div>Error Page</div>,
+    element: <div>Error Page...</div>,
   },
 ];
 // protected route
