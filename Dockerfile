@@ -3,16 +3,15 @@ FROM node:18-alpine as BUILD_IMAGE
 WORKDIR /app/react-app/
 
 COPY package.json .
-RUN npm install
+RUN yarn install
 
 COPY . .
-COPY src/assets/icons ./src/assets/icons
 
-RUN npm run build
+RUN yarn build
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
 
 FROM node:18-alpine as PRODUCTION_IMAGE
 
@@ -23,11 +22,10 @@ EXPOSE 8080
 
 COPY package.json .
 COPY vite.config.ts .
-COPY src/assets/icons ./src/assets/icons
 
-RUN npm install typescript
+RUN yarn add typescript
 EXPOSE 8080
-CMD ["npm","run","preview"]
+CMD ["yarn","run","preview"]
 
 
 
