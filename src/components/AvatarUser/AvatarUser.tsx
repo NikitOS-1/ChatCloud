@@ -10,7 +10,7 @@ import { AvatarPropsInterface } from '.';
 export const AvatarUser = ({
   isOnline = false,
   countryCode = '',
-  avatarSrc = 'src/assets/icons/Avatar/NoPhoto.svg',
+  avatarSrc = '/icons/Avatar/NoPhoto.svg',
   userName = '',
   ...props
 }: AvatarPropsInterface) => {

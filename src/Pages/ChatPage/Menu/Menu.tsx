@@ -19,7 +19,7 @@ interface MenuProps {
   countryCode: string;
   isOnline: boolean;
   margintop: string;
-  avatarSrc: string;
+  avatarSrc?: string;
 }
 export const Menu = ({ ...props }: MenuProps) => {
   const navigate = useNavigate();
