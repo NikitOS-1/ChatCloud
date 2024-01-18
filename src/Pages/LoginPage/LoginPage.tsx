@@ -29,7 +29,7 @@ import {
 } from './styled';
 import { validationSchema } from './validationConfig';
 
-const LoginPage = () => {
+export const LoginPage = () => {
   const navigate = useNavigate();
   const [tabId, setTabId] = useState<string>('user');
   const [selectedAvatar, setSelectedAvatar] = useState<string>(avatars[0].src);
@@ -176,7 +176,10 @@ const LoginPage = () => {
       <FormContainerStyled onSubmit={formik.handleSubmit}>
         {renderedTabContent()}
         <FooterContainerStyled>
-          <Tabs items={['user', 'interests']} value={tabId} />
+          <Tabs
+            items={[{ item: 'user' }, { item: 'interests' }]}
+            value={tabId}
+          />
           <Button
             isDisabled={!formik.dirty || !formik.isValid}
             type="submit"
@@ -192,5 +195,3 @@ const LoginPage = () => {
     </LoginPageStyled>
   );
 };
-
-export default LoginPage;
