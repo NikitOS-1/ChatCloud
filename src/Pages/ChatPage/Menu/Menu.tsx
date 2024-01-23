@@ -4,6 +4,7 @@ import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 import { AvatarUser } from '../../../components/AvatarUser';
+import { MarginInterface } from '../../../types/styles';
 
 import {
   BadgeStyled,
@@ -14,10 +15,9 @@ import {
   OptionStyled,
 } from './styled';
 
-interface MenuProps {
+interface MenuProps extends MarginInterface {
   countryCode: string;
   isOnline: boolean;
-  margintop: string;
   avatarSrc?: string;
 }
 export const Menu = ({ ...props }: MenuProps) => {
@@ -66,6 +66,7 @@ export const Menu = ({ ...props }: MenuProps) => {
       </MenuStyled>
 
       {/* // ------------mobile menu ------------- */}
+
       <MobileMenuStyled>
         {renderButtonChat}
         {renderButtonSearch}

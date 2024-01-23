@@ -18,6 +18,9 @@ export const MenuStyled = styled.div`
 `;
 
 export const ContainerStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: inherit;
 `;
 

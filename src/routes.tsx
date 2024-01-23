@@ -33,7 +33,7 @@ const routes: Route[] = [
       },
       {
         path: 'search',
-        element: <div>Search...</div>,
+        element: <div style={{ border: '1px solid black' }}>Search...</div>,
       },
     ],
   },

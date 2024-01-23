@@ -4,12 +4,9 @@ import styled from 'styled-components';
 import { MarginInterface } from '../../types/styles';
 
 export const AvatarContainerStyled = styled('div')<MarginInterface>`
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  max-width: 80px;
+  position: relative;
+  width: 56px;
+  height: 56px;
   margin-top: ${({ margintop }) => margintop};
   margin-bottom: ${({ marginbottom }) => marginbottom};
   margin-left: ${({ marginleft }) => marginleft};
@@ -24,9 +21,9 @@ export const AvatarStyled = styled(Avatar)`
 `;
 
 export const CountryBadgeStyled = styled(Avatar)`
-  position: relative;
-  top: -21px;
-  left: 18px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 
   &.MuiAvatar-root {
     width: 21px;
@@ -35,9 +32,10 @@ export const CountryBadgeStyled = styled(Avatar)`
 `;
 
 export const OnlineBadgeStyled = styled.div`
-  position: relative;
-  top: -74px;
-  left: 20px;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+
   width: 10px;
   height: 10px;
   border-radius: 50%;

@@ -2,11 +2,18 @@ import { useState } from 'react';
 
 import { Tabs } from '../../../components/Tabs';
 
+import { TabItem } from './components/TabItem';
+
 export const ChatTabs = () => {
   const [tabId, setTabId] = useState<string>('All');
+
   const renderedTabContent = () => {
     if (tabId === 'All') {
-      return <div>All</div>;
+      return (
+        <div>
+          <TabItem />
+        </div>
+      );
     }
     if (tabId === 'People') {
       return (
@@ -22,8 +29,9 @@ export const ChatTabs = () => {
       return <div>Groups</div>;
     }
   };
+
   return (
-    <div style={{ width: '300px' }}>
+    <div style={{ width: 'inherit' }}>
       <Tabs
         items={[
           { item: 'All', badge: 0 },

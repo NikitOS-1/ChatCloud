@@ -10,9 +10,12 @@ export const ChatPage = () => {
         countryCode="UA"
         isOnline
         margintop="24px"
+        marginbottom="24px"
         avatarSrc="/icons/Avatar/Group11.svg"
       />
-      <Outlet />
+      <div style={{ width: '400px' }}>
+        <Outlet />
+      </div>
     </ChatPageStyled>
   );
 };
