@@ -156,7 +156,7 @@ export const LoginPage = () => {
       country: selectedCountry,
       topics: selectedInterests,
     });
-    navigate('/chat');
+    navigate('/chat/message');
   };
 
   const closeModal = () => {

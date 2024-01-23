@@ -1,4 +1,5 @@
 // import { LoadingScreen } from "./components/LoadingScreen";
+import { AuthGuard } from './hooks/AuthGuard/AuthGuard';
 import { ChatPage } from './Pages/ChatPage';
 import { ChatTabs } from './Pages/ChatPage/Tabs';
 import { LoginPage } from './Pages/LoginPage/LoginPage';
@@ -20,7 +21,11 @@ const routes: Route[] = [
   },
   {
     path: 'chat',
-    element: <ChatPage />,
+    element: (
+      <AuthGuard>
+        <ChatPage />
+      </AuthGuard>
+    ),
     children: [
       {
         path: 'message',

@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -22,11 +21,34 @@ interface MenuProps {
   avatarSrc?: string;
 }
 export const Menu = ({ ...props }: MenuProps) => {
-  const navigate = useNavigate();
+  const renderButtonChat = (
+    <ButtonStyled>
+      <Link to={'message'}>
+        <BadgeStyled badgeContent="2">
+          <ChatOutlinedIcon />
+        </BadgeStyled>
+        <p>Chat</p>
+      </Link>
+    </ButtonStyled>
+  );
 
-  useEffect(() => {
-    navigate('message');
-  }, [navigate]);
+  const renderButtonSearch = (
+    <ButtonStyled>
+      <Link to={'search'}>
+        <SearchOutlinedIcon />
+        <p>Search</p>
+      </Link>
+    </ButtonStyled>
+  );
+
+  const renderButtonLogout = (
+    <ButtonStyled>
+      <Link to={'/'}>
+        <LogoutOutlinedIcon />
+        <p>Logout</p>
+      </Link>
+    </ButtonStyled>
+  );
 
   return (
     <>
@@ -35,53 +57,19 @@ export const Menu = ({ ...props }: MenuProps) => {
           <AvatarUser {...props} />
 
           <OptionStyled>
-            <ButtonStyled>
-              <Link to={'message'}>
-                <BadgeStyled badgeContent="2">
-                  <ChatOutlinedIcon />
-                </BadgeStyled>
-                <p>Chat</p>
-              </Link>
-            </ButtonStyled>
-            <ButtonStyled>
-              <Link to={'search'}>
-                <SearchOutlinedIcon />
-                <p>Search</p>
-              </Link>
-            </ButtonStyled>
+            {renderButtonChat}
+            {renderButtonSearch}
           </OptionStyled>
         </ContainerStyled>
 
-        <ButtonStyled>
-          <Link to={'/'}>
-            <LogoutOutlinedIcon />
-            <p>Logout</p>
-          </Link>
-        </ButtonStyled>
+        {renderButtonLogout}
       </MenuStyled>
 
       {/* // ------------mobile menu ------------- */}
       <MobileMenuStyled>
-        <ButtonStyled>
-          <Link to={'message'}>
-            <BadgeStyled badgeContent="2">
-              <ChatOutlinedIcon />
-            </BadgeStyled>
-            <p>Chat</p>
-          </Link>
-        </ButtonStyled>
-        <ButtonStyled>
-          <Link to={'search'}>
-            <SearchOutlinedIcon />
-            <p>Search</p>
-          </Link>
-        </ButtonStyled>
-        <ButtonStyled>
-          <Link to={'/'}>
-            <LogoutOutlinedIcon />
-            <p>Logout</p>
-          </Link>
-        </ButtonStyled>
+        {renderButtonChat}
+        {renderButtonSearch}
+        {renderButtonLogout}
       </MobileMenuStyled>
     </>
   );
