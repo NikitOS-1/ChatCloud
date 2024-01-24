@@ -15,32 +15,39 @@ const TabsWrapper = styled.div`
     height: 80%;
   }
 `;
+const usersData = [
+  {
+    id: 1,
+    name: 'Lola',
+    avatar: '/icons/Avatar/Group10.svg',
+    country: 'UA',
+    isOnline: true,
+  },
+  {
+    id: 1,
+    name: 'Blala',
+    avatar: '/icons/Avatar/Group13.svg',
+    country: 'UA',
+    isOnline: true,
+  },
+];
+const groupsData = [
+  {
+    id: 10,
+    name: 'General',
+    members: 10,
+    messeges: 2,
+  },
+  {
+    id: 11,
+    name: 'Sport',
+    members: 7,
+    messeges: 4,
+  },
+];
 
 export const ChatTabs = () => {
   const [tabId, setTabId] = useState<string>('All');
-
-  const renderedTabContent = () => {
-    if (tabId === 'All') {
-      return (
-        <TabsWrapper>
-          <TabItem />
-          <TabItem />
-          <TabItem />
-          <TabItem />
-          <TabItem isPeople />
-          <TabItem isPeople />
-          <TabItem isPeople />
-          <TabItem isPeople />
-        </TabsWrapper>
-      );
-    }
-    if (tabId === 'People') {
-      return <TabItem isPeople />;
-    }
-    if (tabId === 'Groups') {
-      return <TabItem />;
-    }
-  };
 
   return (
     <TabsItemsContainer>
@@ -54,7 +61,55 @@ export const ChatTabs = () => {
         variants="line"
         onChange={setTabId}
       />
-      {renderedTabContent()}
+      {tabId === 'All' && (
+        <TabsWrapper>
+          {usersData.map(({ id, name, avatar, country, isOnline }) => (
+            <TabItem
+              key={id}
+              isPeople={!!avatar}
+              name={name}
+              avatar={avatar}
+              country={country}
+              isOnline={isOnline}
+            />
+          ))}
+
+          {groupsData.map(({ id, name, members, messeges }) => (
+            <TabItem
+              key={id}
+              name={name}
+              members={members}
+              messeges={messeges}
+            />
+          ))}
+        </TabsWrapper>
+      )}
+      {tabId === 'People' && (
+        <TabsWrapper>
+          {usersData.map(({ id, name, avatar, country, isOnline }) => (
+            <TabItem
+              key={id}
+              isPeople={!!avatar}
+              name={name}
+              avatar={avatar}
+              country={country}
+              isOnline={isOnline}
+            />
+          ))}
+        </TabsWrapper>
+      )}
+      {tabId === 'Groups' && (
+        <TabsWrapper>
+          {groupsData.map(({ id, name, members, messeges }) => (
+            <TabItem
+              key={id}
+              name={name}
+              members={members}
+              messeges={messeges}
+            />
+          ))}
+        </TabsWrapper>
+      )}
     </TabsItemsContainer>
   );
 };

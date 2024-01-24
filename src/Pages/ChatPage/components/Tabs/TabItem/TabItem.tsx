@@ -12,23 +12,38 @@ import {
 } from './styled';
 
 interface TabItemProps {
+  name: string;
   isPeople?: boolean;
+  avatar?: string;
+  country?: string;
+  isOnline?: boolean;
+  members?: number;
+  messeges?: number;
 }
 
-export const TabItem = ({ isPeople = false }: TabItemProps) => {
-  const userName = 'Nikita';
-  const groupName = 'General';
+export const TabItem = ({
+  isPeople = false,
+  name,
+  avatar,
+  country,
+  isOnline,
+  members,
+  messeges,
+}: TabItemProps) => {
   const isTyping = true;
-  const members = 10;
 
   if (isPeople) {
     return (
       <TabItemStyled>
-        <AvatarUser isOnline countryCode="UA" />
+        <AvatarUser
+          isOnline={isOnline}
+          countryCode={country}
+          avatarSrc={avatar}
+        />
         <TitleStyle>
-          <NameStyled>{userName}</NameStyled>
+          <NameStyled>{name}</NameStyled>
           {isTyping && (
-            <DescriptionStyled>{userName + ' is typing...'}</DescriptionStyled>
+            <DescriptionStyled>{name + ' is typing...'}</DescriptionStyled>
           )}
         </TitleStyle>
       </TabItemStyled>
@@ -37,13 +52,13 @@ export const TabItem = ({ isPeople = false }: TabItemProps) => {
     return (
       <TabItemGroupStyled>
         <ContainerStyled>
-          <LogoGroup>{groupName[0]}</LogoGroup>
+          <LogoGroup>{name[0]}</LogoGroup>
           <TitleStyle>
-            <NameStyled>{groupName}</NameStyled>
+            <NameStyled>{name}</NameStyled>
             <DescriptionStyled>{members + ' members'}</DescriptionStyled>
           </TitleStyle>
         </ContainerStyled>
-        <BadgeStyled badgeContent="2"></BadgeStyled>
+        <BadgeStyled badgeContent={messeges}></BadgeStyled>
       </TabItemGroupStyled>
     );
   }
