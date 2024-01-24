@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import { Tabs } from '../../../components/Tabs';
+import { Tabs } from '../../../../components/Tabs';
 
-import { TabItem } from './components/TabItem';
 import { TabsItemsContainer } from './styled';
+import { TabItem } from './TabItem';
 
 const TabsWrapper = styled.div`
   width: 100%;

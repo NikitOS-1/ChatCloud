@@ -1,7 +1,7 @@
 // import { LoadingScreen } from "./components/LoadingScreen";
 import { AuthGuard } from './hooks/AuthGuard/AuthGuard';
 import { ChatPage } from './Pages/ChatPage';
-import { ChatTabs } from './Pages/ChatPage/Tabs';
+import { ChatTabs } from './Pages/ChatPage/components/Tabs';
 import { LoginPage } from './Pages/LoginPage/LoginPage';
 
 interface Route {

@@ -3,8 +3,8 @@ import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
-import { AvatarUser } from '../../../components/AvatarUser';
-import { MarginInterface } from '../../../types/styles';
+import { AvatarUser } from '../../../../components/AvatarUser';
+import { MarginInterface } from '../../../../types/styles';
 
 import {
   BadgeStyled,

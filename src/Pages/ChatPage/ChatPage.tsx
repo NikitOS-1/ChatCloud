@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-import { Content } from './Content';
-import { Menu } from './Menu';
+import { Content } from './components/Content';
+import { Menu } from './components/Menu';
 import { ChatPageStyled, TabsStyled } from './styled';
 
 export const ChatPage = () => {
