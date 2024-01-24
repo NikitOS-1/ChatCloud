@@ -1,39 +1,22 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 
 import { Tabs } from '../../../components/Tabs';
 
 import { TabItem } from './components/TabItem';
-
-const TabsItemsContainer = styled.div`
-  width: inherit;
-  height: 100%;
-  background-color: ${({ theme }) => theme.colors.neutralColors[100]};
-`;
+import { TabsItemsContainer } from './styled';
 
 export const ChatTabs = () => {
   const [tabId, setTabId] = useState<string>('All');
 
   const renderedTabContent = () => {
     if (tabId === 'All') {
-      return (
-        <div>
-          <TabItem />
-        </div>
-      );
+      return <TabItem />;
     }
     if (tabId === 'People') {
-      return (
-        <div>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
-          exercitationem atque aliquid vitae nostrum temporibus delectus autem
-          omnis deleniti, commodi voluptate nobis cumque mollitia distinctio ab
-          nisi repudiandae eum dicta.
-        </div>
-      );
+      return <TabItem />;
     }
     if (tabId === 'Groups') {
-      return <div>Groups</div>;
+      return <TabItem />;
     }
   };
 

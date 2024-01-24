@@ -30,6 +30,7 @@ export const TabsStyled = styled(Tabs)<{ $variants: string }>`
     props.$variants === LINE_TABS &&
     css`
       .MuiTabs-flexContainer {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;

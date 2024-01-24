@@ -7,3 +7,15 @@ export const ChatPageStyled = styled.div`
   box-sizing: border-box;
   overflow: hidden;
 `;
+
+export const TabsStyled = styled.div`
+  width: 350px;
+
+  @media (max-width: 900px) {
+    width: 300px;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+`;

@@ -1,22 +1,8 @@
-import { Link, Outlet } from 'react-router-dom';
-import styled from 'styled-components';
+import { Outlet } from 'react-router-dom';
 
-import { H1, P } from '../../components/Typography';
-
+import { Content } from './Content';
 import { Menu } from './Menu';
-import { ChatPageStyled } from './style';
-
-const MainStyled = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  img {
-    width: max-content;
-    height: max-content;
-  }
-`;
+import { ChatPageStyled, TabsStyled } from './styled';
 
 export const ChatPage = () => {
   return (
@@ -28,18 +14,10 @@ export const ChatPage = () => {
         marginbottom="24px"
         avatarSrc="/icons/Avatar/Group11.svg"
       />
-      <div style={{ width: '400px' }}>
+      <TabsStyled>
         <Outlet />
-      </div>
-      <MainStyled>
-        <img
-          src="/icons/Illustrations/chat-illustration-1.svg"
-          alt="illustration-Chat"
-        />
-        <H1>It’s nice to talk with someone</H1>
-        <P>Pick a chat from left menu or start </P>
-        <Link to={'/chat/search'}>searching for new friends</Link>
-      </MainStyled>
+      </TabsStyled>
+      <Content />
     </ChatPageStyled>
   );
 };
