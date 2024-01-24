@@ -7,6 +7,7 @@ export const TabItemStyled = styled.div`
   background-color: ${({ theme }) => theme.colors.neutralColors[100]};
 
   &:hover {
+    cursor: pointer;
     background-color: ${({ theme }) => theme.colors.neutralColors[150]};
   }
 `;

@@ -10,10 +10,15 @@ export const ChatTabs = () => {
 
   const renderedTabContent = () => {
     if (tabId === 'All') {
-      return <TabItem />;
+      return (
+        <>
+          <TabItem />
+          <TabItem isPeople />
+        </>
+      );
     }
     if (tabId === 'People') {
-      return <TabItem />;
+      return <TabItem isPeople />;
     }
     if (tabId === 'Groups') {
       return <TabItem />;
