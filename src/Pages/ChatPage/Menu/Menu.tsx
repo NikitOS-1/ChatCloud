@@ -19,6 +19,7 @@ interface MenuProps extends MarginInterface {
   countryCode: string;
   isOnline: boolean;
   avatarSrc?: string;
+  userName?: string;
 }
 export const Menu = ({ ...props }: MenuProps) => {
   const renderButtonChat = (

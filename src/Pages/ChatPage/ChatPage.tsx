@@ -11,8 +11,9 @@ export const ChatPage = () => {
         countryCode="UA"
         isOnline
         margintop="24px"
-        marginbottom="24px"
+        marginbottom="56px"
         avatarSrc="/icons/Avatar/Group11.svg"
+        userName="Nikita"
       />
       <TabsStyled>
         <Outlet />

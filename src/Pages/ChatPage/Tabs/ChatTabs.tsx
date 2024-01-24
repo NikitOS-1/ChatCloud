@@ -1,9 +1,20 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 
 import { Tabs } from '../../../components/Tabs';
 
 import { TabItem } from './components/TabItem';
 import { TabsItemsContainer } from './styled';
+
+const TabsWrapper = styled.div`
+  width: 100%;
+  height: 90%;
+  overflow: auto;
+
+  @media (max-width: 800px) {
+    height: 80%;
+  }
+`;
 
 export const ChatTabs = () => {
   const [tabId, setTabId] = useState<string>('All');
@@ -11,10 +22,16 @@ export const ChatTabs = () => {
   const renderedTabContent = () => {
     if (tabId === 'All') {
       return (
-        <>
+        <TabsWrapper>
+          <TabItem />
+          <TabItem />
+          <TabItem />
           <TabItem />
           <TabItem isPeople />
-        </>
+          <TabItem isPeople />
+          <TabItem isPeople />
+          <TabItem isPeople />
+        </TabsWrapper>
       );
     }
     if (tabId === 'People') {
