@@ -86,7 +86,7 @@ export const LoginPage = () => {
               }
               renderOption={(_, option) =>
                 option && (
-                  <BoxStyled component="li">
+                  <BoxStyled component="li" key={option.code}>
                     <img
                       src={`https://flagcdn.com/${option.code.toLowerCase()}.svg`}
                       alt={option.country}

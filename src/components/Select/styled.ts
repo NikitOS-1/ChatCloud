@@ -75,11 +75,15 @@ export const BoxStyled = styled(Box)`
   }
 
   &.MuiBox-root {
+    display: flex;
+    align-items: center;
+    padding: 7px;
     font-family: ${({ theme }) => theme.fonts.CeraProMedium};
     font-size: ${({ theme }) => theme.fontSizes.Medium16};
     color: ${({ theme }) => theme.colors.neutralColors[500]};
 
     &:hover {
+      cursor: pointer;
       background-color: ${({ theme }) => theme.colors.neutralColors[100]};
     }
 
