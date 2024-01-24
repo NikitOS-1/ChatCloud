@@ -17,7 +17,7 @@ export const ChatTabs = () => {
     }
     if (tabId === 'People') {
       return (
-        <div style={{ width: 'inherit' }}>
+        <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
           exercitationem atque aliquid vitae nostrum temporibus delectus autem
           omnis deleniti, commodi voluptate nobis cumque mollitia distinctio ab

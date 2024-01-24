@@ -33,7 +33,11 @@ const routes: Route[] = [
       },
       {
         path: 'search',
-        element: <div style={{ border: '1px solid black' }}>Search...</div>,
+        element: (
+          <div style={{ border: '1px solid black', width: 'inherit' }}>
+            Search...
+          </div>
+        ),
       },
     ],
   },

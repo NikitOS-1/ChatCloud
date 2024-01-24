@@ -82,7 +82,7 @@ export const MobileMenuStyled = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: 799px) {
+  @media (min-width: 801px) {
     display: none;
   }
 `;
