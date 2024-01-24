@@ -1,6 +1,7 @@
 // import { LoadingScreen } from "./components/LoadingScreen";
 import { AuthGuard } from './hooks/AuthGuard/AuthGuard';
 import { ChatPage } from './Pages/ChatPage';
+import { Search } from './Pages/ChatPage/components/Search';
 import { ChatTabs } from './Pages/ChatPage/components/Tabs';
 import { LoginPage } from './Pages/LoginPage/LoginPage';
 
@@ -33,11 +34,7 @@ const routes: Route[] = [
       },
       {
         path: 'search',
-        element: (
-          <div style={{ border: '1px solid black', width: 'inherit' }}>
-            Search...
-          </div>
-        ),
+        element: <Search />,
       },
     ],
   },
