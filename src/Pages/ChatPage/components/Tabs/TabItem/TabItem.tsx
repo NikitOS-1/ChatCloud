@@ -19,6 +19,7 @@ interface TabItemProps {
   isOnline?: boolean;
   members?: number;
   messeges?: number;
+  action?: boolean;
 }
 
 export const TabItem = ({
@@ -29,9 +30,8 @@ export const TabItem = ({
   isOnline,
   members,
   messeges,
+  action,
 }: TabItemProps) => {
-  const isTyping = true;
-
   if (isPeople) {
     return (
       <TabItemStyled>
@@ -42,7 +42,7 @@ export const TabItem = ({
         />
         <TitleStyle>
           <NameStyled>{name}</NameStyled>
-          {isTyping && (
+          {action && (
             <DescriptionStyled>{name + ' is typing...'}</DescriptionStyled>
           )}
         </TitleStyle>

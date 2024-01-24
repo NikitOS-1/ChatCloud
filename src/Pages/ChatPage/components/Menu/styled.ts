@@ -26,11 +26,12 @@ export const ContainerStyled = styled.div`
 
 export const OptionStyled = styled.div``;
 
-export const ButtonStyled = styled.div`
+export const ButtonStyled = styled.div<{ $active: boolean }>`
   margin: 24px 0px;
   color: ${({ theme }) => theme.colors.neutralColors[500]};
   fill: ${({ theme }) => theme.colors.neutralColors[500]};
-
+  color: ${({ $active, theme }) =>
+    $active ? theme.colors.primary.primaryBlue : 'inherit'};
   a {
     display: flex;
     align-items: center;
@@ -50,8 +51,7 @@ export const ButtonStyled = styled.div`
   }
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary.primaryBlue};
-    fill: ${({ theme }) => theme.colors.primary.primaryBlue};
+    color: ${({ theme }) => theme.colors.primary.primaryBlueText};
     cursor: pointer;
   }
 

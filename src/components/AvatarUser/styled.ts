@@ -7,10 +7,10 @@ export const AvatarContainerStyled = styled('div')<MarginInterface>`
   position: relative;
   width: 56px;
   height: 56px;
-  margin-top: ${({ margintop }) => margintop};
-  margin-bottom: ${({ marginbottom }) => marginbottom};
-  margin-left: ${({ marginleft }) => marginleft};
-  margin-right: ${({ marginright }) => marginright};
+  margin-top: ${({ $margintop }) => $margintop};
+  margin-bottom: ${({ $marginbottom }) => $marginbottom};
+  margin-left: ${({ $marginleft }) => $marginleft};
+  margin-right: ${({ $marginright }) => $marginright};
 `;
 
 export const AvatarStyled = styled(Avatar)`

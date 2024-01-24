@@ -1,20 +1,10 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 
 import { Tabs } from '../../../../components/Tabs';
 
-import { TabsItemsContainer } from './styled';
+import { TabsItemsContainer, TabsWrapper } from './styled';
 import { TabItem } from './TabItem';
 
-const TabsWrapper = styled.div`
-  width: 100%;
-  height: 90%;
-  overflow: auto;
-
-  @media (max-width: 800px) {
-    height: 80%;
-  }
-`;
 const usersData = [
   {
     id: 1,
@@ -22,13 +12,47 @@ const usersData = [
     avatar: '/icons/Avatar/Group10.svg',
     country: 'UA',
     isOnline: true,
+    action: true,
   },
   {
-    id: 1,
-    name: 'Blala',
+    id: 2,
+    name: 'SolGoodMan',
     avatar: '/icons/Avatar/Group13.svg',
-    country: 'UA',
+    country: 'US',
     isOnline: true,
+    action: false,
+  },
+  {
+    id: 4,
+    name: 'Nikita',
+    avatar: '/icons/Avatar/Group4.svg',
+    country: 'UA',
+    isOnline: false,
+    action: true,
+  },
+  {
+    id: 44,
+    name: 'Alex',
+    avatar: '/icons/Avatar/Group8.svg',
+    country: 'FR',
+    isOnline: true,
+    action: false,
+  },
+  {
+    id: 6,
+    name: 'Djon',
+    avatar: '/icons/Avatar/Group1.svg',
+    country: 'ML',
+    isOnline: false,
+    action: false,
+  },
+  {
+    id: 7,
+    name: 'Brain',
+    avatar: '/icons/Avatar/Group2.svg',
+    country: 'ER',
+    isOnline: false,
+    action: false,
   },
 ];
 const groupsData = [
@@ -42,20 +66,26 @@ const groupsData = [
     id: 11,
     name: 'Sport',
     members: 7,
-    messeges: 4,
+    messeges: 0,
+  },
+  {
+    id: 12,
+    name: 'Cars',
+    members: 32,
+    messeges: 7,
   },
 ];
 
 export const ChatTabs = () => {
   const [tabId, setTabId] = useState<string>('All');
-
+  const totalMessage = 9;
   return (
     <TabsItemsContainer>
       <Tabs
         items={[
           { item: 'All', badge: 0 },
           { item: 'People', badge: 0 },
-          { item: 'Groups', badge: 2 },
+          { item: 'Groups', badge: totalMessage },
         ]}
         value={tabId}
         variants="line"
@@ -63,17 +93,6 @@ export const ChatTabs = () => {
       />
       {tabId === 'All' && (
         <TabsWrapper>
-          {usersData.map(({ id, name, avatar, country, isOnline }) => (
-            <TabItem
-              key={id}
-              isPeople={!!avatar}
-              name={name}
-              avatar={avatar}
-              country={country}
-              isOnline={isOnline}
-            />
-          ))}
-
           {groupsData.map(({ id, name, members, messeges }) => (
             <TabItem
               key={id}
@@ -82,11 +101,7 @@ export const ChatTabs = () => {
               messeges={messeges}
             />
           ))}
-        </TabsWrapper>
-      )}
-      {tabId === 'People' && (
-        <TabsWrapper>
-          {usersData.map(({ id, name, avatar, country, isOnline }) => (
+          {usersData.map(({ id, name, avatar, country, isOnline, action }) => (
             <TabItem
               key={id}
               isPeople={!!avatar}
@@ -94,6 +109,22 @@ export const ChatTabs = () => {
               avatar={avatar}
               country={country}
               isOnline={isOnline}
+              action={action}
+            />
+          ))}
+        </TabsWrapper>
+      )}
+      {tabId === 'People' && (
+        <TabsWrapper>
+          {usersData.map(({ id, name, avatar, country, isOnline, action }) => (
+            <TabItem
+              key={id}
+              isPeople={!!avatar}
+              name={name}
+              avatar={avatar}
+              country={country}
+              isOnline={isOnline}
+              action={action}
             />
           ))}
         </TabsWrapper>

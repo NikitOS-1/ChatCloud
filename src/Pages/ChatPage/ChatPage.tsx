@@ -10,8 +10,8 @@ export const ChatPage = () => {
       <Menu
         countryCode="UA"
         isOnline
-        margintop="24px"
-        marginbottom="56px"
+        $margintop="24px"
+        $marginbottom="56px"
         avatarSrc="/icons/Avatar/Group11.svg"
         userName="Nikita"
       />

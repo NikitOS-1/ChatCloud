@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
@@ -22,10 +23,16 @@ interface MenuProps extends MarginInterface {
   userName?: string;
 }
 export const Menu = ({ ...props }: MenuProps) => {
+  const [isActive, setIsActive] = useState<string>('message');
+  const totalMessage = 9;
+
   const renderButtonChat = (
-    <ButtonStyled>
+    <ButtonStyled
+      onClick={() => setIsActive('message')}
+      $active={isActive === 'message'}
+    >
       <Link to={'message'}>
-        <BadgeStyled badgeContent="2">
+        <BadgeStyled badgeContent={totalMessage}>
           <ChatOutlinedIcon />
         </BadgeStyled>
         <p>Chat</p>
@@ -34,7 +41,10 @@ export const Menu = ({ ...props }: MenuProps) => {
   );
 
   const renderButtonSearch = (
-    <ButtonStyled>
+    <ButtonStyled
+      onClick={() => setIsActive('search')}
+      $active={isActive === 'search'}
+    >
       <Link to={'search'}>
         <SearchOutlinedIcon />
         <p>Search</p>
