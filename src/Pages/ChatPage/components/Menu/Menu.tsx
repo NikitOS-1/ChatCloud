@@ -53,7 +53,10 @@ export const Menu = ({ ...props }: MenuProps) => {
   );
 
   const renderButtonLogout = (
-    <ButtonStyled>
+    <ButtonStyled
+      onClick={() => setIsActive('logout')}
+      $active={isActive === 'logout'}
+    >
       <Link to={'/'}>
         <LogoutOutlinedIcon />
         <p>Logout</p>
