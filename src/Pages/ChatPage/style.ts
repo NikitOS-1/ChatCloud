@@ -5,4 +5,5 @@ export const ChatPageStyled = styled.div`
   height: inherit;
   display: flex;
   box-sizing: border-box;
+  overflow: hidden;
 `;

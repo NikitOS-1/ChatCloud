@@ -11,6 +11,11 @@ const TabItemStyled = styled.div`
   display: flex;
   align-items: center;
   padding: 16px 24px;
+  background-color: ${({ theme }) => theme.colors.neutralColors[100]};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.neutralColors[150]};
+  }
 `;
 const TitleStyle = styled.div`
   margin-left: 16px;

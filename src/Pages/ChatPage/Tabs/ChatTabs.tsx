@@ -1,8 +1,15 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 
 import { Tabs } from '../../../components/Tabs';
 
 import { TabItem } from './components/TabItem';
+
+const TabsItemsContainer = styled.div`
+  width: inherit;
+  height: 100%;
+  background-color: ${({ theme }) => theme.colors.neutralColors[100]};
+`;
 
 export const ChatTabs = () => {
   const [tabId, setTabId] = useState<string>('All');
@@ -31,7 +38,7 @@ export const ChatTabs = () => {
   };
 
   return (
-    <div style={{ width: 'inherit' }}>
+    <TabsItemsContainer>
       <Tabs
         items={[
           { item: 'All', badge: 0 },
@@ -43,6 +50,6 @@ export const ChatTabs = () => {
         onChange={setTabId}
       />
       {renderedTabContent()}
-    </div>
+    </TabsItemsContainer>
   );
 };
