@@ -64,6 +64,7 @@ export const ChatContendStyled = styled.div`
 `;
 
 export const HeaderContentStyled = styled.div`
+  width: 100%;
   height: 75px;
   display: flex;
   align-items: center;
@@ -73,4 +74,40 @@ export const HeaderContentStyled = styled.div`
 
 export const MainContentStyled = styled.div``;
 
-export const FooterContentStyled = styled.div``;
+export const FooterContentStyled = styled.div`
+  width: 100%;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: ${({ theme }) => theme.colors.neutralColors[100]};
+
+  input {
+    width: 100%;
+    border-radius: 10px;
+    padding: 16px 24px;
+    border: none;
+    font-family: ${({ theme }) => theme.fonts.CeraProRegular};
+    font-size: ${({ theme }) => theme.fontSizes.Medium16};
+    color: ${({ theme }) => theme.colors.neutralColors[500]};
+
+    &:focus-visible {
+      outline: ${({ theme }) => theme.colors.primary.primaryYellow} auto 1px;
+    }
+  }
+`;
+
+export const ButtonSendStyled = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+  border: none;
+  width: 50px;
+  height: 50px;
+  margin: 17px;
+
+  :hover {
+    cursor: pointer;
+  }
+`;

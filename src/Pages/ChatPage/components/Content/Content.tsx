@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 
+import { Icon } from '../../../../components/Icon';
 import { TabItem } from '../TabItem';
 
 import {
+  ButtonSendStyled,
   ChatContendStyled,
   FooterContentStyled,
   HeaderContentStyled,
@@ -32,7 +34,12 @@ export const Content = () => {
           <div style={{ marginRight: '30px', fontSize: '23px' }}>...</div>
         </HeaderContentStyled>
         <MainContentStyled>All messages...</MainContentStyled>
-        <FooterContentStyled>Enter text...</FooterContentStyled>
+        <FooterContentStyled>
+          <input type="text" placeholder="Write a message..." />
+          <ButtonSendStyled>
+            <Icon name="btnSend" />
+          </ButtonSendStyled>
+        </FooterContentStyled>
       </ChatContendStyled>
     </>
   );

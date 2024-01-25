@@ -3,6 +3,7 @@ import React from 'react';
 import ArrowBack from '../../assets/icons/arrow-back.svg?react';
 import ArrowLeft from '../../assets/icons/arrow-left.svg?react';
 import ArrowRight from '../../assets/icons/arrow-right.svg?react';
+import BtnSend from '../../assets/icons/button-send.svg?react';
 import CircleIcon from '../../assets/icons/circle-icon.svg?react';
 import CloseIcon from '../../assets/icons/close.svg?react';
 import DeleteIcon from '../../assets/icons/delete-icon.svg?react';
@@ -18,7 +19,8 @@ interface IconProps {
     | 'close'
     | 'arrowLeft'
     | 'arrowRight'
-    | 'arrowBack';
+    | 'arrowBack'
+    | 'btnSend';
   fill?: string;
 }
 
@@ -34,6 +36,7 @@ export const Icon = (props: IconProps) => {
     arrowLeft: <ArrowLeft fill={fill} {...svgProps} />,
     arrowRight: <ArrowRight fill={fill} {...svgProps} />,
     arrowBack: <ArrowBack fill={fill} {...svgProps} />,
+    btnSend: <BtnSend fill={fill} {...svgProps} />,
   };
 
   return Icons[name];
