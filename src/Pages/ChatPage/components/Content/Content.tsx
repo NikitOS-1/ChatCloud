@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 
-import { WelcomePageStyled } from './styled';
-// import { TabItem } from "../TabItem";
+import { TabItem } from '../TabItem';
+
+import {
+  ChatContendStyled,
+  FooterContentStyled,
+  HeaderContentStyled,
+  MainContentStyled,
+  WelcomePageStyled,
+} from './styled';
 
 export const Content = () => {
   const welcomeMessage = (
@@ -19,7 +26,14 @@ export const Content = () => {
   return (
     <>
       {welcomeMessage}
-      {/* <TabItem name="General" members={32} /> */}
+      <ChatContendStyled>
+        <HeaderContentStyled>
+          <TabItem name="General" members={32} $nohover />
+          <div style={{ marginRight: '30px', fontSize: '23px' }}>...</div>
+        </HeaderContentStyled>
+        <MainContentStyled>All messages...</MainContentStyled>
+        <FooterContentStyled>Enter text...</FooterContentStyled>
+      </ChatContendStyled>
     </>
   );
 };

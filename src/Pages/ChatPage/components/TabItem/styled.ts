@@ -1,28 +1,38 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const TabItemStyled = styled.div`
+export const TabItemStyled = styled.div<{ $nohover: boolean }>`
   display: flex;
   align-items: center;
   padding: 16px 24px;
   font-size: ${({ theme }) => theme.fontSizes.Medium16};
 
-  &:hover {
-    cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.neutralColors[150]};
-  }
+  ${({ $nohover }) =>
+    $nohover
+      ? ''
+      : css`
+          &:hover {
+            cursor: pointer;
+            background-color: ${({ theme }) => theme.colors.neutralColors[150]};
+          }
+        `}
 `;
 
-export const TabItemGroupStyled = styled.div`
+export const TabItemGroupStyled = styled.div<{ $nohover: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
   font-size: ${({ theme }) => theme.fontSizes.Medium16};
 
-  &:hover {
-    cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.neutralColors[150]};
-  }
+  ${({ $nohover }) =>
+    $nohover
+      ? ''
+      : css`
+          &:hover {
+            cursor: pointer;
+            background-color: ${({ theme }) => theme.colors.neutralColors[150]};
+          }
+        `}
 `;
 
 export const ContainerStyled = styled.div`

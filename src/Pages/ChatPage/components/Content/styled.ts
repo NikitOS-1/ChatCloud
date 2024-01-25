@@ -54,3 +54,23 @@ export const WelcomePageStyled = styled.div`
     display: none;
   }
 `;
+
+export const ChatContendStyled = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const HeaderContentStyled = styled.div`
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.neutralColors[150]};
+`;
+
+export const MainContentStyled = styled.div``;
+
+export const FooterContentStyled = styled.div``;

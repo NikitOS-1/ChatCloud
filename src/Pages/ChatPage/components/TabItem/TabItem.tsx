@@ -20,6 +20,7 @@ interface TabItemProps {
   members?: number;
   messeges?: number;
   action?: boolean;
+  $nohover?: boolean;
 }
 
 export const TabItem = ({
@@ -31,10 +32,11 @@ export const TabItem = ({
   members,
   messeges,
   action,
+  $nohover = false,
 }: TabItemProps) => {
   if (isPeople) {
     return (
-      <TabItemStyled>
+      <TabItemStyled $nohover={$nohover}>
         <AvatarUser
           isOnline={isOnline}
           countryCode={country}
@@ -50,7 +52,7 @@ export const TabItem = ({
     );
   } else {
     return (
-      <TabItemGroupStyled>
+      <TabItemGroupStyled $nohover={$nohover}>
         <ContainerStyled>
           <LogoGroup>{name[0]}</LogoGroup>
           <TitleStyle>
