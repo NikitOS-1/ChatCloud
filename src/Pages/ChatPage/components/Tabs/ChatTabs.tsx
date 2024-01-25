@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import { Tabs } from '../../../../components/Tabs';
+import { TabItem } from '../TabItem';
 
 import { TabsItemsContainer, TabsWrapper } from './styled';
-import { TabItem } from './TabItem';
 
 const usersData = [
   {

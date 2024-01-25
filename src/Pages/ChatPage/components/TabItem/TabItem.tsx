@@ -1,5 +1,5 @@
-import { AvatarUser } from '../../../../../components/AvatarUser';
-import { BadgeStyled } from '../../Menu/styled';
+import { AvatarUser } from '../../../../components/AvatarUser';
+import { BadgeStyled } from '../Menu/styled';
 
 import {
   ContainerStyled,

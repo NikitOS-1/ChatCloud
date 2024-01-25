@@ -4,24 +4,30 @@ export const TabItemStyled = styled.div`
   display: flex;
   align-items: center;
   padding: 16px 24px;
-  background-color: ${({ theme }) => theme.colors.neutralColors[100]};
+  font-size: ${({ theme }) => theme.fontSizes.Medium16};
 
   &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.colors.neutralColors[150]};
   }
 `;
+
 export const TabItemGroupStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background-color: ${({ theme }) => theme.colors.neutralColors[100]};
+  font-size: ${({ theme }) => theme.fontSizes.Medium16};
 
   &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.colors.neutralColors[150]};
   }
+`;
+
+export const ContainerStyled = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const TitleStyle = styled.div`
@@ -31,20 +37,13 @@ export const TitleStyle = styled.div`
   gap: 10px;
 `;
 
-export const ContainerStyled = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 export const NameStyled = styled.p`
   font-family: ${({ theme }) => theme.fonts.CeraProMedium};
-  font-size: ${({ theme }) => theme.fontSizes.Medium16};
   color: ${({ theme }) => theme.colors.neutralColors[900]};
 `;
 
 export const DescriptionStyled = styled.p`
   font-family: ${({ theme }) => theme.fonts.CeraProRegular};
-  font-size: ${({ theme }) => theme.fontSizes.Medium16};
   color: ${({ theme }) => theme.colors.neutralColors[500]};
 `;
 
