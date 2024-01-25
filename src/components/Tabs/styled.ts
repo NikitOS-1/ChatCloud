@@ -38,10 +38,14 @@ export const TabsStyled = styled(Tabs)<{ $variants: string }>`
       }
 
       .MuiButtonBase-root {
-        padding: 25px 15px;
+        padding: 35px 20px;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.neutralColors[500]};
         font-family: ${({ theme }) => theme.fonts.CeraProMedium};
+
+        @media (max-width: 800px) {
+          padding: 25px 15px;
+        }
       }
 
       .Mui-selected {
