@@ -7,12 +7,11 @@ export const WelcomePageStyled = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: -50px;
 
   h1 {
     font-family: ${({ theme }) => theme.fonts.CarroisGothicSCRegular};
     font-size: ${({ theme }) => theme.fontSizes.Regular32};
-    margin-bottom: 15px;
+    margin: 25px 0px 15px 0px;
 
     @media (max-width: 900px) {
       font-size: ${({ theme }) => theme.fontSizes.Regular24};
@@ -27,6 +26,7 @@ export const WelcomePageStyled = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
     @media (max-width: 900px) {
       font-size: ${({ theme }) => theme.fontSizes.Medium14};
     }
@@ -45,8 +45,9 @@ export const WelcomePageStyled = styled.div`
   }
 
   img {
-    width: max-content;
-    height: max-content;
+    width: 65%;
+    height: auto;
+    object-fit: cover;
   }
 
   @media (max-width: 800px) {
