@@ -38,7 +38,11 @@ export const LoginPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const { data: countries, isLoading: loadingCounties } = useCountries();
-  const { data: interests, isLoading: loadingInterests } = useInterests();
+  const {
+    data: interests,
+    isLoading: loadingInterests,
+    error: interestError,
+  } = useInterests();
   const { mutate } = useLogin();
 
   const renderedTabContent = () => {
@@ -84,9 +88,9 @@ export const LoginPage = () => {
               isOptionEqualToValue={(option) =>
                 option.country === selectedCountry
               }
-              renderOption={(_, option) =>
+              renderOption={(props, option) =>
                 option && (
-                  <BoxStyled component="li" key={option.code}>
+                  <BoxStyled component="li" key={option.code} {...props}>
                     <img
                       src={`https://flagcdn.com/${option.code.toLowerCase()}.svg`}
                       alt={option.country}
@@ -117,6 +121,7 @@ export const LoginPage = () => {
         </HeaderStyled>
         <UserInfoStyled>
           <Interests
+            interestError={!!interestError}
             isLoading={loadingInterests}
             options={interests?.topics === undefined ? [] : interests?.topics}
             value={selectedInterests}

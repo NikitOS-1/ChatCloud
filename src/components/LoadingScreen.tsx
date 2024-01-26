@@ -8,11 +8,12 @@ export const LoadingScreen = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          height: '100vh',
-          width: '100vw',
+          height: '100%',
+          width: '100%',
+          color: '#FFBA55',
         }}
       >
-        <CircularProgress />
+        <CircularProgress color="inherit" />
       </Box>
     </>
   );

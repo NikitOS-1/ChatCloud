@@ -24,7 +24,7 @@ const usersData = [
   },
   {
     id: 4,
-    name: 'Nikita',
+    name: 'Nik',
     avatar: '/icons/Avatar/Group4.svg',
     country: 'UA',
     isOnline: false,

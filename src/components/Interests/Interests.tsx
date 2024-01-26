@@ -1,4 +1,4 @@
-import { CircularProgress } from '@mui/material';
+import { LoadingScreen } from '../LoadingScreen';
 
 import { InterestItem, InterestsContainer } from './styled';
 import { InterestsProps } from './types';
@@ -8,6 +8,7 @@ export const Interests = ({
   onChange,
   value,
   isLoading = true,
+  interestError = false,
 }: InterestsProps) => {
   const updateSelected = (category: string) => {
     const isIdInArray = value.some((item) => item === category);
@@ -22,17 +23,9 @@ export const Interests = ({
   };
   return (
     <InterestsContainer>
+      {interestError ? 'Error: Items not found 404 ' : ''}
       {isLoading ? (
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-          }}
-        >
-          <CircularProgress />
-        </div>
+        <LoadingScreen />
       ) : (
         <>
           {options.map(({ id, topic }) => (

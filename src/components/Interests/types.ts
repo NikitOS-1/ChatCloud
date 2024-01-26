@@ -3,6 +3,7 @@ export interface InterestsProps {
   onChange: OnChangeCallback;
   value: string[];
   isLoading?: boolean;
+  interestError: boolean;
 }
 
 export type Category = {
