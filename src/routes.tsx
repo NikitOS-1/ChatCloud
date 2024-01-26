@@ -3,6 +3,7 @@ import { AuthGuard } from './hooks/AuthGuard/AuthGuard';
 import { ChatPage } from './Pages/ChatPage';
 import { Search } from './Pages/ChatPage/components/Search';
 import { ChatTabs } from './Pages/ChatPage/components/Tabs';
+import { ErrorPage } from './Pages/ErrorPage/ErrorPage';
 import { LoginPage } from './Pages/LoginPage/LoginPage';
 
 interface Route {
@@ -40,20 +41,7 @@ const routes: Route[] = [
   },
   {
     path: '*',
-    element: (
-      <div
-        style={{
-          width: '100wh',
-          height: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '40px',
-        }}
-      >
-        Error: Page not found
-      </div>
-    ),
+    element: <ErrorPage />,
   },
 ];
 // protected route
