@@ -21,7 +21,7 @@ const routes: Route[] = [
     element: <LoginPage />,
   },
   {
-    path: 'chat',
+    path: '/',
     element: (
       <AuthGuard>
         <ChatPage />
@@ -40,7 +40,20 @@ const routes: Route[] = [
   },
   {
     path: '*',
-    element: <div>Error Page...</div>,
+    element: (
+      <div
+        style={{
+          width: '100wh',
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '40px',
+        }}
+      >
+        Error: Page not found
+      </div>
+    ),
   },
 ];
 // protected route

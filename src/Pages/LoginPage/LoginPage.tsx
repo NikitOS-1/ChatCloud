@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 
 import { AvatarSelect } from '../../components/AvatarSelect';
@@ -161,7 +161,7 @@ export const LoginPage = () => {
       country: selectedCountry,
       topics: selectedInterests,
     });
-    navigate('/chat/message');
+    navigate('message');
   };
 
   const closeModal = () => {
@@ -192,8 +192,9 @@ export const LoginPage = () => {
             onClick={handleContinueClick}
           />
           <P>
-            By proceeding you agree to our <a href="#">Privacy Policy</a> and{' '}
-            <a href="#">Terms of Service</a>
+            By proceeding you agree to our{' '}
+            <Link to={'terms-of-service'}>Privacy Policy</Link> and{' '}
+            <Link to={'terms-of-service'}>Terms of Service</Link>
           </P>
         </FooterContainerStyled>
       </FormContainerStyled>
