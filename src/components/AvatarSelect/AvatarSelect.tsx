@@ -47,7 +47,7 @@ export const AvatarSelect = ({
           onClick={(event) => handleClick(event)}
         />
         <Button
-          margintop="10px"
+          $margintop="10px"
           variant="text"
           label="Change Photo"
           onClick={(event) => handleClick(event)}

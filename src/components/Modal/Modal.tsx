@@ -44,7 +44,7 @@ const ModalWindow = ({ isOpen, onClose, onSkip }: ModalWindowProps) => {
               type="button"
               label="Cancel"
               onClick={onClose}
-              marginright="10px"
+              $marginright="10px"
             />
             <Button type="submit" label="Skip" onClick={onSkip} />
           </FooterStyled>
