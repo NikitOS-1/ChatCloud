@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 
-// import { Icon } from "../../../../components/Icon";
-// import { LoadingScreen } from "../../../../components/LoadingScreen";
-// import { TabItem } from "../TabItem";
+import { Icon } from '../../../../components/Icon';
+import { LoadingScreen } from '../../../../components/LoadingScreen';
+import { TabItem } from '../TabItem';
+
 import {
-  // ButtonSendStyled,
-  // ChatContendStyled,
-  // FooterContentStyled,
-  // HeaderContentStyled,
-  // MainContentStyled,
+  ButtonSendStyled,
+  ChatContendStyled,
+  FooterContentStyled,
+  HeaderContentStyled,
+  MainContentStyled,
   WelcomePageStyled,
 } from './styled';
 
@@ -25,27 +26,27 @@ export const Content = () => {
     </WelcomePageStyled>
   );
 
-  // const chatMessages = (
-  //   <ChatContendStyled>
-  //     <HeaderContentStyled>
-  //       <TabItem name="General" members={32} $nohover />
-  //       <div style={{ marginRight: "30px", fontSize: "23px" }}>...</div>
-  //     </HeaderContentStyled>
-  //     <MainContentStyled>All messages...</MainContentStyled>
-  //     <FooterContentStyled>
-  //       <input type="text" placeholder="Write a message..." />
-  //       <ButtonSendStyled>
-  //         <Icon name="btnSend" />
-  //       </ButtonSendStyled>
-  //     </FooterContentStyled>
-  //   </ChatContendStyled>
-  // );
+  const chatMessages = (
+    <ChatContendStyled>
+      <HeaderContentStyled>
+        <TabItem name="General" members={32} $nohover />
+        <div style={{ marginRight: '30px', fontSize: '23px' }}>...</div>
+      </HeaderContentStyled>
+      <MainContentStyled>All messages...</MainContentStyled>
+      <FooterContentStyled>
+        <input type="text" placeholder="Write a message..." />
+        <ButtonSendStyled>
+          <Icon name="btnSend" />
+        </ButtonSendStyled>
+      </FooterContentStyled>
+    </ChatContendStyled>
+  );
 
   return (
     <>
       {welcomeMessage}
-      {/* {chatMessages}
-      <LoadingScreen /> */}
+      {chatMessages}
+      <LoadingScreen />
     </>
   );
 };

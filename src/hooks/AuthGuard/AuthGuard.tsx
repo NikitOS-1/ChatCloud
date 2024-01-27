@@ -7,7 +7,9 @@ interface AuthGuardProps {
 
 export const AuthGuard = ({ children }: AuthGuardProps) => {
   const auth = true;
+
   const navigate = useNavigate();
+
   if (auth) {
     return <>{children}</>;
   } else {
