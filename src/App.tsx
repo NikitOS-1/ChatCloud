@@ -9,7 +9,7 @@ function App() {
 
   return (
     <StyledLayout>
-      <Toster message="Toster works" />
+      <Toster message="This site uses cookies" />
       {allPages}
     </StyledLayout>
   );
