@@ -11,7 +11,6 @@ export const H1 = styled.h1`
 
   @media (max-width: 800px) {
     font-size: ${({ theme }) => theme.fontSizes.Medium20};
-    font-size: ${({ theme }) => theme.fontSizes.Medium20};
   }
 `;
 
