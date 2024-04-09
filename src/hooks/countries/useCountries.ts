@@ -10,6 +10,7 @@ interface CountriesInterface {
 interface CountryInterface {
   code: string;
   country: string;
+  country: string;
 }
 
 const getCountries = async (): Promise<CountriesInterface> => {
